@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import NavTabs from "@/components/animata/container/nav-tabs";
 
 
 export const metadata: Metadata = {
@@ -18,6 +19,13 @@ export default function RootLayout({
       <body
         
       >
+            <NavTabs tabs={[
+    'Profile',
+    'Search',
+    'About Us',
+    'Contact Us',
+    'Settings'
+  ]}/>
         {children}
       </body>
     </html>

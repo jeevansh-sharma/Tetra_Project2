@@ -1,0 +1,23 @@
+how to use ticker
+1 Ticker
+<Ticker
+  className="text-4xl md:text-7xl font-black"
+  value="456.78"
+/>
+
+2 Button
+<SlideArrowButton/>
+
+3 -border-trail
+  https://motion-primitives.com/docs/border-trail
+
+
+4 Text-border-animation(line under text)
+<TextBorderAnimation text="Programming" />
+
+5 Spining Text
+  <SpinningTextCustomVariants/>
+
+
+
+
