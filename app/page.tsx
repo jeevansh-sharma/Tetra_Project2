@@ -16,6 +16,8 @@ import { BackgroundBeamsWithCollision } from '@/components/ui/backround-beams';
 import { useEffect } from "react";
 import Image from 'next/image';
 import SlideArrowButton from './component/CreateButton';
+import { Overview } from './component/Home/Overview';
+import { Testinomial } from './component/Home/Testinomial';
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -48,7 +50,7 @@ export default function Home() {
 <BackgroundBeamsWithCollision>
 <AnimatedGridBackgroundSection>
   
-<div className='flex flex-col relative w-screen h-[60vh] items-start pl-4 sm:pl-6 md:pl-8 lg:pl-10'>
+<div className='flex flex-col relative w-screen h-[60vh] items-start pl-4 sm:pl-6 md:pl-8 lg:pl-20'>
 
     <p className={'text-7xl text-white font-bold'}>Transforming <span className='font-light'>Education</span>,<br/> Transforming <span className='font-light'>Futures</span></p>
     <div className='max-w-[540px] mt-9 ml-2'>
@@ -63,28 +65,24 @@ export default function Home() {
   </AnimatedGridBackgroundSection>
 </BackgroundBeamsWithCollision>
 
-<div className='mt-20 mb-96 max-w-6xl mx-auto flex flex-row justify-between '>
-  <div className='flex flex-col px-5  max-w-lg'>
-    <h1 className='font-semibold text-7xl'>Discover<br/> Our <span className='font-extralight '>Studio</span></h1>
-    <p className='text-base text-gray-400 mt-16'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus non earum officiis odio cumque in, tempora doloremque praesentium natus possimus ratione ipsam eligendi harum, laudantium itaque iure dolorum debitis. Temporibus quas dolores esse ad quasi eos eveniet similique? Et dignissimos at nemo non! Ab ipsam consequuntur ipsa nam, fugiat nulla!</p>
-    <p className='text-base text-gray-400 mt-16'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus non earum officiis odio cumque in, tempora doloremque praesentium natus possimus ratione ipsam eligendi harum, laudantium itaque iure dolorum debitis. Temporibus quas dolores esse ad quasi eos eveniet similique? Et dignissimos at nemo non! Ab ipsam consequuntur ipsa nam, fugiat nulla!</p>
-  </div>
-  <div className='flex items-center justify-center px-36'>
-  <img src="/over1.jpg" alt='ok' className='w-full h-full ml-16 ' />
-     
-
-    
-
-  </div>
-  
-</div>
-
+   <Overview/>
+   <Testinomial/>
 
 
     </section>
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
 const AnimatedGridBackgroundSection: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
     <div

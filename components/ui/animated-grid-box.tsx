@@ -23,7 +23,7 @@ const TilesComponent: React.FC<{ className?: string; rows?: number; cols?: numbe
           {cols.map((_, j) => (
             <motion.div
               whileHover={{
-                backgroundColor: `var(--tile)`,
+                backgroundColor: `#212121`,
                 transition: { duration: 0 }
               }}
               animate={{
