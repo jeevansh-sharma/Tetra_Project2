@@ -16,16 +16,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        
-      >
-            <NavTabs tabs={[
-    'Profile',
-    'Search',
-    'About Us',
-    'Contact Us',
-    'Settings'
-  ]}/>
+      <body>
+       
         {children}
       </body>
     </html>

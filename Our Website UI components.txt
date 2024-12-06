@@ -32,3 +32,8 @@ https://animata.design/docs/list/reveal-image
 https://animata.design/docs/list/avatar-list
 https://animata.design/docs/list/flower-menu
 https://animata.design/docs/icon/hover-interaction
+https://ui.lukacho.com/components/background-lights
+
+
+For Spotlight
+        " rounded-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops),transparent_80%)] blur-xl transition-opacity duration-200 from-zinc-50 via-zinc-100 to-zinc-200 opacity-100"
