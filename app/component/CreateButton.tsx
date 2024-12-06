@@ -14,12 +14,12 @@ export default function SlideArrowButton({
 }: SlideArrowButtonProps) {
   return (
     <button
-      className={`group relative rounded-full border border-white bg-white p-2 text-xl font-semibold ${className}`}
+      className={`group relative rounded-full border border-black bg-white px-2 py-2 text-xl font-semibold ${className}`}
       {...props}
     >
       <div
         className="absolute left-0 top-0 flex h-full w-11 items-center justify-end rounded-full transition-all duration-200 ease-in-out group-hover:w-full"
-        style={{ backgroundColor: primaryColor }}
+        style={{ backgroundColor: "rgb(255, 152, 0)" }}
       >
         <span className="mr-3 text-white transition-all duration-200 ease-in-out">
           <ArrowRight size={20} />

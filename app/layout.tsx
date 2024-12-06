@@ -1,7 +1,9 @@
+
 import type { Metadata } from "next";
 
 import "./globals.css";
 import NavTabs from "@/components/animata/container/nav-tabs";
+import Navbar from "./component/Navbar";
 
 
 export const metadata: Metadata = {
@@ -14,10 +16,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+ 
   return (
     <html lang="en">
-      <body>
-       
+      <body className="h-screen overflow-y-scroll scrollbar-thin ">
+         {/* <Navbar/> */}
         {children}
       </body>
     </html>
