@@ -4,6 +4,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Link from "next/link";
+import { Outfit } from 'next/font/google'
 
 
 import NavTabs from "@/components/animata/container/nav-tabs";
@@ -18,6 +19,12 @@ import Image from 'next/image';
 import SlideArrowButton from './component/CreateButton';
 import { Overview } from './component/Home/Overview';
 import { Testinomial } from './component/Home/Testinomial';
+import { InView } from '@/components/motionui/inView';
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  display: 'swap',
+})
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -51,15 +58,31 @@ export default function Home() {
 <AnimatedGridBackgroundSection>
   
 <div className='flex flex-col relative w-screen h-[60vh] items-start pl-4 sm:pl-6 md:pl-8 lg:pl-20'>
-
-    <p className={'text-7xl text-white font-bold'}>Transforming <span className='font-light'>Education</span>,<br/> Transforming <span className='font-light'>Futures</span></p>
+   <InView 
+   variants={{
+    hidden: { opacity: 0.9, y: -50, filter: 'blur(0px)' },
+    visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+  }}
+  viewOptions={{ margin: '0px 0px -200px 0px' }}
+  transition={{ duration: 0.5, ease: 'easeInOut' }}
+   >
+    <p className={`${outfit.className} text-7xl text-white font-bold`}>Transforming <span className='font-light'>Education</span>,<br/> Transforming <span className='font-light'>Futures</span></p>
     <div className='max-w-[540px] mt-9 ml-2'>
-    <p className='hidden md:inline text-lg text-gray-200 font-light'>Our platform bridges the gap between traditional education and modern demands, making learning more accessible, engaging, and personalized</p>
+    <p className={`hidden ${outfit.className}  md:inline text-lg text-gray-200 font-light`}>Our platform bridges the gap between traditional education and modern demands, making learning more accessible, engaging, and personalized</p>
     </div>
-    <div className='mt-12 ml-2'>
-
+    </InView>
+    <InView 
+   variants={{
+     hidden: { opacity: 1, x: 0, filter: 'blur(2px)' },
+     visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
+    }}
+  viewOptions={{ margin: '0px 0px 100px 0px' }}
+  transition={{ duration: 1, ease: 'easeInOut' }}
+   >
+    <div className='mt-10 ml-2'>
     <SlideArrowButton/>
     </div>
+    </InView>
 </div>
 
   </AnimatedGridBackgroundSection>

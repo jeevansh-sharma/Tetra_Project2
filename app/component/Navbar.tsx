@@ -1,29 +1,63 @@
+'use client'
 import Link from 'next/link';
+import { useEffect, useState } from "react";
+
+
+import { Outfit } from 'next/font/google'
+const outfit = Outfit({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export default function Navbar() {
+  const [isVisible, setIsVisible] = useState(false); // Navbar visibility state
+  const [lastScrollPos, setLastScrollPos] = useState(0); // Track last scroll position
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+
+      if (currentScrollPos > 0 ) {
+        // User scrolling down, hide navbar
+        setIsVisible(true);
+      } 
+
+      setLastScrollPos(currentScrollPos);
+    };
+
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollPos]);
+
   return (
-    <nav className="bg-neutral-900 text-white shadow-zinc-950 shadow-2xl">
+    <nav className={`fixed top-0 z-30 w-screen  bg-neutral-900 text-white shadow-zinc-950 shadow-2xl transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"} `}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-10">
           {/* Logo Section */}
           <div className="flex items-center justify-center">
-            <Link href="/" className="text-2xl font-bold text-indigo-500">
+            <img src='/download.png' alt="tetraedtech" className='object-cover rounded-full bg-white '/>
+            {/* <Link href="/" className="text-2xl font-bold text-indigo-500">
               MyBrand
-            </Link>
+            </Link> */}
           </div>
 
           {/* Navigation Links */}
           <div className="hidden md:flex space-x-4 mr-28 items-center">
-            <Link href="/" className="hover:text-indigo-400 transition">
+            <Link href="/" className={`${outfit.className} font-normal  hover:text-indigo-400 transition`}>
               Home
             </Link>
-            <Link href="/about" className="hover:text-indigo-400 transition">
+            <Link href="/" className={`${outfit.className} font-normal hover:text-indigo-400 transition`}>
               About
             </Link>
-            <Link href="/services" className="hover:text-indigo-400 transition">
+            <Link href="/" className={`${outfit.className} font-normal hover:text-indigo-400 transition`}>
               Services
             </Link>
-            <Link href="/contact" className="hover:text-indigo-400 transition">
+            <Link href="/" className={`${outfit.className} font-normal hover:text-indigo-400 transition`}>
               Contact
             </Link>
           </div>

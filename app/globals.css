@@ -9,6 +9,19 @@
 
 
 
+.outfit-unique {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--font-weight, 400); /* Default weight to 400 */
+  font-style: normal;
+  font-size: var(--font-size, 16px); /* Default size to 16px */
+  line-height: var(--line-height, 1.5); /* Adjust line-height for readability */
+}
+.outfit-bold {
+  font-weight: 900;
+  font-size: 24px; /* Specific font size for bold variant */
+}
+
 
 .light body {
   --tile: var(--neutral-100);
