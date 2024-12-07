@@ -41,23 +41,23 @@ export default function Navbar() {
           {/* Logo Section */}
           <div className="flex items-center justify-center">
             <img src='/download.png' alt="tetraedtech" className='object-cover rounded-full bg-white '/>
-            {/* <Link href="/" className="text-2xl font-bold text-indigo-500">
-              MyBrand
-            </Link> */}
+            <Link href="/" className={`${outfit.className} text-2xl ml-3 font-light text-white`}>
+              TetraEdTech
+            </Link>
           </div>
 
           {/* Navigation Links */}
           <div className="hidden md:flex space-x-4 mr-28 items-center">
-            <Link href="/" className={`${outfit.className} font-normal  hover:text-indigo-400 transition`}>
+            <Link href="/" className={`${outfit.className} font-  hover:text-indigo-400 transition`}>
               Home
             </Link>
-            <Link href="/" className={`${outfit.className} font-normal hover:text-indigo-400 transition`}>
+            <Link href="/" className={`${outfit.className} font- hover:text-indigo-400 transition`}>
               About
             </Link>
-            <Link href="/" className={`${outfit.className} font-normal hover:text-indigo-400 transition`}>
+            <Link href="/" className={`${outfit.className} font- hover:text-indigo-400 transition`}>
               Services
             </Link>
-            <Link href="/" className={`${outfit.className} font-normal hover:text-indigo-400 transition`}>
+            <Link href="/" className={`${outfit.className} font- hover:text-indigo-400 transition`}>
               Contact
             </Link>
           </div>

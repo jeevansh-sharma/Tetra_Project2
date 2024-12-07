@@ -20,6 +20,7 @@ import SlideArrowButton from './component/CreateButton';
 import { Overview } from './component/Home/Overview';
 import { Testinomial } from './component/Home/Testinomial';
 import { InView } from '@/components/motionui/inView';
+import CompanyServices from './component/Home/CompanyServices';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -89,7 +90,7 @@ export default function Home() {
 </BackgroundBeamsWithCollision>
 
    <Overview/>
-   <Testinomial/>
+   <CompanyServices/>
 
 
     </section>
