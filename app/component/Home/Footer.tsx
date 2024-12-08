@@ -7,7 +7,7 @@ const outfit = Outfit({
 })
 export function Footer(){
     return(
-        <section className="w-screen h-[70vh] bg-neutral-950">
+        <section className="w-screen h-[482px] bg-neutral-950">
             <div className="max-w-6xl  mx-auto flex flex-col">
                 <div className="flex flex-row mt-24 space-x-24  justify-center">
                     <div className="flex flex-col items-center justify-center mb-6 ">

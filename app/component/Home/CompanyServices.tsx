@@ -55,7 +55,7 @@ export default function CompanyServices() {
           </InView>
   
           {/* Services Section */}
-          <div className="grid grid-cols-1 md:grid-cols-4  mt-12 h-[58vh] ">
+          <div className="grid grid-cols-1 md:grid-cols-4  mt-12 h-[400px] ">
             {/* Service Card */}
             {[
               {

@@ -44,7 +44,7 @@ export function Testinomial(){
         },
       ];
     return(
-        <section className=" h-screen w-screen flex flex-col bg-gray-50 items-center justify-center ">
+        <section className=" h-[800px] w-screen flex flex-col bg-gray-50 items-center justify-center ">
     <div className="flex flex-row  items-center justify-center mt-16  ">
         <p className={`${outfit.className} text-7xl font-semibold relative  pb-4`}>What <span className={`${outfit.className} font-light`}>our clients say</span>  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-52 border-b-2 border-black"></span></p>
         <img src="/comma2.png" alt="vv" className="object-cover h-24 w-24 "></img>
