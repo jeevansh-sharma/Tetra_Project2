@@ -1,8 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Tiles } from "@/components/ui/animated-grid-box";
-import { Outfit } from "next/font/google";
 import { SpinningTextCustomVariants } from "@/components/motionui/spining-text-custom";
+import { OurMission } from "../component/AboutUs/OurMission";
+import { Outfit } from "next/font/google";
+import { OurVision } from "../component/AboutUs/OurVision";
+import WhyChooseUs from "../component/AboutUs/WhyChooseUs";
+import ContactUs from "../component/AboutUs/ContactUs";
+
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -63,9 +68,10 @@ export default function Page() {
             <SpinningTextCustomVariants />
           </div>
       </div>
-      <div className="h-[1000px]">
-
-      </div>
+      <OurMission/>
+     <OurVision/>
+     <WhyChooseUs/>
+     <ContactUs/>
     </>
   );
 }

@@ -65,7 +65,7 @@ export function SpinningText({
 
   const handleScrollDown = () => {
     window.scrollBy({
-      top: 1000, // Adjust the value to control the scroll distance
+      top: 650, // Adjust the value to control the scroll distance
       behavior: 'smooth', // Smooth scrolling effect
     });
   };

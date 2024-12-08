@@ -24,7 +24,7 @@ export default function SlideArrowButton({
     >
       <div
         className="absolute left-0 top-0 flex h-full    w-11 items-center justify-end rounded-full transition-all duration-200 ease-in-out group-hover:w-full"
-        style={{ backgroundColor: "rgb(255, 152, 0)" }}
+        style={{ backgroundColor: "rgb(255, 157, 0)" }}
       >
         
         <span className="mr-3  text-black transition-all duration-200 ease-in-out ">
