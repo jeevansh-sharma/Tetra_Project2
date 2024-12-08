@@ -36,7 +36,7 @@ export default function CompanyServices() {
           <div className="flex flex-col items-center justify-center gap-4 mt-16">
             <div className="flex items-center justify-center space-x-6 w-full">
               <img
-                src="images (1).jpg" // team image
+                src="CompanyServices.jpg" // team image
                 alt="Team photo"
                 className="rounded-full w-72 h-24 object-cover"
               />
