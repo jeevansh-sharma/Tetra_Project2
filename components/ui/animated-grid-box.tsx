@@ -14,7 +14,7 @@ const TilesComponent: React.FC<{ className?: string; rows?: number; cols?: numbe
   const cols = new Array(c || 10).fill(1)
 
   return (
-    <div className={cn('relative z-1 flex w-full h-full  mr-2', className)}>
+    <div className={cn('relative z-[1] flex w-full h-full  mr-2', className)}>
       {rows.map((_, i) => (
         <motion.div
           key={`row` + i}

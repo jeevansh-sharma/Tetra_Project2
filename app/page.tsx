@@ -7,11 +7,7 @@ import Link from "next/link";
 import { Outfit } from 'next/font/google'
 
 
-import NavTabs from "@/components/animata/container/nav-tabs";
-import { SpinningTextCustomVariants } from "@/components/motionui/spining-text-custom";
-import { SpinningText } from "@/components/motionui/spinning-text";
-import { HeroParallaxDemo } from "./component/Home/HeroParallaxDemo";
-import { MacbookScrollDemo } from "./component/Home/MacBookScrollDemo";
+
 import { Tiles } from '@/components/ui/animated-grid-box';
 import { BackgroundBeamsWithCollision } from '@/components/ui/backround-beams';
 import { useEffect } from "react";
@@ -46,7 +42,7 @@ export default function Home() {
   }, []);
   return (
 <>
-<div className="fixed top-0 right-0 h-full w-1.5  bg-neutral-900 z-30">
+<div className="fixed top-0 right-0 h-full w-1.5  bg-neutral-900 z-50">
       <div
         className="bg-orange-500 rounded-b-2xl w-full"
         style={{ height: `${scrollProgress}%` }}
@@ -59,7 +55,7 @@ export default function Home() {
 <BackgroundBeamsWithCollision>
 <AnimatedGridBackgroundSection>
   
-<div className='flex flex-col relative w-screen h-[60vh] items-start pl-4 sm:pl-6 md:pl-8 lg:pl-20'>
+<div className='flex flex-col relative w-screen h-[423px] items-start pl-4 sm:pl-6 md:pl-8 lg:pl-20'>
    <InView 
    variants={{
     hidden: { opacity: 0.9, y: -50, filter: 'blur(0px)' },
@@ -93,7 +89,7 @@ export default function Home() {
    <Overview/>
    <CompanyServices/>
    <Testinomial/>
-   <Footer/>
+  
 
 
 

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavTabs from "@/components/animata/container/nav-tabs";
 import Navbar from "./component/Navbar";
+import { Footer } from "./component/Home/Footer";
 
 
 
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className="h-screen overflow-y-scroll scrollbar-thin ">
          <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

@@ -5,8 +5,8 @@ import { SpinningText } from './spinning-text';
 export function SpinningTextCustomVariants() {
   return (
     <SpinningText
-      radius={5.5}
-      fontSize={1}
+      radius={8}
+      fontSize={0.9}
       variants={{
         container: {
           hidden: {
@@ -35,9 +35,9 @@ export function SpinningTextCustomVariants() {
           },
         },
       }}
-      className='font-[450]'
+      className='font-[450] text-white'
     >
-      {`pre-order • pre-order • pre-order • `}
+      {`DISCOVER-MORE • DISCOVER-MORE • `}
     </SpinningText>
   );
 }

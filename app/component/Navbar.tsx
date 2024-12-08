@@ -35,7 +35,7 @@ export default function Navbar() {
   }, [lastScrollPos]);
 
   return (
-    <nav className={`fixed top-0 z-30 w-screen  bg-neutral-900 text-white shadow-zinc-950 shadow-2xl transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"} `}>
+    <nav className={`fixed top-0 z-[49] w-screen  bg-neutral-900 text-white shadow-zinc-950 shadow-2xl transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"} `}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-10">
           {/* Logo Section */}
@@ -51,7 +51,7 @@ export default function Navbar() {
             <Link href="/" className={`${outfit.className} font-  hover:text-indigo-400 transition`}>
               Home
             </Link>
-            <Link href="/" className={`${outfit.className} font- hover:text-indigo-400 transition`}>
+            <Link href="/about_us" className={`${outfit.className} font- hover:text-indigo-400 transition`}>
               About
             </Link>
             <Link href="/" className={`${outfit.className} font- hover:text-indigo-400 transition`}>

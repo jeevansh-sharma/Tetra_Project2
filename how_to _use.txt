@@ -17,6 +17,8 @@ how to use ticker
 
 5 Spining Text
   <SpinningTextCustomVariants/>
+  
+6 Link for icons search - https://react-icons.github.io/react-icons/
 
 
 
