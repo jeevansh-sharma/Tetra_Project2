@@ -19,8 +19,8 @@ export function Overview(){
           transition={{ duration: 0.5, ease: 'easeInOut' }}
         >
     <h1 className={`${outfit.className}font-semibold text-7xl`}>Discover<br/> Our <span className='font-extralight' >Studio</span></h1>
-    <p className={`${outfit.className} text-base text-gray-400 mt-16`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus non earum officiis odio cumque in, tempora doloremque praesentium natus possimus ratione ipsam eligendi harum, laudantium itaque iure dolorum debitis. Temporibus quas dolores esse ad quasi eos eveniet similique? Et dignissimos at nemo non! Ab ipsam consequuntur ipsa nam, fugiat nulla!</p>
-    <p className={`${outfit.className} text-base text-gray-400 mt-16`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus non earum officiis odio cumque in, tempora doloremque praesentium natus possimus ratione ipsam eligendi harum, laudantium itaque iure dolorum debitis. Temporibus quas dolores esse ad quasi eos eveniet similique? Et dignissimos at nemo non! Ab ipsam consequuntur ipsa nam, fugiat nulla!</p>
+    <p className={`${outfit.className} text-base text-gray-400 mt-16`}>At Tetra Edtech, our mission is to empower educational institutions with cutting-edge solutions designed to elevate the quality of education and drive institutional excellence. Through comprehensive services such as digital marketing, event management, and accreditation support, we ensure that institutions are equipped to thrive in an ever-evolving educational landscape.</p>
+    <p className={`${outfit.className} text-base text-gray-400 mt-12`}>Our commitment to excellence extends to teacher training and Faculty Development Programs (FDP), fostering an environment of continuous learning and growth. At Tetra Edtech, we believe every institution has the potential to achieve greatness, and we work tirelessly to make that a reality. </p>
 
   </InView>
   </div>
