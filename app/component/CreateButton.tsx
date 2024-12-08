@@ -31,7 +31,8 @@ export default function SlideArrowButton({
           <ArrowRight size={20} />
         </span>
       </div>
-      <span className={`${outfit.className} relative left-4 z-10 whitespace-nowrap px-8 font-semibold text-black transition-all duration-200 ease-in-out group-hover:-left-3 group-hover:text-black`}>
+      <span className={`${outfit.className} relative left-4 bottom-0.5 z-10 whitespace-nowrap px-8 font-normal text-base text-center 
+       text-black transition-all duration-200 ease-in-out group-hover:-left-3 group-hover:text-black`}>
         {text}
       </span>
 

@@ -1,6 +1,7 @@
 import { InView } from "@/components/motionui/inView";
 import { ArrowBigLeft, ArrowRight, CircleArrowLeftIcon, CircleArrowRight } from "lucide-react";
 import { Outfit } from 'next/font/google'
+import { FaCircleArrowRight } from "react-icons/fa6";
 const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
@@ -48,7 +49,7 @@ export default function CompanyServices() {
              <h1 className="text-4xl md:text-7xl text-white"><span className={`${outfit.className} font-semibold`}>For Your</span> <span className={`${outfit.className} font-extralight`}>Business.</span></h1> 
             
             <button className="px-14 py-5 bg-orange-400 text-black font-semibold rounded-full flex items-center ">
-            <span className={`flex flex-row ${outfit.className} font-normal  `}>What We Do <span className="ml-2 "><CircleArrowRight className="text-black "/></span>  </span>
+            <span className={`flex flex-row ${outfit.className} font-normal text-sm items-center  `}>WHAT WE DO <span className="ml-5 "><FaCircleArrowRight size={24}/></span>  </span>
             </button>
             </div>
           </div>
@@ -81,13 +82,13 @@ export default function CompanyServices() {
               >
                 <h2 className={`text-lg ${outfit.className} text-left  font-semibold mb-2`}>{service.title}</h2>
                 {/* Description - Display only on hover */}
-                <p className={`text-sm ${outfit.className}  text-gray-400 py-16 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                <p className={`text-sm ${outfit.className} text-left  text-gray-400 pt-8 pb-14 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
                   {service.description}
                 </p>
                
                 {/* Arrow Icon - Display only on hover */}
-                <div className="absolute bottom-4 right-4 text-orange-400 text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  &rarr;
+                <div className="absolute bottom-24 left-10 text-orange-400 text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <FaCircleArrowRight size={36}/>
                 </div>
               </div>
             ))}
