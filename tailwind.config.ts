@@ -19,6 +19,9 @@ module.exports = {
 
   theme: {
   	extend: {
+		borderWidth: {
+			'0.2': '0.2px', // Adds a very thin border option
+		  },
 		colors: {
 			background: 'hsl(var(--background))',
 			foreground: 'hsl(var(--foreground))',

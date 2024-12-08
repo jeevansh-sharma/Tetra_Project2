@@ -21,6 +21,7 @@ import { Overview } from './component/Home/Overview';
 import { Testinomial } from './component/Home/Testinomial';
 import { InView } from '@/components/motionui/inView';
 import CompanyServices from './component/Home/CompanyServices';
+import { AboutUs } from './component/Home/AboutUs';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -91,6 +92,9 @@ export default function Home() {
 
    <Overview/>
    <CompanyServices/>
+   <Testinomial/>
+   <AboutUs/>
+
 
 
     </section>

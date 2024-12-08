@@ -1,40 +1,61 @@
+import { InView } from "@/components/motionui/inView";
+import { ArrowBigLeft, ArrowRight, CircleArrowLeftIcon, CircleArrowRight } from "lucide-react";
+import { Outfit } from 'next/font/google'
+const outfit = Outfit({
+  subsets: ['latin'],
+  display: 'swap',
+})
 export default function CompanyServices() {
     return (
-      <div className="bg-black text-white py-16 px-8 relative">
+      <div className="bg-neutral-950 text-white pt-16 pl-8 relative">
 
 
-<div className="relative">
-  <p className="text-xs tracking-wide text-white opacity-35 pr-64 text-right w-auto right-8">
-    Professionals focused on helping your <br />
-    brand grow and move forward.
+<div className="flex flex-row justify-end ">
+  <p className={`text-base tracking-wide ${outfit.className} font-light text-white opacity-35 pr-9 text-right w-auto right-8`}>
+    Professionals focused on helping your brand  <br />
+    grow and move forward.
   </p>
-  <div className="absolute right-0 top-1/4 w-60 h-px bg-white opacity-35"></div>
+
+
+  <div className="text-center w-80 h-px bg-white opacity-35 mt-3"></div>
+  
 </div>
 
 
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className=" z-10 max-w-5xl mx-auto text-center flex flex-col justify-end ">
           {/* Header Section */}
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div className="rounded-full overflow-hidden w-52">
+          <InView
+          variants={{
+            hidden: { opacity: 0, y: 50, filter: 'blur(4px)' },
+            visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+          }}
+          viewOptions={{ margin: '0px 0px -200px 0px' }}
+          transition={{ duration: 0.6, ease: 'easeInOut' }}
+        >
+          <div className="flex flex-col items-center justify-center gap-4 mt-16">
+            <div className="flex items-center justify-center space-x-6 w-full">
               <img
                 src="images (1).jpg" // team image
                 alt="Team photo"
-                className="w-full h-14 object-cover"
+                className="rounded-full w-72 h-24 object-cover"
               />
+              <h1 className="text-4xl md:text-7xl text-white">
+              <span className={`${outfit.className} font-semibold`}>Unique</span> <span className={`${outfit.className} font-extralight`}>Ideas.</span></h1>
             </div>
   
-            <h1 className="text-4xl md:text-5xl text-white">
-              <span className="font-bold">Unique</span> <span className="font-extralight">Ideas.</span> <br />
-              <span className="font-bold">For Your</span> <span className="font-extralight">Business.</span>
-            </h1>
-            <button className="px-6 py-3 bg-orange-400 text-black font-semibold rounded-full flex items-center gap-2">
-              What We Do <span className="text-xl">&rarr;</span>
+            <div className="flex items-center justify-center space-x-6 w-full">
+             <h1 className="text-4xl md:text-7xl text-white"><span className={`${outfit.className} font-semibold`}>For Your</span> <span className={`${outfit.className} font-extralight`}>Business.</span></h1> 
+            
+            <button className="px-14 py-5 bg-orange-400 text-black font-semibold rounded-full flex items-center ">
+            <span className={`flex flex-row ${outfit.className} font-normal  `}>What We Do <span className="ml-2 "><CircleArrowRight className="text-black "/></span>  </span>
             </button>
+            </div>
           </div>
+          </InView>
   
           {/* Services Section */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-4  mt-12 h-[58vh] ">
             {/* Service Card */}
             {[
               {
@@ -46,7 +67,7 @@ export default function CompanyServices() {
                 description: "We create responsive and user-friendly websites tailored to your business needs.",
               },
               {
-                title: "Advertising and Marketing Campaigns",
+                title: "Advertising and  Marketing Campaigns",
                 description: "Boost your business with our targeted and effective marketing strategies.",
               },
               {
@@ -56,13 +77,14 @@ export default function CompanyServices() {
             ].map((service, index) => (
               <div
                 key={index}
-                className="relative border-2 border-transparent hover:border-orange-400 hover:bg-white/10 p-6 rounded-lg transition-all duration-300 group"
+                className="relative hover:border-t-4  hover:border-t-orange-400  hover:bg-white/10 p-10 pt-11  rounded-lg transition-all duration-300 group"
               >
-                <h2 className="text-lg font-semibold mb-2">{service.title}</h2>
+                <h2 className={`text-lg ${outfit.className} text-left  font-semibold mb-2`}>{service.title}</h2>
                 {/* Description - Display only on hover */}
-                <p className="text-sm text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className={`text-sm ${outfit.className}  text-gray-400 py-16 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
                   {service.description}
                 </p>
+               
                 {/* Arrow Icon - Display only on hover */}
                 <div className="absolute bottom-4 right-4 text-orange-400 text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   &rarr;
