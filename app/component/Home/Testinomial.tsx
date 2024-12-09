@@ -6,7 +6,7 @@ const outfit = Outfit({
   display: 'swap',
 })
 export function Testinomial(){
-    const rotations = [5, -10, 8]; 
+
     const testimonials = [
         {
           quote:

@@ -1,6 +1,7 @@
 import { InView } from "@/components/motionui/inView";
 
 import { Outfit } from 'next/font/google'
+import Image from "next/image";
 const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
@@ -11,7 +12,7 @@ export function OurVision(){
    
   <div className='flex flex-col  max-w-md mx-auto'>
  
-    <img src="/ourVision.jpg" alt='ok' className='w-full h-full mr-24  ' />
+    <Image src="/ourVision.jpg" alt='ok' className='w-full h-full mr-24  ' />
  
   </div>
   <div className='flex flex-col items-center  max-w-xl pl-40 mr-28'>

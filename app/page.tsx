@@ -1,9 +1,9 @@
 
 'use client'
 
-import { motion } from 'framer-motion'
+
 import { useState } from 'react'
-import Link from "next/link";
+
 import { Outfit } from 'next/font/google'
 
 
@@ -11,13 +11,13 @@ import { Outfit } from 'next/font/google'
 import { Tiles } from '@/components/ui/animated-grid-box';
 import { BackgroundBeamsWithCollision } from '@/components/ui/backround-beams';
 import { useEffect } from "react";
-import Image from 'next/image';
+
 import SlideArrowButton from './component/CreateButton';
 import { Overview } from './component/Home/Overview';
 import { Testinomial } from './component/Home/Testinomial';
 import { InView } from '@/components/motionui/inView';
 import CompanyServices from './component/Home/CompanyServices';
-import {  Footer } from './component/Home/Footer';
+
 
 const outfit = Outfit({
   subsets: ['latin'],

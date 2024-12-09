@@ -1,0 +1,3 @@
+do not change  CreateButton component , app/component/home, app/component/about_us  , about_us/page.tsx, page.tsx
+Name your services folder as services
+In component folder create Services folder and write its component here

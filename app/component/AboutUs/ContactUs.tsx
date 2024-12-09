@@ -1,5 +1,5 @@
 import { InView } from "@/components/motionui/inView";
-import { ArrowBigLeft, ArrowRight, CircleArrowLeftIcon, CircleArrowRight } from "lucide-react";
+
 import { Outfit } from 'next/font/google'
 import { FaCircleArrowRight } from "react-icons/fa6";
 const outfit = Outfit({
@@ -38,7 +38,7 @@ export default function ContactUs() {
             <div className="flex items-center justify-center space-x-6 w-full">
               
               <h1 className="text-4xl md:text-7xl ">
-              <span className={`${outfit.className} font-semibold`}>Let's make an</span> <span className={`${outfit.className} font-extralight`}>Impact</span></h1>
+              <span className={`${outfit.className} font-semibold`}>Let&#39;s make an</span> <span className={`${outfit.className} font-extralight`}>Impact</span></h1>
             </div>
   
             <div className="flex items-center justify-center space-x-6 w-full">

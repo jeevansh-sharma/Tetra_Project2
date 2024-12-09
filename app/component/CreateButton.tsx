@@ -1,6 +1,6 @@
 import React from "react";
-import { ArrowRight, CircleArrowRight, MoveRight } from "lucide-react";
-import { BorderTrail } from "@/components/motionui/border-trail";
+import { ArrowRight } from "lucide-react";
+
 import { Outfit } from 'next/font/google'
 const outfit = Outfit({
   subsets: ['latin'],
@@ -8,19 +8,21 @@ const outfit = Outfit({
 })
 interface SlideArrowButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
-  primaryColor?: string;
+  _primaryColor?: string;
 }
 
 export default function SlideArrowButton({
   text = "Get Started",
-  primaryColor = "#6f3cff",
+  _primaryColor = "#6f3cff",
   className = "",
   ...props
+  
 }: SlideArrowButtonProps) {
+  console.log(_primaryColor);
   return (
     <button
       className={`${outfit.className}  group relative rounded-full  bg-white px-2 py-2 text-xl font-semibold ${className}`}
-      {...props}
+      {...props} 
     >
       <div
         className="absolute left-0 top-0 flex h-full    w-11 items-center justify-end rounded-full transition-all duration-200 ease-in-out group-hover:w-full"
@@ -40,12 +42,3 @@ export default function SlideArrowButton({
   );
 }
 
-{/* <div className="flex items-center justify-center bg-gray-900 h-16 w-96 p-12">
-    <AnimatedBorderTrail className="rounded-full bg-zinc-600 hover:bg-zinc-500"
-    contentClassName="rounded-full bg-zinc-800"
-    trailColor="white">
-
-    <SlideArrowButton/>
-    </AnimatedBorderTrail>
-
-    </div> */}

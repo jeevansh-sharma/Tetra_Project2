@@ -1,5 +1,5 @@
 import { InView } from "@/components/motionui/inView";
-import { ArrowBigLeft, ArrowRight, CircleArrowLeftIcon, CircleArrowRight } from "lucide-react";
+
 import { Outfit } from 'next/font/google'
 import { FaCircleArrowRight } from "react-icons/fa6";
 const outfit = Outfit({
