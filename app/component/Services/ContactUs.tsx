@@ -42,7 +42,7 @@ export default function ContactUs() {
             </div>
   
             <div className="flex items-center justify-center space-x-6 w-full">
-             <h1 className="text-4xl md:text-7xl "><span className={`${outfit.className} font-semibold`}>We're </span> <span className={`${outfit.className} font-extralight`}>her to help.</span></h1> 
+             <h1 className="text-4xl md:text-7xl "><span className={`${outfit.className} font-semibold`}>We&apos;re </span> <span className={`${outfit.className} font-extralight`}>her to help.</span></h1> 
             
             
             </div>

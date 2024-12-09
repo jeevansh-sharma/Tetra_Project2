@@ -2,10 +2,9 @@
 import { useEffect, useState } from "react";
 import { Tiles } from "@/components/ui/animated-grid-box";
 import { SpinningTextCustomVariants } from "@/components/motionui/spining-text-custom";
-import { OurMission } from "../component/AboutUs/OurMission";
+
 import { Outfit } from "next/font/google";
-import { OurVision } from "../component/AboutUs/OurVision";
-import WhyChooseUs from "../component/AboutUs/WhyChooseUs";
+
 import ContactUs from "../component/Services/ContactUs";
 
 // imports for sticky scroll
