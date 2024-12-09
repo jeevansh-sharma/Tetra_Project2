@@ -25,9 +25,11 @@ export function OurMission(){
 
   </InView>
   </div>
-  <div className='flex items-center justify-center px-36'>
+  <div className='flex relative items-center justify-center px-28'>
   
-  <Image src="/ourMission.jpg" alt='ok' className='w-full h-full ml-16  ' />
+  <Image src="/ourMission.jpg" alt='ok' className='w-full h-full   '  width={12} // Aspect ratio width
+  height={16} // Aspect ratio height
+  layout="responsive"/>
   
      
 

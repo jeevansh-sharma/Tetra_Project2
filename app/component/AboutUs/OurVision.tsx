@@ -10,9 +10,11 @@ export function OurVision(){
     return(
         <div className='mt-20 mb-20  max-w-6xl mx-auto flex flex-row justify-between '>
    
-  <div className='flex flex-col  max-w-md mx-auto'>
+  <div className='relative flex flex-col  max-w-md mx-auto'>
  
-    <Image src="/ourVision.jpg" alt='ok' className='w-full h-full mr-24  ' />
+    <Image src="/ourVision.jpg"  alt='ok' className='w-full h-full mr-24  'width={7} // Aspect ratio width
+  height={8} // Aspect ratio height
+  layout="responsive" />
  
   </div>
   <div className='flex flex-col items-center  max-w-xl pl-40 mr-28'>
