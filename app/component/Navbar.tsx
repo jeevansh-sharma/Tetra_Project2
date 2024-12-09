@@ -54,10 +54,10 @@ export default function Navbar() {
             <Link href="/about_us" className={`${outfit.className} font- hover:text-indigo-400 transition`}>
               About
             </Link>
-            <Link href="/" className={`${outfit.className} font- hover:text-indigo-400 transition`}>
+            <Link href="/services" className={`${outfit.className} font- hover:text-indigo-400 transition`}>
               Services
             </Link>
-            <Link href="/" className={`${outfit.className} font- hover:text-indigo-400 transition`}>
+            <Link href="/contact_us" className={`${outfit.className} font- hover:text-indigo-400 transition`}>
               Contact
             </Link>
           </div>
