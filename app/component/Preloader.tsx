@@ -1,23 +1,71 @@
-"use client"; // Add this at the top
+"use client"; // Ensure this is treated as a client component
 
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from "react";
+import { gsap, CSSPlugin, Expo } from "gsap";
+gsap.registerPlugin(CSSPlugin);
 
 const Preloader = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
-    // Simulate a delay for the loader, e.g., 3 seconds
-    const timer = setTimeout(() => setIsLoading(false), 1500);
-    return () => clearTimeout(timer);
+    const count = setInterval(() => {
+      setCounter((counter) => (counter < 100 ? counter + 1 : (clearInterval(count), setCounter(100), reveal())));
+    }, 25);
   }, []);
 
-  if (!isLoading) return null;
+  const reveal = () => {
+    const tl = gsap.timeline({
+      onComplete: () => {
+        console.log("Loading Completed");
+      },
+    });
+    tl.to("#line", {
+      width: "100%",
+      ease: Expo.easeInOut,
+      duration: 1.2,
+      delay: 0.7,
+    })
+      .to("#counter", { opacity: 0, duration: 0.3 })
+      .to("#counter", { display: "none", duration: 0.3 })
+      .to("#line", {
+        height: "100%",
+        ease: Expo.easeInOut,
+        duration: 0.7,
+        delay: 0.5,
+      })
+      .to("#content", { opacity: 1, width: "100%", ease: Expo.easeInOut, duration: 0.7 })
+      .to("#content-lines", { display: "block", duration: 0.1 })
+      .to("#content-lines", {
+        opacity: 1,
+        stagger: 0.15,
+        ease: Expo.easeInOut,
+        duration: 0.6,
+      });
+  };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
-      <div className="text-center">
-        <p className="text-orange-500 text-3xl font-bold animate-pulse">Loading...</p>
-        <p className="text-white mt-2">“Your custom quote here!”</p>
+    <div className="relative w-screen h-screen overflow-hidden text-black">
+      {/* Loader Overlay */}
+      <div className="h-full w-full bg-[#000] flex justify-center items-center absolute top-0">
+        <div id="line" className="absolute left-0 z-20 w-0 h-[2px] bg-orange-500"></div>
+        <div
+          id="progress-bar"
+          className="absolute left-0 w-0 h-[1px] transition bg-white/80"
+          style={{ width: counter + "%" }}
+        ></div>
+        <div
+          id="counter"
+          className="absolute z-30 tracking-tighter transform font-extralight text-white/80 sm1:-translate-y-10 md:-translate-y-20 sm1:text-5xl md:text-8xl"
+        >
+          {counter}%
+        </div>
+      </div>
+
+      {/* Content Reveal */}
+      <div id="content" className="absolute top-0 left-0 w-0 h-full bg-[#000] p-auto z-20 text-white">
+        <div className="h-screen flex justify-center items-center">
+          <h1 className="text-4xl font-bold text-orange-500">Welcome to Our Website!</h1>
+        </div>
       </div>
     </div>
   );
