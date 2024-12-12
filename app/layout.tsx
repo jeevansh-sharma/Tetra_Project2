@@ -1,12 +1,9 @@
-
 import type { Metadata } from "next";
-
 import "./globals.css";
 
 import Navbar from "./component/Navbar";
 import { Footer } from "./component/Home/Footer";
-
-
+import Preloader from "./component/Preloader"; // Import the Preloader component
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,14 +15,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
- 
   return (
-    <html lang="en" >
-    
-      <body className="h-screen overflow-y-scroll scrollbar-thin ">
-         <Navbar/>
+    <html lang="en">
+      <body className="h-screen overflow-y-scroll scrollbar-thin">
+        <Preloader /> {/* Add the Preloader here */}
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
