@@ -63,7 +63,7 @@ export default function Home() {
             <div className='flex flex-col bg-neutral-950  w-screen h-screen items-start justify-center pl-4 sm:pl-6 md:pl-8 lg:pl-20'>
               <InView
                 variants={{
-                  hidden: { opacity: 0.9, y: -50, filter: 'blur(0px)' },
+                  hidden: { opacity: 0, y: -50, filter: 'blur(0px)' },
                   visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
                 }}
                 viewOptions={{ margin: '0px 0px -200px 0px' }}
@@ -76,7 +76,7 @@ export default function Home() {
               </InView>
               <InView
                 variants={{
-                  hidden: { opacity: 1, x: 0, filter: 'blur(2px)' },
+                  hidden: { opacity: 0, x: 0, filter: 'blur(2px)' },
                   visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
                 }}
                 viewOptions={{ margin: '0px 0px 100px 0px' }}
