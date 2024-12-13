@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import Navbar from "./component/Navbar";
+import Navbar from "./component/Navbar/Navbar";
 import { Footer } from "./component/Home/Footer";
 import Preloader from "./component/Preloader"; // Import the Preloader component
 

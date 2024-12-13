@@ -11,8 +11,11 @@ import { Testinomial } from './component/Home/Testinomial';
 import { InView } from '@/components/motionui/inView';
 import CompanyServices from './component/Home/CompanyServices';
 import Preloader from './component/Preloader';
-import Navbar from './component/Navbar';
+import Navbar from './component/Navbar/Navbar';
 import { Footer } from './component/Home/Footer';
+import { AnimatePresence } from 'framer-motion';
+import NavBar from './component/Navbar/Navbar';
+import { MenuIcon } from 'lucide-react';
 const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
@@ -20,6 +23,7 @@ const outfit = Outfit({
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [loader, setLoader] = useState(true)
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -59,7 +63,9 @@ export default function Home() {
 
         (
           <section className="" >
-             <Navbar />
+             <AnimatePresence mode="wait">
+             {isActive && <NavBar />}
+            </AnimatePresence>
             <div className='flex flex-col bg-neutral-950  w-screen h-screen items-start justify-center pl-4 sm:pl-6 md:pl-8 lg:pl-20'>
               <InView
                 variants={{
@@ -86,6 +92,10 @@ export default function Home() {
                   <SlideArrowButton />
                 </div>
               </InView>
+              <div className='text-white cursor-pointer' onClick={() => {setIsActive(!isActive)}}>
+                <MenuIcon/>
+
+              </div>
 
             </div>
             <Overview />
