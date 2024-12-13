@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./component/Navbar/Navbar";
 import { Footer } from "./component/Home/Footer";
 import Preloader from "./component/Preloader"; // Import the Preloader component
+import FollowCursor from "@/components/ui/FollowCursor";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="h-screen overflow-y-scroll scrollbar-thin">
         {/* Add the Preloader here */}
+        <FollowCursor/>
        
         {children}
         

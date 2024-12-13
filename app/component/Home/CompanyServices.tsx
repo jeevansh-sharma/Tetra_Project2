@@ -1,5 +1,6 @@
 import { InView } from "@/components/motionui/inView";
 
+
 import { Outfit } from 'next/font/google'
 import { FaCircleArrowRight } from "react-icons/fa6";
 const outfit = Outfit({
@@ -9,8 +10,7 @@ const outfit = Outfit({
 export default function CompanyServices() {
     return (
       <div className="bg-neutral-950 text-white pt-16 pl-8 relative">
-
-
+  
 <div className="flex flex-row justify-end ">
   <p className={`text-base tracking-wide ${outfit.className} font-light text-white opacity-35 pr-9 text-right w-auto right-8`}>
     Professionals focused on helping your brand  <br />
