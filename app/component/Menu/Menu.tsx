@@ -15,10 +15,10 @@ const menuLinks = [
 ];
 
 const Menu = () => {
-  const container = useRef();
+  const container = useRef<HTMLDivElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const tl = useRef();
+  const tl = useRef<gsap.core.Timeline | null>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,21 +32,23 @@ const Menu = () => {
         duration: 1.25,
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         ease: "power4.inOut",
+        delay: 0.25,
       })
       .to(".menu-link-item-holder", {
         y: 0,
-        duration: 1,
+        duration: 1.25,
         stagger: 0.1,
         ease: "power4.inOut",
-        delay: -0.75,
+        delay: 0.75,
       });
   }, { scope: container });
 
+
   useEffect(() => {
     if (isMenuOpen) {
-      tl.current.play();
+      tl.current?.play();
     } else {
-      tl.current.reverse();
+      tl.current?.reverse();
     }
   }, [isMenuOpen]);
 
@@ -109,11 +111,7 @@ const Menu = () => {
         </div>
       )}
 
-      <div className="menu-close-icon flex items-end justify-end px-4">
-        <p className="text-[100px] text-black leading-none cursor-pointer">
-          &#x2715;
-        </p>
-      </div>
+      \
     </div>
   );
 };
