@@ -9,7 +9,16 @@ const Preloader = () => {
 
   useEffect(() => {
     const count = setInterval(() => {
-      setCounter((counter) => (counter < 100 ? counter + 1 : (clearInterval(count), setCounter(100), reveal())));
+      setCounter((counter) => {
+        if (counter < 100) {
+          return counter + 1;
+        } else {
+          clearInterval(count);
+          setCounter(100);
+          reveal();
+          return counter;
+        }
+      });
     }, 25);
   }, []);
 
@@ -36,11 +45,14 @@ const Preloader = () => {
       .to("#content", { opacity: 1, width: "100%", ease: Expo.easeInOut, duration: 0.7 })
       .to("#content-lines", { display: "block", duration: 0.1 })
       .to("#content-lines", {
-        opacity: 1,
+        opacity: 0,
         stagger: 0.15,
         ease: Expo.easeInOut,
         duration: 0.6,
-      });
+      })
+      .to("#progress-bar", { height:"0%" , duration: 0.3 })
+      .to("#line", { width: "0%", height: "0%", ease: Expo.easeInOut, duration: 0.3 })
+      .to("#content", { opacity:0, width:"0%",ease: Expo.easeInOut, duration: 0.3,  });
   };
 
   return (
@@ -62,7 +74,7 @@ const Preloader = () => {
       </div>
 
       {/* Content Reveal */}
-      <div id="content" className="absolute top-0 left-0 w-0 h-full bg-[#000] p-auto z-20 text-white">
+      <div id="content" className="absolute top-0 left-0 w-0 h-full bg-[#000] p-auto z-[48] text-white overflow-hidden" >
         <div className="h-screen flex justify-center items-center">
           <h1 className="text-4xl font-bold text-orange-500">Welcome to Our Website!</h1>
         </div>

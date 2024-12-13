@@ -18,10 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="h-screen overflow-y-scroll scrollbar-thin">
-        <Preloader /> {/* Add the Preloader here */}
-        <Navbar />
+        {/* Add the Preloader here */}
+       
         {children}
-        <Footer />
+        
       </body>
     </html>
   );
