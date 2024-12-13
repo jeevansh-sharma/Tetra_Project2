@@ -16,21 +16,31 @@ import { Footer } from './component/Home/Footer';
 import { AnimatePresence } from 'framer-motion';
 import NavBar from './component/Navbar/Navbar';
 import { MenuIcon } from 'lucide-react';
+import { HeroParallax } from '@/components/ui/hero-parralax';
 const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
 })
+
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [loader, setLoader] = useState(true)
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoader(false)
-    }, 9000)
-  }, [])
-
+    // Check if loader was shown before in the current session
+    const hasLoaded = sessionStorage.getItem('hasLoaded');
+  
+    if (!hasLoaded) {
+      setLoader(true);
+      setTimeout(() => {
+        setLoader(false);
+        sessionStorage.setItem('hasLoaded', 'true');
+      }, 9000); // Duration for the loader
+    } else {
+      setLoader(false);
+    }
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY; // Current scroll position
@@ -46,7 +56,7 @@ export default function Home() {
     };
   }, []);
   return (
-    <>
+    <div className=''>
 
 
       <div className="fixed top-0 right-0 h-full w-1.5  bg-neutral-900 z-50">
@@ -56,43 +66,19 @@ export default function Home() {
         ></div>
       </div>
 
-
+ 
 
       {
-        loader ? (<Preloader />) :
+        !sessionStorage.getItem('hasLoaded') ? (<Preloader />) :
 
         (
           <section className="" >
              <AnimatePresence mode="wait">
              {isActive && <NavBar />}
             </AnimatePresence>
-            <div className='flex flex-col bg-neutral-950  w-screen h-screen items-start justify-center pl-4 sm:pl-6 md:pl-8 lg:pl-20'>
-              <InView
-                variants={{
-                  hidden: { opacity: 0, y: -50, filter: 'blur(0px)' },
-                  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-                }}
-                viewOptions={{ margin: '0px 0px -200px 0px' }}
-                transition={{ duration: 0.5, ease: 'easeInOut' }}
-              >
-                <p className={`${outfit.className} text-7xl text-white font-bold`}>Transforming <span className='font-light'>Education</span>,<br /> Transforming <span className='font-light'>Futures</span></p>
-                <div className='max-w-[540px] mt-9 ml-2'>
-                  <p className={`hidden ${outfit.className}  md:inline text-lg text-gray-200 font-light`}>Our platform bridges the gap between traditional education and modern demands, making learning more accessible, engaging, and personalized</p>
-                </div>
-              </InView>
-              <InView
-                variants={{
-                  hidden: { opacity: 0, x: 0, filter: 'blur(2px)' },
-                  visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
-                }}
-                viewOptions={{ margin: '0px 0px 100px 0px' }}
-                transition={{ duration: 1, ease: 'easeInOut' }}
-              >
-                <div className='mt-10 ml-2'>
-                  <SlideArrowButton />
-                </div>
-              </InView>
-              <div className='text-white cursor-pointer' onClick={() => {setIsActive(!isActive)}}>
+            <div className='flex  flex-col relative bg-white '>
+              <HeroParallax products={products}/>
+              <div className='text-black z-[50] fixed  top-7 right-14 cursor-pointer' onClick={() => {setIsActive(!isActive)}}>
                 <MenuIcon/>
 
               </div>
@@ -106,9 +92,71 @@ export default function Home() {
         )
 
       }
-    </>
+    </div>
   );
 }
+
+export const products = [
+  {
+    title: "Moonbeam",
+    link: "https://gomoonbeam.com",
+    thumbnail:
+      "/9.png",
+  },
+  {
+    title: "Cursor",
+    link: "https://cursor.so",
+    thumbnail:
+  "/7.png",
+  },
+  {
+    title: "Rogue",
+    link: "https://userogue.com",
+    thumbnail:
+"/1.png",
+  },
+ 
+  {
+    title: "Editorially",
+    link: "https://editorially.org",
+    thumbnail:
+      "/2.png",
+  },
+  {
+    title: "Editrix AI",
+    link: "https://editrix.ai",
+    thumbnail:
+    "/4.png",
+  },
+  {
+    title: "Pixel Perfect",
+    link: "https://app.pixelperfect.quest",
+    thumbnail:
+      "/3.png",
+  },
+ 
+  {
+    title: "Algochurn",
+    link: "https://algochurn.com",
+    thumbnail:
+      "/5.png",
+  },
+  {
+    title: "Aceternity UI",
+    link: "https://ui.aceternity.com",
+    thumbnail:
+      "/6.png",
+  },
+  {
+    title: "Tailwind Master Kit",
+    link: "https://tailwindmasterkit.com",
+    thumbnail:
+      "/8.png",
+  },
+  
+ 
+
+];
 
 
 

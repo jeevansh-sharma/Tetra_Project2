@@ -24,6 +24,7 @@ const Preloader = () => {
 
   const reveal = () => {
     const tl = gsap.timeline({
+      
       onComplete: () => {
         console.log("Loading Completed");
       },
@@ -51,14 +52,18 @@ const Preloader = () => {
         duration: 0.6,
       })
       .to("#progress-bar", { height:"0%" , duration: 0.3 })
-      .to("#line", { width: "0%", height: "0%", ease: Expo.easeInOut, duration: 0.3 })
+    
+      .to("counter", { height:"0%", duration: 0.1 })
+      .to("#line", { width: "0%", height: "0%", ease: Expo.easeInOut, duration: 0.1 })
+      
       .to("#content", { opacity:0, width:"0%",ease: Expo.easeInOut, duration: 0.3,  });
+
   };
 
   return (
     <div className="relative w-screen h-screen overflow-hidden text-black">
       {/* Loader Overlay */}
-      <div className="h-full w-full bg-[#000] flex justify-center items-center absolute top-0">
+      <div className="h-full w-full bg-[#000] flex justify-center items-center absolute top-0 overflow-hidden ">
         <div id="line" className="absolute left-0 z-20 w-0 h-[2px] bg-orange-500"></div>
         <div
           id="progress-bar"
@@ -67,7 +72,7 @@ const Preloader = () => {
         ></div>
         <div
           id="counter"
-          className="absolute z-30 tracking-tighter transform font-extralight text-white/80 sm1:-translate-y-10 md:-translate-y-20 sm1:text-5xl md:text-8xl"
+          className="absolute z-30 tracking-tighter text-center transform  font-extralight text-white/80 sm1:-translate-y-10 md:-translate-y-20 sm1:text-5xl md:text-8xl"
         >
           {counter}%
         </div>
