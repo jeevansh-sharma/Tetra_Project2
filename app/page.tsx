@@ -12,11 +12,17 @@ import { InView } from '@/components/motionui/inView';
 import CompanyServices from './component/Home/CompanyServices';
 import Preloader from './component/Preloader';
 import Navbar from './component/Navbar/Navbar';
-import { Footer } from './component/Home/Footer';
+
 import { AnimatePresence } from 'framer-motion';
 import NavBar from './component/Navbar/Navbar';
-import { MenuIcon } from 'lucide-react';
+import { CircleArrowRight, MenuIcon } from 'lucide-react';
 import { HeroParallax } from '@/components/ui/hero-parralax';
+import { SideMenuBtn } from '@/components/ui/side-menu';
+import { Footer } from './component/Home/Footer';
+import CatEffect from './component/Home/CatEffect';
+import { ScrollEffect } from './component/Home/ScrollEffect';
+
+
 const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
@@ -26,6 +32,29 @@ export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [loader, setLoader] = useState(true)
   const [isActive, setIsActive] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   useEffect(() => {
     // Check if loader was shown before in the current session
@@ -56,7 +85,7 @@ export default function Home() {
     };
   }, []);
   return (
-    <div className=''>
+    <div className='w-full h-full'>
 
 
       <div className="fixed top-0 right-0 h-full w-1.5  bg-neutral-900 z-50">
@@ -69,25 +98,37 @@ export default function Home() {
  
 
       {
-        !sessionStorage.getItem('hasLoaded') ? (<Preloader />) :
+        loader ? (<Preloader />) :
 
         (
-          <section className="" >
+          <section className="w-full h-full " >
              <AnimatePresence mode="wait">
              {isActive && <NavBar />}
             </AnimatePresence>
             <div className='flex  flex-col relative bg-white '>
-              <HeroParallax products={products}/>
-              <div className='text-black z-[50] fixed  top-7 right-14 cursor-pointer' onClick={() => {setIsActive(!isActive)}}>
-                <MenuIcon/>
+              <div className='bg-black w-screen h-screen'>
 
               </div>
 
+              <div className='text-black z-[50] fixed  top-3 right-14 cursor-pointer' onClick={() => {setIsActive(!isActive)}}>
+                <SideMenuBtn />
+
             </div>
-            <Overview />
-            <CompanyServices />
-            <Testinomial />
-            <Footer />
+
+            </div>
+            <ScrollEffect/>
+            
+            
+           
+            <button
+      onClick={scrollToTop}
+      className={`fixed -rotate-90 bottom-20 right-6  text-black px-4 py-2 rounded-full  hover:bg-gray-300 transition-all duration-300 transform ${showButton ? 'opacity-100' : 'opacity-0'} ${showButton ? 'pointer-events-auto' : 'pointer-events-none'}`}
+    >
+      <div className='flex flex-row'>
+
+       Back to Top <span className='px-2 pb-1'><CircleArrowRight className='fill-gray-200 text-black' size={24}/></span> 
+      </div>
+    </button>
           </section>
         )
 

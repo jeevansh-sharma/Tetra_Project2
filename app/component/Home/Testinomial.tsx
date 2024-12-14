@@ -1,6 +1,8 @@
 'use client'
 import { AnimatedTestimonials } from "@/components/ui/animated-testinomials";
 import { Outfit } from 'next/font/google'
+import { Index } from "./Curve";
+
 const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
@@ -53,6 +55,9 @@ export function Testinomial(){
    
 
     <AnimatedTestimonials  testimonials={testimonials} />
+   
+        
+
    
         </section>
     )

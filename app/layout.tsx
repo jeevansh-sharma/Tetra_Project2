@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Navbar from "./component/Navbar/Navbar";
-import { Footer } from "./component/Home/Footer";
+
 import Preloader from "./component/Preloader"; // Import the Preloader component
 import FollowCursor from "@/components/ui/FollowCursor";
 
@@ -15,7 +15,10 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) 
+
+
+{
   return (
     <html lang="en">
       <body className="h-screen overflow-y-scroll scrollbar-thin">
@@ -23,7 +26,7 @@ export default function RootLayout({
         <FollowCursor/>
        
         {children}
-        
+       
       </body>
     </html>
   );

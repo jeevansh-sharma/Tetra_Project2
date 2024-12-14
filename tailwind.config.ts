@@ -19,8 +19,14 @@ module.exports = {
 
   theme: {
   	extend: {
+		clipPath: {
+			'custom-polygon': 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+		  },
 		borderWidth: {
 			'0.2': '0.2px', // Adds a very thin border option
+		  },
+		  boxShadow: {
+			bottom: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', // Custom bottom shadow
 		  },
 		colors: {
 			background: 'hsl(var(--background))',
@@ -71,7 +77,7 @@ module.exports = {
 		}
   	}
   },
-  plugins: [addVariablesForColors, require("tailwindcss-animate"),require('tailwind-scrollbar'),],
+  plugins: [addVariablesForColors, require("tailwindcss-animate"),require('tailwind-scrollbar'),require('tailwind-clip-path'),],
 };
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme("colors"));

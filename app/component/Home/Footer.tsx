@@ -1,13 +1,15 @@
 
 import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from 'lucide-react'
 import { Outfit } from 'next/font/google'
+import { Index } from './Curve'
 const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
 })
 export function Footer(){
     return(
-        <section className="w-screen h-[482px] bg-neutral-950">
+        <section className=" relative w-screen  bg-neutral-950">
+            <Index/>
             <div className="max-w-6xl  mx-auto flex flex-col">
                 <div className="flex flex-row mt-24 space-x-24  justify-center">
                     <div className="flex flex-col items-center justify-center mb-6 ">
