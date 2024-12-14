@@ -21,6 +21,8 @@ import { SideMenuBtn } from '@/components/ui/side-menu';
 import { Footer } from './component/Home/Footer';
 import CatEffect from './component/Home/CatEffect';
 import { ScrollEffect } from './component/Home/ScrollEffect';
+import SlidingText from './component/Home/SlidingText';
+import About from './component/Home/Process';
 
 
 const outfit = Outfit({
@@ -116,8 +118,13 @@ export default function Home() {
             </div>
 
             </div>
+
+            {/* Components will be added here */}
+
+
+            <SlidingText/>
+            <About/>{/* //this is process.tsx */}
             <ScrollEffect/>
-            
             
            
             <button
