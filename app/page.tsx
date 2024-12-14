@@ -3,24 +3,23 @@ import { Outfit } from 'next/font/google'
 import React, { useEffect, useState } from "react";
 import { gsap, CSSPlugin, Expo } from "gsap";
 gsap.registerPlugin(CSSPlugin);
-import { Tiles } from '@/components/ui/animated-grid-box';
-import { BackgroundBeamsWithCollision } from '@/components/ui/backround-beams';
-import SlideArrowButton from './component/CreateButton';
+
 import { Overview } from './component/Home/Overview';
 import { Testinomial } from './component/Home/Testinomial';
-import { InView } from '@/components/motionui/inView';
+
 import CompanyServices from './component/Home/CompanyServices';
 import Preloader from './component/Preloader';
-import Navbar from './component/Navbar/Navbar';
+
 
 import { AnimatePresence } from 'framer-motion';
 import NavBar from './component/Navbar/Navbar';
 import { CircleArrowRight, MenuIcon } from 'lucide-react';
-import { HeroParallax } from '@/components/ui/hero-parralax';
+
 import { SideMenuBtn } from '@/components/ui/side-menu';
 import { Footer } from './component/Home/Footer';
-import CatEffect from './component/Home/CatEffect';
+
 import { ScrollEffect } from './component/Home/ScrollEffect';
+
 
 
 const outfit = Outfit({
@@ -95,30 +94,36 @@ export default function Home() {
         ></div>
       </div>
 
- 
+      <div className='text-black z-[50] fixed  top-3 right-14 cursor-pointer' onClick={() => {setIsActive(!isActive)}}>
+                <SideMenuBtn />
+
+            </div>
 
       {
         loader ? (<Preloader />) :
 
         (
+         
           <section className="w-full h-full " >
              <AnimatePresence mode="wait">
              {isActive && <NavBar />}
             </AnimatePresence>
+            
             <div className='flex  flex-col relative bg-white '>
               <div className='bg-black w-screen h-screen'>
 
               </div>
 
-              <div className='text-black z-[50] fixed  top-3 right-14 cursor-pointer' onClick={() => {setIsActive(!isActive)}}>
-                <SideMenuBtn />
+              
 
             </div>
-
-            </div>
+           
             <ScrollEffect/>
-            
-            
+            <Overview/>
+            <CompanyServices/>
+            <Testinomial/>
+            <Footer/>            
+           
            
             <button
       onClick={scrollToTop}
@@ -130,6 +135,7 @@ export default function Home() {
       </div>
     </button>
           </section>
+     
         )
 
       }
