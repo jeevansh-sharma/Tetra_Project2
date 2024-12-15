@@ -22,8 +22,11 @@ import { Footer } from './component/Home/Footer';
 import CatEffect from './component/Home/CatEffect';
 import { ScrollEffect } from './component/Home/ScrollEffect';
 import SlidingText from './component/Home/SlidingText';
-import About from './component/Home/Process';
-
+import About from './component/Home/NewAbout';
+import Testimonials from './component/Home/NewTestinomials';
+import NewFooter from './component/Home/New_Footer';
+import Process from './component/Home/NewProcess';
+import FirstHeroSection from './component/Home/FirstHeroSection';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -123,8 +126,12 @@ export default function Home() {
 
 
             <SlidingText/>
-            <About/>{/* //this is process.tsx */}
+            <FirstHeroSection/>
+            <Process/>
+            <Testimonials/>            {/* <About/>//this is process.tsx */}
             <ScrollEffect/>
+            <NewFooter/>
+            
             
            
             <button
