@@ -5,7 +5,7 @@ import { gsap, CSSPlugin, Expo } from "gsap";
 gsap.registerPlugin(CSSPlugin);
 
 import { Overview } from './component/Home/Overview';
-import { Testinomial } from './component/Home/Testinomial';
+
 
 import CompanyServices from './component/Home/CompanyServices';
 import Preloader from './component/Preloader';
@@ -19,6 +19,13 @@ import { SideMenuBtn } from '@/components/ui/side-menu';
 import { Footer } from './component/Home/Footer';
 
 import { ScrollEffect } from './component/Home/ScrollEffect';
+import { BentoGridDemo } from './component/Home/Accesories';
+import FirstHeroSection from './component/Home/FirstHeroSection';
+import SlidingText from './component/Home/SlidingText';
+import NewFooter from './component/Home/New_Footer';
+import Testimonials from './component/Home/NewTestinomials';
+import Process from './component/Home/NewProcess';
+ 
 
 
 
@@ -110,18 +117,20 @@ export default function Home() {
             </AnimatePresence>
             
             <div className='flex  flex-col relative bg-white '>
-              <div className='bg-black w-screen h-screen'>
-
+              <FirstHeroSection/>
               </div>
+            <SlidingText/>
 
-              
-
-            </div>
            
             <ScrollEffect/>
+            <BentoGridDemo/>
             <Overview/>
+            
             <CompanyServices/>
-            <Testinomial/>
+            {/* <Testinomial/> */}
+            <Process/>
+            <Testimonials/>
+            <NewFooter/>
             <Footer/>            
            
            
