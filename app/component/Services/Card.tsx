@@ -43,7 +43,7 @@ const Card: React.FC<CardProps> = ({
     >
       <motion.div
         className="card flex flex-col relative h-[500px] w-[1000px] rounded-3xl p-12"
-        style={{ scale, backgroundColor: color, top: `calc(-5vh + ${i * 25}px)` }}
+        style={{ scale, backgroundColor: "color", top: `calc(-5vh + ${i * 25}px)` }}
       >
         <h2 className="text-center m-0 text-xl">{title}</h2>
         <div className="flex h-full mt-12 gap-12">
@@ -63,7 +63,7 @@ const Card: React.FC<CardProps> = ({
           </div>
           <div className="imgContainer relative w-[60%] h-full rounded-3xl overflow-hidden">
             <motion.div style={{ scale: imageScale }} className="w-full h-full">
-              <Image fill src={`/images/${src}`} alt="image" className="object-cover" />
+              <Image fill src={`/${src}`} alt="image" className="object-cover" />
             </motion.div>
           </div>
         </div>

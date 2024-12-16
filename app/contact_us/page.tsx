@@ -6,6 +6,7 @@ import { SpinningTextCustomVariants } from "@/components/motionui/spining-text-c
 import { LetsTalk } from "../component/ContactUs/Talk";
 import Map from "../component/ContactUs/Map";
 import { Innovative } from "../component/ContactUs/Innovative";
+import { HeroScrollDemo } from "../component/ContactUs/TiltScrollEffect";
 
 
 const outfit = Outfit({
@@ -66,7 +67,7 @@ Lets connect and bring your vision to life. Get in
 <SpinningTextCustomVariants />
 </div>
 </div>
-
+<HeroScrollDemo/>
 <LetsTalk/>
 <Map/>
 <Innovative/>

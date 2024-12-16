@@ -25,6 +25,8 @@ import SlidingText from './component/Home/SlidingText';
 import NewFooter from './component/Home/New_Footer';
 import Testimonials from './component/Home/NewTestinomials';
 import Process from './component/Home/NewProcess';
+import OurVision from './component/Home/Effect';
+
  
 
 
@@ -120,7 +122,7 @@ export default function Home() {
               <FirstHeroSection/>
               </div>
             <SlidingText/>
-
+            <OurVision/>
            
             <ScrollEffect/>
             <BentoGridDemo/>
