@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Navbar from "./component/Navbar/Navbar";
-
+import {ReactLenis} from 'lenis/react'
 import Preloader from "./component/Preloader"; // Import the Preloader component
 import FollowCursor from "@/components/ui/FollowCursor";
 
@@ -23,10 +23,11 @@ export default function RootLayout({
     <html lang="en">
       <body className="h-screen overflow-y-scroll scrollbar-thin">
         {/* Add the Preloader here */}
+        
         <FollowCursor/>
        
         {children}
-       
+      
       </body>
     </html>
   );

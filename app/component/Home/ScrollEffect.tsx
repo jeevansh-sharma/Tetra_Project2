@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {ReactLenis} from 'lenis/react'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,6 +88,7 @@ export function ScrollEffect() {
         return rows;
     }
     return (
+        <ReactLenis root>
         <section id="main" className='relative bg-black flex w-screen justify-center items-center h-[150vh] flex-col '>
             <div className='flex flex-col absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 justify-center items-center'>
                 <div id='logo' className='w-[150px] rounded-full overflow-hidden  h-[150px] border-2 border-white transform scale-0 '>
@@ -113,7 +115,7 @@ export function ScrollEffect() {
         
             
         </section>
-
+        </ReactLenis>
     )
 }
 

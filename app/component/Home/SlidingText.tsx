@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import ProjectCard from "./SlidingTextCard";
 import { Marquee, Modal } from "@/animation";
 import { useScroll, motion, useTransform } from "framer-motion";
+import ReactLenis from "lenis/react";
 
 export default function SlidingText() { // Changed component name
 	const container = useRef(null);
@@ -27,6 +28,7 @@ export default function SlidingText() { // Changed component name
 	const [modal, setModal] = useState({ active: false, index: 0 });
 
 	return (
+		<ReactLenis root>
 		<section
 			className="w-full my-[100px]"
 			id="projects">
@@ -63,5 +65,6 @@ export default function SlidingText() { // Changed component name
 				/>
 			</div> */}
 		</section>
+		</ReactLenis>
 	);
 }
