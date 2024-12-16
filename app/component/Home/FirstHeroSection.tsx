@@ -1,75 +1,120 @@
-import Image from 'next/image';
-import { FaArrowRight } from 'react-icons/fa';
+"use client";
+import { useEffect, useState } from "react";
+import { Tiles } from "@/components/ui/animated-grid-box";
+import { Outfit } from "next/font/google";
+import { SpinningTextCustomVariants } from "@/components/motionui/spining-text-custom";
 
-const FirstHeroSection = () => {
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export default function FirstHeroSection() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    // useEffect of scroll bar function
+    const handleScroll = () => {
+      const scrollTop = window.scrollY; // Current scroll position
+      const windowHeight =
+        document.documentElement.scrollHeight - window.innerHeight; // Total scrollable height
+      const scrollPercentage = (scrollTop / windowHeight) * 100; // Calculate scroll percentage
+      setScrollProgress(scrollPercentage);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <section className="relative w-full bg-gray-50 text-black overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        {/* Top Section */}
-        <div className="flex items-center justify-between pt-10">
-          <div className="flex items-center space-x-2">
-            {/* Dummy Logo */}
-            <Image
-              src="/dummy-user.jpg"
-              alt="User Logo"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
-            <p className="text-sm font-semibold">
-              23K Clients{' '}
-              <span className="text-gray-500">Trust Our Consultancy</span>
-            </p>
+    <>
+      {/* Scrollbar */}
+      <div className="fixed top-0 right-0 h-full w-1.5 bg-neutral-900 z-50">
+        <div
+          className="bg-orange-500 rounded-b-2xl w-full"
+          style={{ height: `${scrollProgress}%` }}
+        ></div>
+      </div>
+
+      {/* Hero Section with Video Background */}
+      <div className="relative min-h-screen">
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        >
+          <source src="/fullbg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Section with higher z-index */}
+        <section className="flex flex-col mt-44 w-[55vw] items-start pt-10 pl-4 sm:pl-6 md:pl-8 lg:pl-20 relative z-20">
+          <p className={`${outfit.className} text-8xl text-white font-bold`}>
+            Branding
+            <br /> Your <br /> Brand{" "}
+          </p>
+          <div className="w-40 mt-3 border-4 border-orange-500"></div>
+          <div className="flex items-center space-x-4 mt-9 ml-2">
+            <a
+              href="#"
+              className="bg-orange-500 text-white font-semibold py-2 px-6 rounded-full flex items-center space-x-2 hover:bg-orange-600 transition-colors"
+            >
+              <span>Explore Us!</span>
+              <span className="bg-white text-orange-500 rounded-full w-6 h-6 flex items-center justify-center">
+                ➔
+              </span>
+            </a>
+            <a
+              href="#"
+              className="text-white text-lg font-light hover:underline"
+            >
+              View Work &gt;
+            </a>
           </div>
-          
+        </section>
+
+        {/* Orange-outlined box for video */}
+        <div className="absolute top-20 right-20 z-10">
+          <video
+            autoPlay
+            muted
+            loop
+            className="w-[500px] h-[250px] object-cover rounded-lg shadow-lg"
+          >
+            <source src="/gif.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
 
-        {/* Main Text */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 items-center">
-          <div>
-            <h1 className="text-8xl font-bold leading-tight">
-              <span className="block">Grow Your</span>
-              <span className="text-gray-300">Business</span>
-            </h1>
-            <p className="text-gray-500 mt-4 text-lg">
-              Expert Consultancy Solutions for Your Business Growth and Success.
-              Tailored strategies and proven results.
-            </p>
-            <div className="mt-6">
-              <button className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-full inline-flex items-center">
-                Free Consultation <FaArrowRight className="ml-2" />
-              </button>
-            </div>
-          </div>
-
-          <div className="relative">
-            {/* Image and Icons */}
-            <Image
-              src="/1.png"
-              alt="Consultancy"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-lg"
-            />
-            <div className="absolute -top-2 -left-2 bg-white p-2 rounded-full shadow-md">
-              💼
-            </div>
-            <div className="absolute -bottom-2 -right-2 bg-white p-2 rounded-full shadow-md">
-              ⏳
-            </div>
-          </div>
-        </div>
-
-        {/* Final Text */}
-        <div className="text-center mt-16">
-          <h2 className="text-5xl font-bold">
-            <span>Results</span>{' '}
-            <span className="text-gray-300">Await You</span>
-          </h2>
+        <div className="absolute bottom-26 right-80 z-[30]">
+          <SpinningTextCustomVariants />
         </div>
       </div>
-    </section>
+    </>
+  );
+}
+
+const AnimatedGridBackgroundSection: React.FC<{
+  children?: React.ReactNode;
+}> = ({ children }) => {
+  return (
+    <div
+      className={
+        "w-full h-[650px] bg-gradient-to-b from-neutral-950 to-neutral-900 relative overflow-hidden flex"
+      }
+    >
+      {/* Children with lower z-index */}
+      <div className={"w-fit h-fit relative z-[30]"}>{children}</div>
+
+      {/* Tiles with higher z-index */}
+      <div className={"absolute top-0 left-0 h-full w-full"}>
+        <Tiles rows={60} cols={60} />
+      </div>
+    </div>
   );
 };
-
-export default FirstHeroSection;

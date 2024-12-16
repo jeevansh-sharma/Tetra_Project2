@@ -124,7 +124,6 @@ export default function Home() {
 
             {/* Components will be added here */}
 
-
             <SlidingText/>
             <FirstHeroSection/>
             <Process/>
