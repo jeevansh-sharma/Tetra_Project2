@@ -26,6 +26,8 @@ import NewFooter from './component/Home/New_Footer';
 import Testimonials from './component/Home/NewTestinomials';
 import Process from './component/Home/NewProcess';
 import OurVision from './component/Home/Effect';
+import { SmoothScrollWrapper } from './component/Wrapper';
+import { HeroSection } from './component/NewHome/HeroSection';
 
  
 
@@ -78,6 +80,7 @@ export default function Home() {
       setLoader(false);
     }
   }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY; // Current scroll position
@@ -103,53 +106,35 @@ export default function Home() {
         ></div>
       </div>
 
-      <div className='text-black z-[50] fixed  top-3 right-14 cursor-pointer' onClick={() => {setIsActive(!isActive)}}>
+      <div className={`text-black ${scrollProgress<10 ? `z-[0]`: `z-[50]` } fixed  top-3 right-14 cursor-pointer`} onClick={() => {setIsActive(!isActive)}}>
                 <SideMenuBtn />
+      </div>
 
-            </div>
-
+      
       {
         loader ? (<Preloader />) :
 
         (
-         
-          <section className="w-full h-full " >
-             <AnimatePresence mode="wait">
-             {isActive && <NavBar />}
-            </AnimatePresence>
-            
-            <div className='flex  flex-col relative bg-white '>
-              <FirstHeroSection/>
-              </div>
-            <SlidingText/>
-            <OurVision/>
-           
-            <ScrollEffect/>
-            <BentoGridDemo/>
-            <Overview/>
-            
-            <CompanyServices/>
-            {/* <Testinomial/> */}
-            <Process/>
-            <Testimonials/>
-            <NewFooter/>
-            <Footer/>            
-           
-           
-            <button
-      onClick={scrollToTop}
-      className={`fixed -rotate-90 bottom-20 right-6  text-black px-4 py-2 rounded-full  hover:bg-gray-300 transition-all duration-300 transform ${showButton ? 'opacity-100' : 'opacity-0'} ${showButton ? 'pointer-events-auto' : 'pointer-events-none'}`}
-    >
-      <div className='flex flex-row'>
 
-       Back to Top <span className='px-2 pb-1'><CircleArrowRight className='fill-gray-200 text-black' size={24}/></span> 
-      </div>
-    </button>
-          </section>
-     
+          <><AnimatePresence mode="wait">
+              {isActive && <NavBar />}
+            </AnimatePresence><SmoothScrollWrapper>
+                <HeroSection />
+
+                <ScrollEffect />
+                <Overview />
+                <CompanyServices />
+                <OurVision />
+                <Process />
+                <Testimonials />
+                <NewFooter />
+                <Footer />
+              </SmoothScrollWrapper></>
+           
         )
-
       }
+     
+      
     </div>
   );
 }

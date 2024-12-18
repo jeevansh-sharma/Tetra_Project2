@@ -80,9 +80,7 @@ const Preloader = () => {
 
       {/* Content Reveal */}
       <div id="content" className="absolute top-0 left-0 w-0 h-full bg-[#000] p-auto z-[48] text-white overflow-hidden" >
-        <div className="h-screen flex justify-center items-center">
-          <h1 className="text-4xl font-bold text-orange-500">Welcome to Our Website!</h1>
-        </div>
+        
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ export default function RootLayout({
 {
   return (
     <html lang="en">
-      <body className="h-screen overflow-y-scroll scrollbar-thin">
+      <body className=" overflow-y-scroll scrollbar-thin">
         {/* Add the Preloader here */}
         
         <FollowCursor/>

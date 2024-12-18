@@ -21,7 +21,7 @@ export default function Process() {
 		<section
 			className="w-screen my-[100px]"
 			id="process">
-			<div className="flex sm:flex-col lg:items-left gap-x-[20px] border-b border-[#8D8D8D] px-[50px]">
+			<div className="flex sm:flex-col lg:items-left gap-x-[20px] border-b border-[#8D8D8D] pl-[60px]">
 				<h1 className="text-[#202020] uppercase leading-none sm:text-[180px] md:text-[100px] text-[100px] font-bold tracking-tight overflow-hidden">
 					{"process".split("").map((item: string, i: number) => (
 						<motion.span

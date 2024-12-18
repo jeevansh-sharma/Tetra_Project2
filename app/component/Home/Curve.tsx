@@ -28,7 +28,7 @@ export function Index() {
 
   return (
     <div ref={ref} className="absolute top-0 z-10 w-screen h-[100px]">
-      <svg className="w-screen h-[100px] fill-[#f9fafb] stroke-none shadow-bottom">
+      <svg className="w-screen h-[100px] fill-[#e1e1e1] stroke-none shadow-bottom">
         <motion.path
           variants={curve}
           initial="initial"

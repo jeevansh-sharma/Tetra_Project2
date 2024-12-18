@@ -40,7 +40,7 @@ export default function SlidingText() { // Changed component name
 					projects
 				</h1>
 			</Marquee>/
-
+			</section>
 			{/* // this is the text below for cards */}
 
 
@@ -64,7 +64,7 @@ export default function SlidingText() { // Changed component name
 					modal={modal}
 				/>
 			</div> */}
-		</section>
+		
 		</ReactLenis>
 	);
 }

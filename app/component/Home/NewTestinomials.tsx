@@ -6,14 +6,14 @@ export default function Testimonials() {
 	const phares = ["what my"];
 	const phares1 = ["client says"];
 	return (
-		<section className="py-[80px] bg-[#e1e1e1] relative z-[60]">
-			<div className="w-full flex justify-start padding-x pb-[40px]">
+		<section className="py-[80px] bg-[#e1e1e1] relative ">
+			<div className="w-full flex justify-start padding-x pb-[40px] pl-[60px]">
 				<h1 className="text-[#202020] uppercase leading-none sm:text-[80px] md:text-[100px] text-[100px] font-bold overflow-hidden">
 					<TextMask>{phares}</TextMask>
 					<TextMask>{phares1}</TextMask>
 				</h1>
 			</div>
-			<div className="w-full flex flex-col gap-[20px] bg-[#e1e1e1] relative z-[60]">
+			<div className="w-full flex flex-col gap-[20px] bg-[#e1e1e1] relative ">
 				<Marquee baseVelocity={-0.2}>
 					<div className="flex m-0 gap-x-[20px] items-center mr-[20px] bg-[#e1e1e1] relative z-[60]">
 						{testimonials.slice(0, 4).map((item) => (

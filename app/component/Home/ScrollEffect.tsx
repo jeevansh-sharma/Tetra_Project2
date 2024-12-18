@@ -3,7 +3,15 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {ReactLenis} from 'lenis/react'
+import { Bebas_Neue } from 'next/font/google'
+import SlidingText from './SlidingText';
+import { Marquee } from '@/animation';
 
+const bebas = Bebas_Neue({
+    subsets: ['latin'],
+    display: 'swap',
+    weight: '400'
+})
 gsap.registerPlugin(ScrollTrigger);
 
 export function ScrollEffect() {
@@ -87,16 +95,29 @@ export function ScrollEffect() {
         }
         return rows;
     }
+
     return (
         <ReactLenis root>
-        <section id="main" className='relative bg-black flex w-screen justify-center items-center h-[150vh] flex-col '>
-            <div className='flex flex-col absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 justify-center items-center'>
-                <div id='logo' className='w-[150px] rounded-full overflow-hidden  h-[150px] border-2 border-white transform scale-0 '>
+        <section id="main" className='relative bg-black flex w-screen justify-center items-center h-[200vh] flex-col '>
+        <div
+			className="w-full "
+			>
+			<Marquee baseVelocity={2}>
+				<h1 className="text-white uppercase text-[100px] font-bold tracking-tight flex items-center justify-center">
+					<span className="w-[40px] h-[40px] bg-[#8c8c8c] rounded-full mx-[20px]" />
+					EMPOWERING
+					<span className="w-[40px] h-[40px] bg-[#8c8c8c] rounded-full mx-[20px]" />
+					GROWTH
+				</h1>
+			</Marquee>/
+			</div>
+            <div className='flex flex-col  p-5 absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 justify-center items-center'>
+                <div id='logo' className='w-[150px] rounded-full overflow-hidden  h-[150px]  transform scale-0 '>
                     <img src='/gaut.jpeg' className='w-full h-full object-cover' alt='gaut'>
                     </img>
                 </div>
 
-                <div className='flex flex-col items-center justify-center m-8'>
+                <div className='flex flex-col items-center justify-center m-8 '>
                     <div className='relative m-2 w-max h-[28px] clip-path-custom-polygon '>
                         <p id="linep" className='relative  text-white  text-2xl transform translate-y-8'>Delve into coding with Gautam</p>
                     </div>
@@ -107,7 +128,7 @@ export function ScrollEffect() {
                         <p id="linep" className='relative text-white text-2xl transform translate-y-8'>Delve into coding with Gautam</p>
                     </div>
                 </div>
-                <div id='btn' className='relative px-4 py-2 text-xl bg-none border-2 border-white text-white rounded-full opacity-0  outline-none transform translate-y-7 '>
+                <div id='btn' className='relative px-4 py-2 text-xl bg-none border-2 border-black text-black rounded-full opacity-0  outline-none transform translate-y-7 '>
                     <button>Click here</button>
                 </div>
             </div>
