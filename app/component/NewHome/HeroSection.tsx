@@ -5,6 +5,7 @@ import React, { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { Bebas_Neue } from 'next/font/google'
+import TextBorderAnimation from '@/components/animata/text/text-border-animation'
 
 const bebas = Bebas_Neue({
     subsets: ['latin'],
@@ -54,10 +55,10 @@ export const HeroSection = () => {
         <img src='/log2.png' className='object-cover h-16 w-24'></img>
     </div>
     <div className='absolute top-9 inset-x-0 w-screen h-4 flex flex-row items-center justify-center text-center z-[4]  bg-transparent  gap-x-14'>
-        <p className={`text-sm text-white`}>Service</p>
-        <p className={`text-sm text-white`}>Portfolio</p>
-        <p className={`text-sm text-white`}>About us</p>
-        <p className={`text-sm text-white`}>Our Team</p>
+    <TextBorderAnimation text="Service" className="text-sm text-white" />
+      <TextBorderAnimation text="Portfolio" className="text-sm text-white" />
+      <TextBorderAnimation text="About us" className="text-sm text-white" />
+      <TextBorderAnimation text="Our Team" className="text-sm text-white" />
 
     </div>
     <div className='absolute flex top-7 right-7 z-[4] '>

@@ -33,7 +33,7 @@ export default function NewFooter() {
 						<Link
 							href={"mailto:Zainsoftwear11?subject=Portfolio%20Website"}
 							className="uppercase text-[25px] text-[#202020] tracking-wider font-semibold">
-							website@gmail.com
+							tetraEdTech@gmail.com
 						</Link>
 					</motion.div>
 				</div>

@@ -42,14 +42,14 @@ const OurVision = () => {
       {/* Left Image */}
       <div className="col-span-2 v-image ">
         <Image
-          src="/1.png"
+          src="/Vision5.jpg"
           width={312}
           height={600}
           alt="Vision Image "
           className="mt-24 h-[450px] object-cover rounded-xl"
         />
         <Image
-          src="/2.png"
+          src="/Vision4.jpg"
           width={312}
           height={600}
           alt="Vision Image"
@@ -60,15 +60,14 @@ const OurVision = () => {
       {/* Vision Text Box */}
       <div className="col-span-2 flex items-center v-image z-20 ">
         <p className="w-8/12 lg:w-6/12  mx-auto text-white xl:w-auto font-semibold text-3xl 2xl:text-4xl px-10 py-20 xl:m-10 bg-black border border-amber-500 rounded-3xl h-fit  tracking-tighter">
-          To help brands maximize and optimize their MENA reach, especially in
-          key markets like Saudi Arabia and Egypt
+        Helping and Enabling  brands optimize, thrive and expand their reach, focusing on high-impact and strategic markets. 
         </p>
       </div>
 
       {/* Right Image */}
       <div className="col-span-2 v-image">
         <Image
-          src="/3.png"
+          src="/Vision3.jpg"
           width={312}
           height={400}
           alt="Vision Image"

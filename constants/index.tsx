@@ -89,29 +89,34 @@ export const images = [
 export const processItem = [
     {
         id: "1",
-        title: "Art",
-        subTitle: "Direction",
-        para: "My process starts by predicting and crafting a visual narrative for the project, making it memorable, striking, and beautiful. To ensure a successful outcome, I place great importance on deeply understanding the project brief and client needs. This involves identifying project goals, functional specifications, and conducting thorough research to gain insights into competitors and target audiences."
+        heading: "Crafting a Visual Narrative",
+        title: " Visual ",
+        subTitle: "Narrative",
+        para: "Our process starts by predicting and crafting a visual narrative for the project, making it memorable, striking, and beautiful. To ensure a successful outcome, I place great importance on deeply understanding the project brief and client needs. This involves identifying project goals, functional specifications, and conducting thorough research to gain insights into competitors and target audiences."
     },
     {
         id: "2",
+        heading: "Designing User-Centric Experiences",
         title: "Digital",
         subTitle: "Design",
         para: "During the design phase, after establishing the desired mood and tone in the art direction stage, the mission is to connect the dots and explore different design iterations. I work to create an easy-to-use and enjoyable experience that highlights the unique characteristics of each project while maintaining an elegant and satisfying user interface."
     },
     {
         id: "3",
-        title: "Next JS",
+        heading: "Developing with Precision and Performance",
+        title: "Precision",
         subTitle: "Development",
-        para: "Next js development lies at the core of what I offer, with a focus on custom design tailored to your specific needs, setting your business apart from the competition. The main objective is to deliver a responsive website that is performant, pixel-perfect, and offers a fluid user experience with carefully crafted animations and interactions."
+        para: "Precision design and development lies at the core of what we offer, with a focus on custom design tailored to your specific needs, setting your business apart from the competition. The main objective is to deliver a responsive website that is performant, pixel-perfect, and offers a fluid user experience with carefully crafted animations and interactions."
     },
     {
         id: "4",
+        heading: "Enhancing Engagement through Interactivity",
         title: "Interaction",
         subTitle: "Design",
-        para: "I firmly believe that motion and interactivity are essential components of the digital environment, serving as a vital link between the audience and the product. Even the smallest and most subtle motions or micro-interactions have the power to elevate the overall user experience to new heights effortlessly."
+        para: "We firmly believe that motion and interactivity are essential components of the digital environment, serving as a vital link between the audience and the product. Even the smallest and most subtle motions or micro-interactions have the power to elevate the overall user experience to new heights effortlessly."
     },
 ];
+
 
 export const TfooterItem = [
     {
@@ -176,89 +181,90 @@ export const footerLinks = [
 export const testimonials = [
     {
         id: 1,
-        text: "Zain's web development skills are outstanding! He transformed our outdated site into a modern, responsive masterpiece. Highly recommended!",
+        text: "Tetra EdTech's web development skills are outstanding! They transformed our outdated site into a modern, responsive masterpiece. Highly recommended!",
         src: avatar1,
-        name: "John D.",
-        username: "@johndev",
+        name: "Amit Sharma",
+        username: "@amitdeveloper",
     },
     {
         id: 2,
-        text: "The attention to detail Zain brought to our project was amazing. He exceeded our expectations and delivered on time.",
+        text: "The attention to detail Tetra EdTech brought to our project was amazing. They exceeded our expectations and delivered on time.",
         src: avatar2,
-        name: "Emily S.",
-        username: "@emilysweb",
+        name: "Priya Patel",
+        username: "@priyadesigns",
     },
     {
         id: 3,
-        text: "Zain is a fantastic web developer! He quickly understood our needs and built a site that's both functional and beautiful.",
+        text: "Tetra EdTech is a fantastic web development company! They quickly understood our needs and built a site that's both functional and beautiful.",
         src: avatar3,
-        name: "Michael T.",
-        username: "@michaeltech",
+        name: "Ravi Kumar",
+        username: "@ravidev",
     },
     {
         id: 4,
-        text: "Working with Zain was a pleasure. His creativity and technical skills took our website to the next level!",
+        text: "Working with Tetra EdTech was a pleasure. Their creativity and technical skills took our website to the next level!",
         src: avatar4,
-        name: "Sarah K.",
-        username: "@sarahcreative",
+        name: "Anjali Verma",
+        username: "@anjaliweb",
     },
     {
         id: 5,
-        text: "I’ve worked with many developers, but Zain stands out. His code is clean, his designs are user-friendly, and he always meets deadlines.",
+        text: "I’ve worked with many developers, but Tetra EdTech stands out. Their code is clean, their designs are user-friendly, and they always meet deadlines.",
         src: avatar5,
-        name: "David M.",
-        username: "@davidsites",
+        name: "Vikram Desai",
+        username: "@vikramdev",
     },
     {
         id: 6,
-        text: "Zain's expertise in web development is top-notch. Our new e-commerce platform runs smoother and faster thanks to him.",
+        text: "Tetra EdTech's expertise in web development is top-notch. Our new e-commerce platform runs smoother and faster thanks to them.",
         src: avatar6,
-        name: "Olivia P.",
-        username: "@oliviacode",
+        name: "Sneha Rao",
+        username: "@snehasites",
     },
     {
         id: 7,
-        text: "Zain not only delivered a visually stunning site but also optimized it for SEO, giving us a boost in traffic. Highly impressed!",
+        text: "Tetra EdTech not only delivered a visually stunning site but also optimized it for SEO, giving us a boost in traffic. Highly impressed!",
         src: avatar7,
-        name: "Brian H.",
-        username: "@briandev",
+        name: "Karan Singh",
+        username: "@karanweb",
     },
     {
         id: 8,
-        text: "If you're looking for a reliable, talented web developer, Zain is your guy. He’s professional, fast, and creative!",
+        text: "If you're looking for a reliable, talented web developer, Tetra EdTech is your go-to. They’re professional, fast, and creative!",
         src: avatar8,
-        name: "Sophia L.",
-        username: "@sophiadesign",
+        name: "Neha Agarwal",
+        username: "@nehaweb",
     },
     {
         id: 9,
-        text: "Zain’s web work is incredible. Our site's performance and user experience have improved significantly since the redesign.",
+        text: "Tetra EdTech’s web work is incredible. Our site's performance and user experience have improved significantly since the redesign.",
         src: avatar9,
-        name: "James R.",
-        username: "@jamesreboot",
+        name: "Rajesh Mehta",
+        username: "@rajeshtech",
     },
     {
         id: 10,
-        text: "Zain is a genius when it comes to web development. He was able to turn our ideas into a beautiful, functional reality.",
+        text: "Tetra EdTech is a genius when it comes to web development. They were able to turn our ideas into a beautiful, functional reality.",
         src: avatar10,
-        name: "Ava W.",
-        username: "@avadesign",
+        name: "Kavita Joshi",
+        username: "@kavitadesigns",
     },
     {
         id: 11,
-        text: "We had a complicated project, and Zain handled it with ease. His problem-solving skills are unmatched.",
+        text: "We had a complicated project, and Tetra EdTech handled it with ease. Their problem-solving skills are unmatched.",
         src: avatar11,
-        name: "Lucas G.",
-        username: "@lucaswebpro",
+        name: "Sandeep Chauhan",
+        username: "@sandeepweb",
     },
     {
         id: 12,
-        text: "Zain's professionalism and passion for web development truly shine through in his work. We couldn’t be happier with our website!",
+        text: "Tetra EdTech's professionalism and passion for web development truly shine through in their work. We couldn’t be happier with our website!",
         src: avatar12,
-        name: "Grace N.",
-        username: "@gracedesign",
+        name: "Isha Sharma",
+        username: "@ishadesigns",
     }
 ];
+
 
 export const skillItems = [
     {

@@ -2,7 +2,9 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import {ReactLenis} from 'lenis/react'
+//import {ReactLenis} from 'lenis/react'
+import { ReactLenis } from '@studio-freight/react-lenis'
+
 import { Bebas_Neue } from 'next/font/google'
 import SlidingText from './SlidingText';
 import { Marquee } from '@/animation';
@@ -112,24 +114,24 @@ export function ScrollEffect() {
 			</Marquee>/
 			</div>
             <div className='flex flex-col  p-5 absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 justify-center items-center'>
-                <div id='logo' className='w-[150px] rounded-full overflow-hidden  h-[150px]  transform scale-0 '>
-                    <img src='/gaut.jpeg' className='w-full h-full object-cover' alt='gaut'>
+                <div id='logo' className='w-[150px] overflow-hidden  h-[150px]  transform scale-0 '>
+                    <img src='/log2.png' className='w-full h-full object-cover' alt='gaut'>
                     </img>
                 </div>
 
                 <div className='flex flex-col items-center justify-center m-8 '>
                     <div className='relative m-2 w-max h-[28px] clip-path-custom-polygon '>
-                        <p id="linep" className='relative  text-white  text-2xl transform translate-y-8'>Delve into coding with Gautam</p>
+                        <p id="linep" className='relative  text-white  text-2xl transform translate-y-8'>Transforming knowledge into lasting success.</p>
                     </div>
                     <div className='relative m-2 w-max h-[28px] clip-path-custom-polygon '>
-                        <p id="linep" className='relative text-white text-2xl transform translate-y-8'>Delve into coding with Gautam</p>
+                        <p id="linep" className='relative text-white text-2xl transform translate-y-8'>Bridging gaps with smart technology.</p>
                     </div>
                     <div className='relative m-2 w-max h-[28px] clip-path-custom-polygon '>
-                        <p id="linep" className='relative text-white text-2xl transform translate-y-8'>Delve into coding with Gautam</p>
+                        <p id="linep" className='relative text-white text-2xl transform translate-y-8'>Innovate, learn, and grow together.</p>
                     </div>
                 </div>
-                <div id='btn' className='relative px-4 py-2 text-xl bg-none border-2 border-black text-black rounded-full opacity-0  outline-none transform translate-y-7 '>
-                    <button>Click here</button>
+                <div id='btn' className='relative px-4 py-2 text-xl bg-none border-2 border-white text-white rounded-full opacity-0  outline-none transform translate-y-7 '>
+                    <button>Let's Work </button>
                 </div>
             </div>
             {generateRows()}
