@@ -5,11 +5,15 @@ import { SpinningTextCustomVariants } from "@/components/motionui/spining-text-c
 import { Outfit } from "next/font/google";
 import Card from "../component/Services/Card";
 import { projects } from "../component/Services/data";
-import { useScroll } from "framer-motion";
+import { AnimatePresence, useScroll } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 
 import ContactUs from "../component/Services/ContactUs";
 import DigitalMarketing from "../component/Services/Digital Marketing";
+import { NavbarTop } from "../component/NavbarTop";
+import { SideMenuBtn } from "@/components/ui/side-menu";
+import NavBar from "../component/Navbar/Navbar";
+
 
 // Font configuration
 const outfit = Outfit({
@@ -19,7 +23,7 @@ const outfit = Outfit({
 
 export default function Page() {
   const [scrollProgress, setScrollProgress] = useState(0);
-
+  const [isActive, setIsActive] = useState(false);
   // Ref and scroll progress for the Card component
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -56,15 +60,22 @@ export default function Page() {
   }, []);
 
   return (
-    <>
+    <div className="">
       {/* Scroll Progress Indicator */}
-      <div className="fixed top-0 right-0 h-full w-1.5 bg-neutral-900 z-50">
+      <div className="fixed top-0 right-0 h-full w-1.5 bg-neutral-900 ">
         <div className="bg-orange-500 rounded-b-2xl w-full" style={{ height: `${scrollProgress}%` }}></div>
       </div>
+      <div className={`text-black ${scrollProgress<10 ? `z-[0]`: `z-[50]` } fixed  top-3 right-14 cursor-pointer`} onClick={() => {setIsActive(!isActive)}}>
+                      <SideMenuBtn />
+            </div>
 
       {/* Intro Section */}
-      <div className="relative">
-        <section className="flex flex-col mt-44 w-[55vw] items-start pl-4 sm:pl-6 md:pl-8 lg:pl-20 relative">
+      <div className="relative w-screen h-screen flex flex-col  bg-black"> 
+        <NavbarTop/>
+        <AnimatePresence mode="wait">
+              {isActive && <NavBar />}
+            </AnimatePresence>
+        <section className="flex flex-col mt-44 w-[55vw]  items-start pl-4 sm:pl-6 md:pl-8 lg:pl-20 relative">
           <p className={`${outfit.className} text-8xl text-white font-bold`}>
             What <span className="font-extralight">we offer</span>
           </p>
@@ -74,14 +85,14 @@ export default function Page() {
           </p>
         </section>
 
-        <div className="absolute bottom-36 right-80 z-[30]">
+        <div className="absolute bottom-36 right-80 ">
           <SpinningTextCustomVariants />
         </div>
       </div>
 
       {/* Projects Section with Cards */}
       <div ref={container}>
-        <main className="relative mt-[50vh]">
+        <main className="relative mt-20">
           {projects.map((project, index) => {
             const targetScale = 1 - (projects.length - index) * 0.05;
             return <Card key={index} i={index} {...project} progress={scrollYProgress} range={[index * 0.25, 1]} targetScale={targetScale} />;
@@ -91,18 +102,8 @@ export default function Page() {
 
       {/* Optional ContactUs Component */}
       {/* <ContactUs /> */}
-    </>
+    </div>
   );
 }
 
-// Animated Grid Background Section Component
-const AnimatedGridBackgroundSection: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
-  return (
-    <div className="w-full h-[650px] bg-gradient-to-b from-neutral-950 to-neutral-900 relative overflow-hidden flex">
-      <div className="w-fit h-fit relative z-[30]">{children}</div>
-      <div className="absolute top-0 left-0 h-full w-full">
-        <Tiles rows={60} cols={60} />
-      </div>
-    </div>
-  );
-};
+

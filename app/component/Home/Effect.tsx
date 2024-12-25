@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const OurVision = () => {
   const visionContainer = useRef<HTMLElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     let ctx = gsap.context(() => {
       gsap.to(".v-image", {
         y: "-55%",
@@ -24,8 +24,8 @@ const OurVision = () => {
       });
     });
 
-    return () => ctx.revert();
-  }, []);
+    
+  });
 
   return (
     <section
