@@ -7,8 +7,13 @@ import NavBar from "../component/Navbar/Navbar";
 import { HeroSection } from "../component/Services/NewHeroSection";
 import ContactUs from "../component/AboutUs/ContactUs";
 import Filler from "../component/Services/Filler";
-import { ParallaxScrollDemo } from "../component/portfolio/ParralaxDemo";
+
 import { Footer } from "../component/Home/Footer";
+import { FocusCardsDemo } from "../component/OurTeam/TeamMembers";
+import DirectorComponent from "../component/OurTeam/DirectorComponent";
+import CMOComponent from "../component/OurTeam/CMOMessage";
+
+
 
 const title="OUR TEAM"
 const summary = (
@@ -63,6 +68,10 @@ export default function Page(){
      
       <HeroSection title={title} summary={summary}/>
       <Filler/>
+      <DirectorComponent/>
+      <CMOComponent/>
+   
+      <FocusCardsDemo/>
       <ContactUs/>
       <Footer/>
         </section>

@@ -63,13 +63,13 @@ export const HeroSection = ({title , summary}:{title:string, summary:JSX.Element
         <button className='bg-transparent text-white border border-white px-6  rounded-xl text-sm'>Contact</button>
 
     </div>
-        <h1 ref={textRef} className={`${bebas.className} text-white text-[10rem]  font-extralight  absolute top-[9.5rem] z-[2] `}>
+        <h1 ref={textRef} className={`${bebas.className} text-white text-[10rem]  font-extralight  absolute top-[6rem] z-[2] `}>
             {title}
         </h1>
-        <div ref={textRef1} className='w-[8rem] absolute top-[21.5rem]  z-[3]  h-[0.3rem] bg-[#F97316]'></div>
+        <div ref={textRef1} className='w-[8rem] absolute top-[18rem]  z-[3]  h-[0.3rem] bg-[#F97316]'></div>
         
         <Image ref={leafRef} src={'/lan1.png'} alt='plant' width={1200} height={500} className='w-[1500px] absolute bottom-0 z-0'    />
-        <h1 ref={girlImagRef} className={` text-gray-300 text-[1.2rem] text-center font-normal tracking-tight absolute bottom-[12rem] `}>
+        <h1 ref={girlImagRef} className={` text-gray-300 text-[1.1rem] text-center font-normal tracking-tight absolute bottom-[16.9rem] `}>
            {summary}
         </h1>
         <div ref={girlImagRef} className='absolute bottom-[6rem]'>
