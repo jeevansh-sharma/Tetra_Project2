@@ -8,7 +8,7 @@ const outfit = Outfit({
 })
 export default function ContactUs() {
     return (
-      <div className=" bg-[#F2F2F2]  pt-16 pl-8 relative">
+      <div className=" bg-[#e1e1e1]  pt-16 pl-8 relative">
 
 
 <div className="flex flex-row justify-end ">

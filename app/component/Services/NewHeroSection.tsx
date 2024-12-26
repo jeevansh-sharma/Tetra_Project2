@@ -14,11 +14,13 @@ const bebas = Bebas_Neue({
 })
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { NavbarTop } from '../NavbarTop'
+import { SpinningTextCustomVariants } from '@/components/motionui/spining-text-custom'
 gsap.registerPlugin(ScrollTrigger)
 
-export const HeroSection = () => {
+export const HeroSection = ({title , summary}:{title:string, summary:JSX.Element}) => {
 
     const textRef = useRef(null)
+    const textRef1 = useRef(null)
     const containerRef = useRef(null)
     const leafRef = useRef(null)
     const girlImagRef = useRef(null)
@@ -35,7 +37,11 @@ export const HeroSection = () => {
         })
 
        tl.to(textRef.current, {
-        y: -300
+        y: -100,
+        
+       }, 'a')
+       .to(textRef1.current, {
+        y: -100
        }, 'a')
        .to(leafRef.current, {
         scale: 1.2
@@ -44,7 +50,7 @@ export const HeroSection = () => {
         scale: 1.3
        }, 'a')
        .to(containerRef.current, {
-        y: 300
+        y: 100
        }, 'a')
     })
 
@@ -57,15 +63,19 @@ export const HeroSection = () => {
         <button className='bg-transparent text-white border border-white px-6  rounded-xl text-sm'>Contact</button>
 
     </div>
-        <h1 ref={textRef} className={`${bebas.className} text-white text-[10rem]  font-extralight  absolute top-[7rem] z-[2] `}>
-            SERVICES
+        <h1 ref={textRef} className={`${bebas.className} text-white text-[10rem]  font-extralight  absolute top-[9.5rem] z-[2] `}>
+            {title}
         </h1>
-        <div className='w-10 items-center h-5 bg-amber-800'></div>
+        <div ref={textRef1} className='w-[8rem] absolute top-[21.5rem]  z-[3]  h-[0.3rem] bg-[#F97316]'></div>
         
         <Image ref={leafRef} src={'/lan1.png'} alt='plant' width={1200} height={500} className='w-[1500px] absolute bottom-0 z-0'    />
-        <h1 ref={girlImagRef} className={` text-white text-[1.5rem] font-normal tracking-tight absolute bottom-[14rem] `}>
-            "Great things happen when passion meets with <br/> teamwork. Together we can achieve excellence. " 
+        <h1 ref={girlImagRef} className={` text-gray-300 text-[1.2rem] text-center font-normal tracking-tight absolute bottom-[12rem] `}>
+           {summary}
         </h1>
+        <div ref={girlImagRef} className='absolute bottom-[6rem]'>
+        <SpinningTextCustomVariants />
+
+        </div>
     </div>
     </>
   )

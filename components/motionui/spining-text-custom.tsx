@@ -5,8 +5,8 @@ import { SpinningText } from './spinning-text';
 export function SpinningTextCustomVariants() {
   return (
     <SpinningText
-      radius={5}
-      fontSize={0.9}
+      radius={1}
+      fontSize={0.6}
       variants={{
         container: {
           hidden: {

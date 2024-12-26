@@ -65,7 +65,7 @@ export function SpinningText({
 
   const handleScrollDown = () => {
     window.scrollBy({
-      top: 603, // Adjust the value to control the scroll distance
+      top: 1150, // Adjust the value to control the scroll distance
       behavior: 'smooth', // Smooth scrolling effect
     });
   };
@@ -85,15 +85,15 @@ export function SpinningText({
         <div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-500 border border-neutral-900  rounded-full"
           style={{
-            width: '10ch',
-            height: '10ch',
+            width: '6ch',
+            height: '6ch',
           }}
         ></div>
         <div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-neutral-950 border border-orange-500 rounded-full"
           style={{
-            width: '6ch',
-            height: '6ch',
+            width: '4ch',
+            height: '4ch',
           }}
         ></div>
 
@@ -108,7 +108,7 @@ export function SpinningText({
                 '--index': index,
                 '--total': totalLetters,
                 '--font-size': fontSize,
-                '--radius': 7,
+                '--radius': 6.7,
                 fontSize: `calc(var(--font-size, 2) * 1rem)`,
                 transform: `
                   translate(-50%, -50%)

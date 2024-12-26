@@ -14,8 +14,15 @@ import { NavbarTop } from "../component/NavbarTop";
 import { SideMenuBtn } from "@/components/ui/side-menu";
 import NavBar from "../component/Navbar/Navbar";
 import { HeroSection } from "../component/Services/NewHeroSection";
+import Filler from "../component/Services/Filler";
+import { Footer } from "../component/Home/Footer";
 
-
+const title="SERVICES"
+const summary = (
+  <>
+    Great things happen when passion meets with <br /> teamwork. Together we can achieve.
+  </>
+);
 // Font configuration
 const outfit = Outfit({
   subsets: ["latin"],
@@ -76,13 +83,13 @@ export default function Page() {
         <AnimatePresence mode="wait">
               {isActive && <NavBar />}
             </AnimatePresence>
-       <HeroSection/>
+       <HeroSection title={title} summary={summary}/>
 
-        <div className="absolute bottom-24 right-80 ">
-          <SpinningTextCustomVariants />
-        </div>
+       
+          
+     
       </div>
-
+     <Filler/>
       {/* Projects Section with Cards */}
       <div ref={container}>
         <main className="relative mt-20">
@@ -94,7 +101,8 @@ export default function Page() {
       </div>
 
       {/* Optional ContactUs Component */}
-      {/* <ContactUs /> */}
+      <ContactUs />
+      <Footer/>
     </div>
   );
 }

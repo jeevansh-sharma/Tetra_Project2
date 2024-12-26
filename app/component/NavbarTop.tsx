@@ -23,7 +23,7 @@ export function NavbarTop() {
       <Link href="/about_us">
         <TextBorderAnimation text="About us" className="text-sm text-white" />
       </Link>
-      <Link href="/our-team">
+      <Link href="/our_team">
         <TextBorderAnimation text="Our Team" className="text-sm text-white" />
       </Link>
     </div>
