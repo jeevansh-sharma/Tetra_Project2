@@ -57,12 +57,15 @@ export const HeroSection = () => {
         <button className='bg-transparent text-white border border-white px-6  rounded-xl text-sm'>Contact</button>
 
     </div>
-        <h1 ref={textRef} className={`${bebas.className} text-white text-[10rem] font-extralight tracking-tight absolute top-[7rem] z-[2] `}>
-            BRANDING YOUR BRAND
+        <h1 ref={textRef} className={`${bebas.className} text-white text-[10rem]  font-extralight  absolute top-[7rem] z-[2] `}>
+            SERVICES
         </h1>
-        <div className='w-[380px] h-[400px] bg-[#858480] rounded-t-full absolute bottom-0 z-[1]' />
+        <div className='w-10 items-center h-5 bg-amber-800'></div>
+        
         <Image ref={leafRef} src={'/lan1.png'} alt='plant' width={1200} height={500} className='w-[1500px] absolute bottom-0 z-0'    />
-        <Image ref={girlImagRef} src={'/lan2.png'} width={900} height={900}  alt='tatooed girl' className='absolute w-[1000px]  -bottom-8 z-[3]' />
+        <h1 ref={girlImagRef} className={` text-white text-[1.5rem] font-normal tracking-tight absolute bottom-[14rem] `}>
+            "Great things happen when passion meets with <br/> teamwork. Together we can achieve excellence. " 
+        </h1>
     </div>
     </>
   )

@@ -40,7 +40,7 @@ export function SpinningText({
   className,
   reverse = false,
   fontSize = 1,
-  radius = 10,
+  radius = 6,
   transition,
   variants,
 }: SpinningTextProps) {
@@ -65,7 +65,7 @@ export function SpinningText({
 
   const handleScrollDown = () => {
     window.scrollBy({
-      top: 650, // Adjust the value to control the scroll distance
+      top: 603, // Adjust the value to control the scroll distance
       behavior: 'smooth', // Smooth scrolling effect
     });
   };
@@ -108,7 +108,7 @@ export function SpinningText({
                 '--index': index,
                 '--total': totalLetters,
                 '--font-size': fontSize,
-                '--radius': radius,
+                '--radius': 7,
                 fontSize: `calc(var(--font-size, 2) * 1rem)`,
                 transform: `
                   translate(-50%, -50%)

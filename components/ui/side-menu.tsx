@@ -13,8 +13,8 @@ export const SideMenuBtn = () => {
    
     <MagneticButton>
     <div
-      className={`relative flex items-center justify-center w-20 h-20 hover:bg-blue-600    rounded-full ${
-        crossed ? 'bg-blue-600' : 'bg-gray-800'
+      className={`relative flex items-center justify-center w-20 h-20 hover:bg-[#F97316]    rounded-full ${
+        crossed ? 'bg-[#F97316] ' : 'bg-gray-800'
       } `} onClick={() => setCrossedState((e) => !e)}
     >
         <MagneticButton>

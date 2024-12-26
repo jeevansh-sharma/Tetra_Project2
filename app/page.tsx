@@ -59,12 +59,7 @@ export default function Home() {
     };
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+
 
   useEffect(() => {
     // Check if loader was shown before in the current session

@@ -13,6 +13,7 @@ import DigitalMarketing from "../component/Services/Digital Marketing";
 import { NavbarTop } from "../component/NavbarTop";
 import { SideMenuBtn } from "@/components/ui/side-menu";
 import NavBar from "../component/Navbar/Navbar";
+import { HeroSection } from "../component/Services/NewHeroSection";
 
 
 // Font configuration
@@ -71,21 +72,13 @@ export default function Page() {
 
       {/* Intro Section */}
       <div className="relative w-screen h-screen flex flex-col  bg-black"> 
-        <NavbarTop/>
+       
         <AnimatePresence mode="wait">
               {isActive && <NavBar />}
             </AnimatePresence>
-        <section className="flex flex-col mt-44 w-[55vw]  items-start pl-4 sm:pl-6 md:pl-8 lg:pl-20 relative">
-          <p className={`${outfit.className} text-8xl text-white font-bold`}>
-            What <span className="font-extralight">we offer</span>
-          </p>
-          <div className="w-40 mt-3 border-4 border-orange-500"></div>
-          <p className={`hidden ${outfit.className} md:inline text-2xl text-gray-200 font-light mt-9 ml-2`}>
-            Transforming Challenges into Opportunities Through Our Expertise
-          </p>
-        </section>
+       <HeroSection/>
 
-        <div className="absolute bottom-36 right-80 ">
+        <div className="absolute bottom-24 right-80 ">
           <SpinningTextCustomVariants />
         </div>
       </div>

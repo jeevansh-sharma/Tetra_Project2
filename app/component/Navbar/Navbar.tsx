@@ -43,7 +43,7 @@ export default function NavBar() {
                       navItems.map( (data, index) => {
                         return (
                           <motion.div key={index} className="relative flex items-center"onMouseEnter={() => {setSelectedIndicator(data.href)}} custom={index} variants={slide} initial="initial" animate="enter" exit="exit">
-                          <motion.div variants={scale} animate={selectedIndicator == data.href ? "open" : "closed"} className="w-[10px] h-[10px] rounded-full bg-white left-[-30px] absolute"></motion.div>
+                          <motion.div variants={scale} animate={selectedIndicator == data.href ? "open" : "closed"} className="w-[10px] h-[10px] rounded-full bg-[#F97316] left-[-30px] absolute"></motion.div>
                           <Link href={data.href}>{data.title}</Link>
                         </motion.div>
                         )

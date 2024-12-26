@@ -1,19 +1,31 @@
 import TextBorderAnimation from "@/components/animata/text/text-border-animation";
+import React from 'react'
+import Link from 'next/link'  // Import Link from next/link
 
-export function NavbarTop(){
+export function NavbarTop() {
     return (
-        <div className='w-full h-16 bg-[#282828]  '>
-            <div className='flex flex-row items-center px-5'>
-                <img src='/log2.png' className='object-cover h-16 w-24'></img>
-                <div className='flex flex-row items-center justify-between gap-x-14 ml-[25%]'>
-                    <TextBorderAnimation text="Service" className="text-sm text-white" />
-                    <TextBorderAnimation text="Portfolio" className="text-sm text-white" />
-                    <TextBorderAnimation text="About us" className="text-sm text-white" />
-                    <TextBorderAnimation text="Our Team" className="text-sm text-white" />
-                    
-                </div>
-                <button className='bg-transparent text-white border border-white px-6 ml-[20%]  rounded-xl text-sm'>Contact</button>
-            </div>
-        </div>
+       <div className='absolute top-9 inset-x-0 w-screen h-4 flex flex-row items-center justify-center text-center z-[4] bg-transparent gap-x-14'>
+      
+      {/* Logo with Link to homepage */}
+      <div className='absolute bg-transparent left-12 z-[4]'>
+        <Link href="/">
+          <img src='/log2.png' className='object-cover h-16 w-24' />
+        </Link>
+      </div>
+
+      {/* Navbar links with Next.js Link component */}
+      <Link href="/services">
+        <TextBorderAnimation text="Service" className="text-sm text-white" />
+      </Link>
+      <Link href="/portfolio">
+        <TextBorderAnimation text="Portfolio" className="text-sm text-white" />
+      </Link>
+      <Link href="/about_us">
+        <TextBorderAnimation text="About us" className="text-sm text-white" />
+      </Link>
+      <Link href="/our-team">
+        <TextBorderAnimation text="Our Team" className="text-sm text-white" />
+      </Link>
+    </div>
     )
 }
