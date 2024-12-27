@@ -11,20 +11,20 @@ export function HeroScrollDemo() {
         titleComponent={
           <>
             <h1 className="text-4xl font-semibold text-black dark:text-white">
-              Unleash the power of <br />
+            Connect with Us to Explore  <br />
               <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                Scroll Animations
+              Endless Possibilities
               </span>
             </h1>
           </>
         }
       >
         <Image
-          src={`/1.png`}
+          src={`/s2.jpeg`}
           alt="hero"
-          height={720}
+          height={600}
           width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          className="mx-auto rounded-2xl object-cover h-full object-left-top hover:scale-105 transition-transform duration-500 ease-in-out" 
           draggable={false}
         />
       </ContainerScroll>

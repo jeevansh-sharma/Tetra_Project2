@@ -12,6 +12,7 @@ import { Footer } from "../component/Home/Footer";
 import { SideMenuBtn } from "@/components/ui/side-menu";
 import { AnimatePresence } from "framer-motion";
 import NavBar from "../component/Navbar/Navbar";
+import Filler from "../component/Services/Filler";
 
 
 const outfit = Outfit({
@@ -61,6 +62,7 @@ style={{ height: `${scrollProgress}%` }}
       
 
 <HeroSection title="CONTACT US" summary={summary}/>
+<Filler/>
 <HeroScrollDemo/>
 <LetsTalk/>
 <Map/>

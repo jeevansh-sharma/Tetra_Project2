@@ -7,7 +7,7 @@ const outfit = Outfit({
 })
 export function LetsTalk(){
     return (
-        <div className="flex flex-col  bg-white max-w-5xl mx-auto mb-24 ">
+        <div className="flex flex-col  bg-none max-w-5xl mx-auto mb-24 ">
             <div className="w-full text-center pt-24 pb-12 ">
             <h1 className={`${outfit.className} font-semibold text-7xl`}> Let&apos;s <span className='font-extralight' >Talk</span></h1>
 

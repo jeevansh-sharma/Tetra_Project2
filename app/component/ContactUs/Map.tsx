@@ -8,7 +8,7 @@ const outfit = Outfit({
 export default function Map(){
     return(
         <section className="flex flex-row bg-neutral-950 h-screen w-screen">
-            <div className="flex flex-col ml-32 mt-32">
+            <div className="flex flex-col ml-52 mt-32">
                 <h1 className={`font-bold text-white text-8xl`}>Navigate <span className={`font-normal`}>to</span>   </h1>
                 <h1 className={`font-bold text-white text-8xl mt-6`}>Our <span className={`font-normal`}>Office</span> </h1>
                 

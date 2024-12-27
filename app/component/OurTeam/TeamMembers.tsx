@@ -4,28 +4,52 @@ import { FocusCards } from "@/components/ui/FocusCards";
 export function FocusCardsDemo() {
   const cards = [
     {
-      title: "Forest Adventure",
-      src: "/1.png",
+      title: "Parveen kumar",
+      src: "/t1.jpg",
     },
     {
-      title: "Valley of life",
-      src: "/2.png",
+      title: "Parveen kumar",
+      src: "/t1.jpg",
     },
     {
-      title: "Sala behta hi jayega",
-      src: "/3.png",
+      title: "Parveen kumar",
+      src: "/t1.jpg",
     },
     {
-      title: "Camping is for pros",
-      src: "/4.png",
+      title: "Gautam kumar",
+      src: "/t1.jpg",
     },
     {
-      title: "The road not taken",
-      src: "/5.png",
+      title: "Randeep kumar",
+      src: "/t1.jpg",
     },
     {
-      title: "The First Rule",
-      src:  "/6.png",  
+      title: "Parveen kumar",
+      src: "/t1.jpg", 
+    },
+    {
+      title: "Parveen kumar",
+      src: "/t1.jpg", 
+    },
+    {
+      title: "Parveen kumar",
+      src: "/t1.jpg", 
+    },
+    {
+      title: "Parveen kumar",
+      src: "/t1.jpg", 
+    },
+    {
+      title: "Parveen kumar",
+      src: "/t1.jpg", 
+    },
+    {
+      title: "Parveen kumar",
+      src: "/t1.jpg", 
+    },
+    {
+      title: "Parveen kumar",
+      src: "/t1.jpg", 
     },
   ];
 
