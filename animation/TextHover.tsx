@@ -18,7 +18,7 @@ export default function TextHover({
             {titile1}
           </div>
           <div className="group-hover:translate-y-[100%] transition-all duration-500">
-            {subTitle1}
+            {subTitle1}&nbsp;
           </div>
         </h1>
       </div>
@@ -30,7 +30,7 @@ export default function TextHover({
         </h1>
         <h1 className="relative text-4xl flex gap-x-2">
           <div className="group-hover:translate-y-[-100%] transition-all duration-500">
-            {titile2}
+            {titile2}&nbsp;
           </div>
           <div className="group-hover:translate-y-[100%] transition-all duration-500">
             {subTitle2}

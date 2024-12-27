@@ -18,7 +18,7 @@ import TransitionLink from '../Transition'
 gsap.registerPlugin(ScrollTrigger)
 
 export const HeroSection = () => {
-    const label= (<div className='bg-transparent text-white border border-white px-6  rounded-xl text-sm'>
+    const label= (<div className='bg-transparent text-white border-2 hover:text-black hover:bg-white hover:border-black  border-white px-6  rounded-xl text-sm'>
         Contact Us
   </div>)
     const textRef = useRef(null)

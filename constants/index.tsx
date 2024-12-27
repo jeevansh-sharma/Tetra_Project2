@@ -88,9 +88,9 @@ export const images = [
 
 export const processItem = [
     {
-        id: "1",
+        id: "1 ",
         heading: "Crafting a Visual Narrative",
-        title: " Visual ",
+        title: "Visual ",
         subTitle: "Narrative",
         para: "Our process starts by predicting and crafting a visual narrative for the project, making it memorable, striking, and beautiful. To ensure a successful outcome, I place great importance on deeply understanding the project brief and client needs. This involves identifying project goals, functional specifications, and conducting thorough research to gain insights into competitors and target audiences."
     },

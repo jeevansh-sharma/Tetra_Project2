@@ -43,7 +43,13 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
         xPercent: 0,
         duration: 0.8,
         onComplete: () => {
-          router.push(href);
+          if (window.location.pathname === href) {
+            // If same route, reload the current page
+            window.location.href = href;
+          } else {
+            // Navigate to a new route
+            router.push(href);
+          }
         },
       })
       .to(

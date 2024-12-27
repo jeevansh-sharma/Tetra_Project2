@@ -24,7 +24,7 @@ export default function TransitionLink({
 
   return (
     <button
-      className=" cursor-pointer"
+      className="cursor-pointer"
       onClick={handleClick}
     >
       {label}
