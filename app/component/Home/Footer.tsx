@@ -1,71 +1,120 @@
+import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from 'lucide-react';
+import { Outfit } from 'next/font/google';
+import { Index } from './Curve';
+import { motion } from 'framer-motion';
+import TransitionLink from '../Transition';
 
-import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from 'lucide-react'
-import { Outfit } from 'next/font/google'
-import { Index } from './Curve'
 const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
-})
-export function Footer(){
-    return(
-        <section className=" relative w-screen  bg-neutral-950">
-            <Index/>
-            <div className="max-w-6xl  mx-auto flex flex-col">
-                <div className="flex flex-row mt-24 space-x-24  justify-center">
-                    <div className="flex flex-col items-center justify-center mb-6 ">
-                        
-                        <h2 className={`${outfit.className} text-[#EDEADE] font-bold  text-3xl`}>TetraEdTech</h2>
+});
 
+export function Footer() {
+  return (
+    <footer className="relative w-screen bg-neutral-950 text-[#EDEADE]">
+      <Index />
+      <div className="max-w-6xl mx-auto py-16 px-6 flex flex-col">
+        {/* Main Row: All Sections in a Row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row justify-between items-start space-y-12 md:space-y-0"
+        >
+          {/* Section 1: Company Name and Description */}
+          <div className="flex flex-col items-start text-left space-y-4 max-w-xs">
+            <h2 className={`${outfit.className} text-4xl font-semibold`}>TetraEdTech</h2>
+            <p className={`${outfit.className} text-sm font-light`}>
+              Empowering businesses and individuals with cutting-edge technology and solutions to
+              achieve unparalleled growth.
+            </p>
+          </div>
 
-                    </div>
-                    <div className="flex flex-col">
-                        
-                        <h2 className={`${outfit.className} text-[#EDEADE]  text-xl`}>Weebly themes<br/> pre-sale faqs<br/> submit a ticket
-                        </h2>
-
-
-                    </div>
-                    <div className="flex flex-col">
-                        
-                        <h2 className={`${outfit.className} text-[#EDEADE]  text-xl`}>Services<br/> Theme Tweak
-                        </h2>
-
-
-                    </div>
-                    <div className="flex flex-col">
-                        
-                        <h2 className={`${outfit.className} text-[#EDEADE] text-xl`}>Showcase<br/> Widget<br/> Support
-                        </h2>
-
-
-                    </div>
-                    <div className="flex flex-col">
-                        
-                        <h2 className={`${outfit.className} text-[#EDEADE] text-xl`}>About Us<br/>Contact us<br/>Affiliates<br/>Resources
-                        </h2>
-
-
-                    </div>
-
-                </div>
-                <div>
-
-                </div>
-
-                <div className="text-center max-w-5xl ml-16 justify-center   h-px bg-[#EDEADE] opacity-35 mt-14 "></div>
-                <div className='flex items-center justify-center mt-20 space-x-2 '>
-
-                   <div className='flex justify-center items-center rounded-full border w-12 h-12'><FacebookIcon className='text-[#EDEADE] '/></div> 
-                   <div className='flex justify-center items-center rounded-full border w-12 h-12'><TwitterIcon className='text-[#EDEADE] '/></div> 
-                   <div className='flex justify-center items-center rounded-full border w-12 h-12'><YoutubeIcon className='text-[#EDEADE] '/></div> 
-                   <div className='flex justify-center items-center rounded-full border w-12 h-12'><InstagramIcon className='text-[#EDEADE] '/></div> 
-                </div>
-                <div className='flex items-center justify-center mt-3 '>
-                    <p className={`${outfit.className} font-normal text-[#EDEADE] `}>@Copyright. All rights reserved. </p>
-                </div>
-
+          {/* Section 2: Main and Corporate Offices */}
+          <div className="flex flex-col items-start space-y-6">
+            <div>
+              <h3 className={`${outfit.className} text-lg font-semibold mb-2`}>Main Office</h3>
+              <p className={`${outfit.className} text-sm`}>
+              Hd 458, Wework Dlf Forum, Dlf Qe,<br/> Gurgaon, Haryana, India, 122002
+              </p>
             </div>
-           
-        </section>
-    )
+            <div>
+              <h3 className={`${outfit.className} text-lg font-semibold mb-2`}>Corporate Office</h3>
+              <p className={`${outfit.className} text-sm`}>
+              Hd 460, Wework Dlf Forum, Dlf Qe,<br/> Zirakpur, Haryana, India, 122002
+              </p>
+            </div>
+          </div>
+
+          {/* Section 3: Quick Links */}
+          <div className="flex flex-col items-start">
+  <h3 className={`${outfit.className} text-lg font-semibold mb-4`}>Quick Links</h3>
+  <ul className={`${outfit.className} text-sm space-y-2`}>
+    {[
+      { href: '/about_us', label: 'About Us' },
+      { href: '/services', label: 'Services' },
+      { href: '/contact_us', label: 'Contact Us' },
+      { href: '/portfolio', label: 'Portfolio' },
+      { href: '/our_team', label: 'Our Team' },
+    ].map(({ href, label }) => (
+      <li key={href} className="group flex items-center space-x-2">
+        <TransitionLink 
+          href={href} 
+          label={
+            <span 
+              className="group-hover:text-[#F97316] group-hover:translate-x-2 transition-all duration-300"
+            >
+              {label}
+            </span>
+          } 
+        />
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+          className="hidden group-hover:block text-[#F97316]"
+        >
+          →
+        </motion.div>
+      </li>
+    ))}
+  </ul>
+</div>
+
+          {/* Section 4: Contact Information */}
+          <div className="flex flex-col items-start space-y-4">
+            <h3 className={`${outfit.className} text-lg font-semibold`}>Contact Information</h3>
+            <div className="flex space-x-4">
+              <a href="#" aria-label="Facebook">
+                <FacebookIcon className="w-6 h-6 text-[#EDEADE] hover:text-white" />
+              </a>
+              <a href="#" aria-label="Twitter">
+                <TwitterIcon className="w-6 h-6 text-[#EDEADE] hover:text-white" />
+              </a>
+              <a href="#" aria-label="YouTube">
+                <YoutubeIcon className="w-6 h-6 text-[#EDEADE] hover:text-white" />
+              </a>
+              <a href="#" aria-label="Instagram">
+                <InstagramIcon className="w-6 h-6 text-[#EDEADE] hover:text-white" />
+              </a>
+            </div>
+            <p className={`${outfit.className} text-sm`}>
+              Phone: +91 9898989898<br />
+              Email: tetraedtech@gmail.com
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Divider */}
+        <div className="w-full h-px bg-[#EDEADE] opacity-30 my-8"></div>
+
+        {/* Footer Bottom */}
+        <div className="text-center">
+          <p className={`${outfit.className} text-sm font-light`}>
+            © 2024 TetraEdTech. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 }

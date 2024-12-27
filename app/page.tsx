@@ -28,6 +28,7 @@ import Process from './component/Home/NewProcess';
 import OurVision from './component/Home/Effect';
 import { SmoothScrollWrapper } from './component/Wrapper';
 import { HeroSection } from './component/NewHome/HeroSection';
+import ContactUs from './component/AboutUs/ContactUs';
 
 
  
@@ -124,7 +125,7 @@ export default function Home() {
                 <OurVision />
                 <Process />
                 <Testimonials />
-                <NewFooter />
+                <ContactUs/>
                 <Footer />
               </SmoothScrollWrapper></>
             

@@ -9,6 +9,9 @@ import { Innovative } from "../component/ContactUs/Innovative";
 import { HeroScrollDemo } from "../component/ContactUs/TiltScrollEffect";
 import { HeroSection } from "../component/Services/NewHeroSection";
 import { Footer } from "../component/Home/Footer";
+import { SideMenuBtn } from "@/components/ui/side-menu";
+import { AnimatePresence } from "framer-motion";
+import NavBar from "../component/Navbar/Navbar";
 
 
 const outfit = Outfit({
@@ -23,7 +26,7 @@ const outfit = Outfit({
   );
 export default function Page(){
     const [scrollProgress, setScrollProgress] = useState(0);
-
+    const [isActive, setIsActive] = useState(false);
     useEffect(() => {                    //useEffect of scroll bar function
       const handleScroll = () => {
         const scrollTop = window.scrollY; // Current scroll position
@@ -48,6 +51,15 @@ className="bg-orange-500 rounded-b-2xl w-full"
 style={{ height: `${scrollProgress}%` }}
 ></div>
 </div>
+  <div className={`text-black ${scrollProgress<10 ? `z-[0]`: `z-[50]` } fixed  top-3 right-14 cursor-pointer`} onClick={() => {setIsActive(!isActive)}}>
+                      <SideMenuBtn />
+            </div>
+            
+        <AnimatePresence mode="wait">
+              {isActive && <NavBar />}
+            </AnimatePresence>
+      
+
 <HeroSection title="CONTACT US" summary={summary}/>
 <HeroScrollDemo/>
 <LetsTalk/>

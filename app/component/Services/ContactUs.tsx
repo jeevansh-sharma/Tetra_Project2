@@ -2,6 +2,7 @@ import { InView } from "@/components/motionui/inView";
 
 import { Outfit } from 'next/font/google'
 import { FaCircleArrowRight } from "react-icons/fa6";
+import TransitionLink from "../Transition";
 const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
@@ -49,9 +50,9 @@ export default function ContactUs() {
             <div className="mt-16 mb-24">
 
             
-            <button className="px-14 py-5 bg-orange-400 text-black font-semibold rounded-full flex items-center ">
-            <span className={`flex flex-row ${outfit.className} font-normal text-sm items-center  `}>CONTACT US <span className="ml-5 "><FaCircleArrowRight size={24}/></span>  </span>
-            </button>
+          <TransitionLink href="/contact_us" label={(   <div className="px-14 py-5 bg-orange-400 text-black font-semibold rounded-full flex items-center ">
+                      <span className={`flex flex-row ${outfit.className} font-normal text-sm items-center  `}>CONTACT US <span className="ml-5 "><FaCircleArrowRight size={24}/></span>  </span>
+                      </div>)}/>
             </div>
           </div>
           </InView>

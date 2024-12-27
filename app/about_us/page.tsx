@@ -9,6 +9,10 @@ import WhyChooseUs from "../component/AboutUs/WhyChooseUs";
 import ContactUs from "../component/AboutUs/ContactUs";
 import { HeroSection } from "../component/Services/NewHeroSection";
 import Filler from "../component/Services/Filler";
+import { Footer } from "../component/Home/Footer";
+import { SideMenuBtn } from "@/components/ui/side-menu";
+import { AnimatePresence } from "framer-motion";
+import NavBar from "../component/Navbar/Navbar";
 
 
 const outfit = Outfit({
@@ -24,6 +28,7 @@ const summary = (
 
 export default function Page() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {                    //useEffect of scroll bar function
     const handleScroll = () => {
@@ -50,12 +55,20 @@ export default function Page() {
           style={{ height: `${scrollProgress}%` }}
         ></div>
       </div>
+      <div className={`text-black ${scrollProgress<10 ? `z-[0]`: `z-[50]` } fixed  top-3 right-14 cursor-pointer`} onClick={() => {setIsActive(!isActive)}}>
+                      <SideMenuBtn />
+            </div>
+            
+        <AnimatePresence mode="wait">
+              {isActive && <NavBar />}
+            </AnimatePresence>
        <HeroSection title={title} summary={summary}/>
        <Filler/>
       <OurMission/>
      <OurVision/>
      <WhyChooseUs/>
      <ContactUs/>
+     <Footer/>
     </>
   );
 }

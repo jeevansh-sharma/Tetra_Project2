@@ -1,3 +1,4 @@
+import TiltedCover from "@/components/animata/container/CardShift";
 import { InView } from "@/components/motionui/inView";
 
 import { Outfit } from 'next/font/google'
@@ -26,52 +27,54 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6, ease: 'easeInOut' }}
         >
           <div className="flex flex-col items-center justify-center gap-4 ">
-            <div className="flex items-center justify-center space-x-6 w-full">
+            <div className="flex flex-col items-center justify-center space-x-6 w-full">
               
               <h1 className="text-4xl md:text-7xl text-white">
               <span className={`${outfit.className} font-semibold`}>Why</span> <span className={`${outfit.className} font-extralight`}>Choose Us</span></h1>
+              <div  className='w-[8rem]  my-3 h-[0.3rem] bg-[#F97316]'></div>
             </div>
   
             
           </div>
           </InView>
-  
-          {/* Services Section */}
-          <div className="grid grid-cols-1 md:grid-cols-4  mt-12  ">
-            {/* Service Card */}
-            {[
-              {
-                title: "Branding and Identity Design",
-                description: "Our creative agency helps you define and establish your unique brand identity.",
-              },
-              {
-                title: "Website Design and Development",
-                description: "We create responsive and user-friendly websites tailored to your business needs.",
-              },
-              {
-                title: "Advertising and  Marketing Campaigns",
-                description: "Boost your business with our targeted and effective marketing strategies.",
-              },
-              {
-                title: "Creative Consulting and Development",
-                description: "Innovative solutions to take your creative projects to the next level.",
-              },
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="relative hover:border-t-4  hover:border-t-orange-400 h-[250px]  hover:bg-white/10 p-10 pt-11  rounded-lg transition-all duration-300 group"
-              >
-                <h2 className={`text-lg ${outfit.className} text-left  font-semibold mb-2`}>{service.title}</h2>
-                {/* Description - Display only on hover */}
-                <p className={`text-sm ${outfit.className} text-left  text-gray-400 pt-8 pb-14 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
-                  {service.description}
-                </p>
-               
-                {/* Arrow Icon - Display only on hover */}
-               
-              </div>
-            ))}
+          <div className="flex w-full flex-wrap items-center justify-center">
+        <TiltedCover image={{
+        alt: "Yoga Event at Universal College Atran",
+        src: "/award1.jpeg"
+      }}>
+          <div className="p-2">
+            <div className="mb-2 text-sm font-semibold text-foreground/80">Yoga Event at Universal College Atran</div>
+            <p className="leading-2 text-sm text-muted-foreground">
+            Tetra Edtech Limited was honored with the opportunity to organize a rejuvenating and impactful yoga event at Universal College Atran, promoting wellness and mindfulness among the community.
+            </p>
           </div>
+        </TiltedCover>
+
+        <TiltedCover direction="right" tiltCover={false} image={{
+        alt: " Heritage Fest and Job Fair",
+        src: "/award2.jpeg"
+      }}>
+          <div className="p-2">
+            <div className="mb-2 text-sm font-semibold text-foreground/80"> Heritage Fest and Job Fair</div>
+            <p className="leading-2 text-sm text-muted-foreground">
+            Our dedication to cultural enrichment and career development was acknowledged through an award for successfully arranging a vibrant Heritage Fest and a well-curated Job Fair. These events provided a unique platform for showcasing cultural pride while facilitating meaningful career opportunities.
+            </p>
+          </div>
+        </TiltedCover>
+
+        <TiltedCover direction="right" image={{
+        alt: "Work desk",
+        src: "/award3.jpeg"
+      }}>
+          <div className="p-2">
+            <div className="mb-2 text-sm font-semibold text-foreground/80">Seminar at Punjab Group of Colleges</div>
+            <p className="leading-2 text-sm text-muted-foreground">
+            Tetra Edtech Limited was invited to deliver an insightful seminar at Punjab Group of Colleges, where we shared knowledge and expertise, fostering growth and learning among the students and faculty.
+            </p>
+          </div>
+        </TiltedCover>
+      </div>;
+          
         </div>
       </div>
     );

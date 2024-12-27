@@ -18,9 +18,15 @@ import TransitionLink from '../Transition'
 gsap.registerPlugin(ScrollTrigger)
 
 export const HeroSection = () => {
-    const label= (<div className='bg-transparent text-white border-2 hover:text-black hover:bg-white hover:border-black  border-white px-6  rounded-xl text-sm'>
-        Contact Us
-  </div>)
+    
+    const label= (<div className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mb-5">
+        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFD1A1_0%,#FF6200_50%,#FFD1A1_100%)]
+
+" />
+        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+          Contact us
+        </span>
+      </div>)
     const textRef = useRef(null)
     const containerRef = useRef(null)
     const leafRef = useRef(null)
@@ -56,7 +62,7 @@ export const HeroSection = () => {
     
     <div ref={containerRef}  className=' min-h-screen bg-[#282828] flex flex-col items-center justify-center relative overflow-hidden'>
     <NavbarTop/>
-    <div className='absolute flex top-7 right-7 z-[4] '>
+    <div className='absolute flex top-4 right-7 z-[4] '>
         <TransitionLink href="/contact_us" label={label}/>
 
     </div>

@@ -9,7 +9,7 @@ export default function NewFooter() {
 		<section
 			className="w-full h-screen bg-[#e1e1e1] relative "
 			id="contact">
-			<div className="flex items-center justify-between flex-col h-full">
+			<div className="flex items-center justify-center flex-col h-full">
 				<div className="w-full h-[8vh] " />
 				<div className="flex items-center justify-center flex-col gap-y-[30px] w-full h-auto ">
 					<div>
@@ -37,20 +37,7 @@ export default function NewFooter() {
 						</Link>
 					</motion.div>
 				</div>
-				<div className="flex items-center justify-between w-full h-[8vh] ">
-					<ul className="flex justify-between items-center w-full">
-						{TfooterItem.map((item) => (
-							<li key={item.id}>
-								<Link
-									className="text-[20px] text-[#202020] capitalize tracking-wider"
-									href={item.href}
-									target="_blank">
-									<LinkHover>{item.title}</LinkHover>
-								</Link>
-							</li>
-						))}
-					</ul>
-				</div>
+				
 			</div>
 		</section>
 	);
