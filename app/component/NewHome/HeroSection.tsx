@@ -14,10 +14,13 @@ const bebas = Bebas_Neue({
 })
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { NavbarTop } from '../NavbarTop'
+import TransitionLink from '../Transition'
 gsap.registerPlugin(ScrollTrigger)
 
 export const HeroSection = () => {
-
+    const label= (<div className='bg-transparent text-white border border-white px-6  rounded-xl text-sm'>
+        Contact Us
+  </div>)
     const textRef = useRef(null)
     const containerRef = useRef(null)
     const leafRef = useRef(null)
@@ -54,7 +57,7 @@ export const HeroSection = () => {
     <div ref={containerRef}  className=' min-h-screen bg-[#282828] flex flex-col items-center justify-center relative overflow-hidden'>
     <NavbarTop/>
     <div className='absolute flex top-7 right-7 z-[4] '>
-        <button className='bg-transparent text-white border border-white px-6  rounded-xl text-sm'>Contact</button>
+        <TransitionLink href="/contact_us" label={label}/>
 
     </div>
         <h1 ref={textRef} className={`${bebas.className} text-white text-[10rem] font-extralight tracking-tight absolute top-[7rem] z-[2] `}>

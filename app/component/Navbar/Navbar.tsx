@@ -7,6 +7,7 @@ import { menuSlide, scale, slide } from './anim';
 import Curve from './Curve/Curve';
 import Footer from './Footer/Footer';
 import Link from 'next/link';
+import TransitionLink from '../Transition';
 
 const navItems = [
   {
@@ -44,7 +45,8 @@ export default function NavBar() {
                         return (
                           <motion.div key={index} className="relative flex items-center"onMouseEnter={() => {setSelectedIndicator(data.href)}} custom={index} variants={slide} initial="initial" animate="enter" exit="exit">
                           <motion.div variants={scale} animate={selectedIndicator == data.href ? "open" : "closed"} className="w-[10px] h-[10px] rounded-full bg-[#F97316] left-[-30px] absolute"></motion.div>
-                          <Link href={data.href}>{data.title}</Link>
+                          <TransitionLink href={data.href} label={<span>{data.title}</span>}></TransitionLink>
+                          {/* <Link href={data.href}>{data.title}</Link> */}
                         </motion.div>
                         )
                       })

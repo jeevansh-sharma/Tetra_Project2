@@ -29,6 +29,7 @@ import OurVision from './component/Home/Effect';
 import { SmoothScrollWrapper } from './component/Wrapper';
 import { HeroSection } from './component/NewHome/HeroSection';
 
+
  
 
 
@@ -110,10 +111,11 @@ export default function Home() {
         loader ? (<Preloader />) :
 
         (
-
+       
           <><AnimatePresence mode="wait">
               {isActive && <NavBar />}
             </AnimatePresence><SmoothScrollWrapper>
+
                 <HeroSection />
 
                 <ScrollEffect />
@@ -125,7 +127,7 @@ export default function Home() {
                 <NewFooter />
                 <Footer />
               </SmoothScrollWrapper></>
-           
+            
         )
       }
      

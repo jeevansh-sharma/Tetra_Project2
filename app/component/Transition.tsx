@@ -12,12 +12,14 @@ export default function TransitionLink({
   label,
 }: {
   href: string;
-  label: string;
+  label:JSX.Element;
 }) {
   const router = useRouter();
 
-  const handleClick = () => {
+ const handleClick = () => {
+    console.log("handleClick",href," ", router);
     animatePageOut(href, router);
+    console.log("handleClick2");
   };
 
   return (
@@ -25,7 +27,8 @@ export default function TransitionLink({
       className=" cursor-pointer"
       onClick={handleClick}
     >
-        <TextBorderAnimation text= {label} className="text-sm text-white" />
+      {label}
+        
      
     </button>
   );
