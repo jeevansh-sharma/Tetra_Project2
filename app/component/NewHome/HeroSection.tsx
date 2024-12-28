@@ -5,7 +5,6 @@ import React, { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { Bebas_Neue } from 'next/font/google'
-import TextBorderAnimation from '@/components/animata/text/text-border-animation'
 
 const bebas = Bebas_Neue({
     subsets: ['latin'],
@@ -15,6 +14,7 @@ const bebas = Bebas_Neue({
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { NavbarTop } from '../NavbarTop'
 import TransitionLink from '../Transition'
+
 gsap.registerPlugin(ScrollTrigger)
 
 export const HeroSection = () => {
@@ -63,7 +63,9 @@ export const HeroSection = () => {
     <div ref={containerRef}  className=' min-h-screen bg-[#282828] flex flex-col items-center justify-center relative overflow-hidden'>
     <NavbarTop/>
     <div className='absolute flex top-4 right-7 z-[4] '>
+     
         <TransitionLink href="/contact_us" label={label}/>
+       
 
     </div>
         <h1 ref={textRef} className={`${bebas.className} text-white text-[10rem] font-extralight tracking-tight absolute top-[7rem] z-[2] `}>

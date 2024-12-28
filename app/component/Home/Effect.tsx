@@ -33,7 +33,7 @@ const OurVision = () => {
       ref={visionContainer}
     >
       {/* Vision Text Wrap */}
-      <div className="absolute top-0 left-0 z-20 w-full h-screen grid place-content-center">
+      <div className="absolute top-0 left-0 z-[21] w-full h-screen grid place-content-center">
         <h2 className="text-9xl md:text-[10rem] lg:text-[12rem] xl:text-[14rem] font-bold bg-gradient-to-b from-white to-transparent bg-clip-text text-transparent opacity-90 tracking-tighter">
           Our Vision
         </h2>
@@ -59,7 +59,7 @@ const OurVision = () => {
 
       {/* Vision Text Box */}
       <div className="col-span-2 flex items-center v-image z-20 ">
-        <p className="w-8/12 lg:w-6/12  mx-auto text-white xl:w-auto font-semibold text-3xl 2xl:text-4xl px-10 py-20 xl:m-10 bg-black border border-amber-500 rounded-3xl h-fit  tracking-tighter">
+        <p className="w-8/12 lg:w-fit  mx-auto text-white xl:w-auto font-semibold text-3xl 2xl:text-4xl px-10 py-20 xl:m-10 bg-black border border-amber-500 rounded-3xl h-6/12  tracking-tighter">
         Helping and Enabling  brands optimize, thrive and expand their reach, focusing on high-impact and strategic markets. 
         </p>
       </div>

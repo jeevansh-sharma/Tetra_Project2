@@ -15,7 +15,7 @@ export function NavbarTop() {
       {/* Logo with Link to homepage */}
       <div className='absolute bg-transparent left-12 mt-1 z-[4]'>
      
-          <img src='/logologo2.png' className='object-cover h-32 w-32' />
+          <img src='/tetra.png'  className='object-cover h-10' />
        
       </div>
 
