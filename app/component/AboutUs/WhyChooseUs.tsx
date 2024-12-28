@@ -30,7 +30,7 @@ export default function WhyChooseUs() {
             <div className="flex flex-col items-center justify-center space-x-6 w-full">
               
               <h1 className="text-4xl md:text-7xl text-white">
-              <span className={`${outfit.className} font-semibold`}>Why</span> <span className={`${outfit.className} font-extralight`}>Choose Us</span></h1>
+              <span className={`${outfit.className} font-semibold`}>Our Proud </span> <span className={`${outfit.className} font-extralight`}>Achievements</span></h1>
               <div  className='w-[8rem]  my-3 h-[0.3rem] bg-[#F97316]'></div>
             </div>
   

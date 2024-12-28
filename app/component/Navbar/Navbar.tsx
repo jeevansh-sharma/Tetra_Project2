@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styles from './style.module.scss';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { menuSlide, scale, slide } from './anim';
@@ -45,7 +44,9 @@ export default function NavBar() {
                         return (
                           <motion.div key={index} className="relative flex items-center"onMouseEnter={() => {setSelectedIndicator(data.href)}} custom={index} variants={slide} initial="initial" animate="enter" exit="exit">
                           <motion.div variants={scale} animate={selectedIndicator == data.href ? "open" : "closed"} className="w-[10px] h-[10px] rounded-full bg-[#F97316] left-[-30px] absolute"></motion.div>
-                          <TransitionLink href={data.href} label={<span>{data.title}</span>}></TransitionLink>
+                          <TransitionLink href={data.href} label={<span style={{ fontSize: '40px' }}>{data.title}</span>} />
+
+
                           {/* <Link href={data.href}>{data.title}</Link> */}
                         </motion.div>
                         )
