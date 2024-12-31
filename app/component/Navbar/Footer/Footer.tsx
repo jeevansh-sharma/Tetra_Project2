@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export default function Index() {
   return (
@@ -22,13 +22,13 @@ export default function Index() {
         Facebook
       </a>
       <a
-        href="https://www.linkedin.com/company/tetraedtechlimited?originalSubdomain=in"
+        href="https://wa.me/919315515944"
         target="_blank"
         rel="noopener noreferrer"
         className="transition-all duration-300 transform flex flex-col text-gray-400 items-center hover:scale-110 hover:text-[#F97316]"
       >
-        <FaLinkedin size={18} className="text-xl mb-2 text-gray-400" />
-        LinkedIn
+        <FaWhatsapp size={18} className="text-xl mb-2 text-gray-400" />
+        WhatsApp
       </a>
     </div>
   );

@@ -15,7 +15,7 @@ export function LetsTalk(){
             <div className='w-[60wh] flex  flex-col items-start  mx-auto  '>
               <div className='flex flex-row py-3 '>
                 <div className='bg-black border border-white rounded-full flex items-center justify-start w-[330px] h-11 pl-7 py-1'><h1 className={`${outfit.className} font-extrabold text-xl text-white`}>Phone <span className={`${outfit.className} font-light`}> Number</span></h1></div>
-                <h1 className={`${outfit.className} font-normal text-center py-2 ml-12 text-xl`}>+91 9306706661 </h1>
+                <h1 className={`${outfit.className} font-normal text-center py-2 ml-12 text-xl`}>+91 9315515944 </h1>
 
               </div>
               <div className='flex flex-row py-3 '>

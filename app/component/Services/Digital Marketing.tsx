@@ -1,47 +1,25 @@
+import { Outfit } from "next/font/google";
 import React from "react";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+});
+
 
 const DigitalMarketing = () => {
   return (
     <>
-    <div className="parallax flex items-center justify-center bg-black bg-opacity-80"><span className="text-5xl ">hello word</span></div>
-
-    <div className="height-[1000px] text-1xl p-100">
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-    
+    <div className="parallax w-screen flex flex-col items-center justify-center bg-black bg-opacity-80">
+    <h1 className={`${outfit.className} font-semibold text-[5.5rem] text-white text-center`}>
+          Discover Our <span className="font-extralight">Studio</span>
+        </h1>
+        
+          <div className="h-[0.3rem] w-[8rem]  bg-[#F97316]"></div>
+        
     </div>
+
+   
     </>
   );
 };

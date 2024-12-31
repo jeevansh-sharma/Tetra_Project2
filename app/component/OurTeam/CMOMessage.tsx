@@ -27,7 +27,7 @@ export default function CMOComponent() {
       <div className="flex flex-col items-center gap-4">
         <div className="w-[440px] h-[500px] ">
           <img
-            src="/CMO.png" // Replace with your image URL
+            src="/divyam.png" // Replace with your image URL
             alt="Director Image Placeholder"
             className="w-full h-full object-cover"
           />

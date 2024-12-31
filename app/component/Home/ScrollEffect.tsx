@@ -88,10 +88,10 @@ export function ScrollEffect() {
         for (let i = 1; i <= 3; i++) {
             rows.push(<div key={i} id='row' className="relative w-screen m-4 flex items-center justify-center gap-8">
                 <div id="cardLeft" className='h-[300px] w-2/5 rounded-lg overflow-hidden  '>
-                    <img src={`/${2 * i - 1}.png`} alt='image' className='w-full h-full object-cover' ></img>
+                    <img src={`/f${2 * i - 1}.jpg`} alt='image' className='w-full h-full object-cover' ></img>
                 </div>
                 <div id='cardRight' className=' h-[300px] w-2/5 rounded-lg overflow-hidden  '>
-                    <img src={`/${2 * i}.png`} className='w-full h-full object-cover' ></img>
+                    <img src={`/f${2 * i}.jpg`} className='w-full h-full object-cover' ></img>
                 </div>
             </div>);
         }
@@ -100,16 +100,18 @@ export function ScrollEffect() {
 
     return (
         <ReactLenis root>
-        <section id="main" className='relative bg-black flex w-screen justify-center items-center h-[200vh] flex-col '>
+        <section id="main" className='relative bg-black flex w-screen justify-start mt-9 items-center h-[200vh] flex-col '>
         <div
-			className="w-full "
+			className="w-full mt-9 "
 			>
 			<Marquee baseVelocity={2}>
-				<h1 className="text-white uppercase text-[100px] font-bold tracking-tight flex items-center justify-center">
+				<h1 className="text-white uppercase text-[80px] font-bold tracking-tight flex items-center justify-center">
 					<span className="w-[40px] h-[40px] bg-[#8c8c8c] rounded-full mx-[20px]" />
-					EMPOWERING
+					MASTER
 					<span className="w-[40px] h-[40px] bg-[#8c8c8c] rounded-full mx-[20px]" />
-					GROWTH
+					PROSPER
+                    <span className="w-[40px] h-[40px] bg-[#8c8c8c] rounded-full mx-[20px]" />
+					RISE <span className='w-[30px]'/> FASTER
 				</h1>
 			</Marquee>/
 			</div>

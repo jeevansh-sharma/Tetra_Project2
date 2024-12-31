@@ -30,6 +30,7 @@ import { SmoothScrollWrapper } from './component/Wrapper';
 import { HeroSection } from './component/NewHome/HeroSection';
 import ContactUs from './component/AboutUs/ContactUs';
 import { NewOverview } from './component/Home/NewOverview';
+import Videosection from './component/Home/VideoSection';
 
 
  
@@ -94,7 +95,7 @@ export default function Home() {
     };
   }, []);
   return (
-    <div className='w-full h-full'>
+    <div className='w-full h-full bg-black'>
 
 
       <div className="fixed top-0 right-0 h-full w-1.5  bg-neutral-900 z-50">
@@ -121,11 +122,13 @@ export default function Home() {
                 <HeroSection />
 
                 <ScrollEffect />
+                
                 <NewOverview/>
                 <CompanyServices />
                 <OurVision />
                 {/* <Process /> */}
                 <Testimonials />
+                <Videosection/>
                 <ContactUs/>
                 <Footer />
               </SmoothScrollWrapper></>

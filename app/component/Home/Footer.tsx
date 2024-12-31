@@ -1,8 +1,9 @@
-import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from 'lucide-react';
+import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon, YoutubeIcon } from 'lucide-react';
 import { Outfit } from 'next/font/google';
 import { Index } from './Curve';
 import { motion } from 'framer-motion';
 import TransitionLink from '../Transition';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -35,13 +36,17 @@ export function Footer() {
             <div>
               <h3 className={`${outfit.className} text-lg font-semibold mb-2`}>Main Office</h3>
               <p className={`${outfit.className} text-sm`}>
-              Hd 458, Wework Dlf Forum, Dlf Qe,<br/> Gurgaon, Haryana, India, 122002
+              WeWork DLF Phase 3 Cyber
+              City, Gurugram
               </p>
             </div>
             <div>
               <h3 className={`${outfit.className} text-lg font-semibold mb-2`}>Corporate Office</h3>
               <p className={`${outfit.className} text-sm`}>
-              Hd 460, Wework Dlf Forum, Dlf Qe,<br/> Zirakpur, Haryana, India, 122002
+              9th Floor, Tricity Trade Tower,
+Patiala Rd, nearby<br/> Radisson
+hotel, Zirakpur, Nabha, Punjab
+140603
               </p>
             </div>
           </div>
@@ -85,22 +90,22 @@ export function Footer() {
           <div className="flex flex-col items-start space-y-4">
             <h3 className={`${outfit.className} text-lg font-semibold`}>Contact Information</h3>
             <div className="flex space-x-4">
-              <a href="#" aria-label="Facebook">
+              <a href="https://www.facebook.com/tetraedtechlimited/" aria-label="Facebook">
                 <FacebookIcon className="w-6 h-6 text-[#EDEADE] hover:text-white" />
               </a>
-              <a href="#" aria-label="Twitter">
-                <TwitterIcon className="w-6 h-6 text-[#EDEADE] hover:text-white" />
+              <a href="https://www.linkedin.com/company/tetraedtechlimited?originalSubdomain=in" aria-label="LinkedIn">
+                <LinkedinIcon className="w-6 h-6 text-[#EDEADE] hover:text-white" />
               </a>
-              <a href="#" aria-label="YouTube">
-                <YoutubeIcon className="w-6 h-6 text-[#EDEADE] hover:text-white" />
+              <a href="https://wa.me/919315515944" aria-label="YouTube">
+                <FaWhatsapp className="w-6 h-6 text-[#EDEADE] hover:text-white" />
               </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://www.instagram.com/tetraedtechlimited/" aria-label="Instagram">
                 <InstagramIcon className="w-6 h-6 text-[#EDEADE] hover:text-white" />
               </a>
             </div>
             <p className={`${outfit.className} text-sm`}>
-              Phone: +91 9898989898<br />
-              Email: tetraedtech@gmail.com
+              Phone: +91 9315515944<br />
+              Email: infotetraedtech@gmail.com
             </p>
           </div>
         </motion.div>

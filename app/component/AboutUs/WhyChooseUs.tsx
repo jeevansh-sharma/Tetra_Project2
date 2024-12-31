@@ -39,11 +39,11 @@ export default function WhyChooseUs() {
           </InView>
           <div className="flex w-full flex-wrap items-center justify-center">
         <TiltedCover image={{
-        alt: "Yoga Event at Universal College Atran",
+        alt: "Yoga Event at Universal College Patran",
         src: "/award1.jpeg"
       }}>
           <div className="p-2">
-            <div className="mb-2 text-sm font-semibold text-foreground/80">Yoga Event at Universal College Atran</div>
+            <div className="mb-2 text-sm font-semibold text-foreground/80">Yoga Event at Universal College Patran</div>
             <p className="leading-2 text-sm text-muted-foreground">
             Tetra Edtech Limited was honored with the opportunity to organize a rejuvenating and impactful yoga event at Universal College Atran, promoting wellness and mindfulness among the community.
             </p>
