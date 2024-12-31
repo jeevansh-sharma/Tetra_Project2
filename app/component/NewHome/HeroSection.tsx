@@ -4,12 +4,12 @@ import Image from 'next/image'
 import React, { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { Bebas_Neue } from 'next/font/google'
+import {  Roboto } from 'next/font/google'
 
-const bebas = Bebas_Neue({
+const bebas = Roboto({
     subsets: ['latin'],
     display: 'swap',
-    weight: '400'
+    weight: '700'
 })
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { NavbarTop } from '../NavbarTop'
@@ -68,8 +68,8 @@ export const HeroSection = () => {
        
 
     </div>
-        <h1 ref={textRef} className={`${bebas.className} text-white text-[10rem] font-extralight tracking-tight absolute top-[7rem] z-[2] `}>
-            BRANDING YOUR BRAND
+        <h1 ref={textRef} className={`${bebas.className} text-white text-[6.5rem] font-extralight tracking-tight absolute top-[8.2rem] z-[2] `}>
+            TETRA EDTECH LIMITED
         </h1>
         <div className='w-[380px] h-[400px] bg-[#858480] rounded-t-full absolute bottom-0 z-[1]' />
         <Image ref={leafRef} src={'/lan1.png'} alt='plant' width={1200} height={500} className='w-[1500px] absolute bottom-0 z-0'    />

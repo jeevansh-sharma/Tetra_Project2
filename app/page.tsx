@@ -29,6 +29,7 @@ import OurVision from './component/Home/Effect';
 import { SmoothScrollWrapper } from './component/Wrapper';
 import { HeroSection } from './component/NewHome/HeroSection';
 import ContactUs from './component/AboutUs/ContactUs';
+import { NewOverview } from './component/Home/NewOverview';
 
 
  
@@ -120,10 +121,10 @@ export default function Home() {
                 <HeroSection />
 
                 <ScrollEffect />
-                <Overview />
+                <NewOverview/>
                 <CompanyServices />
                 <OurVision />
-                <Process />
+                {/* <Process /> */}
                 <Testimonials />
                 <ContactUs/>
                 <Footer />

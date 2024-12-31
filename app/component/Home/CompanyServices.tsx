@@ -1,7 +1,9 @@
 import { InView } from "@/components/motionui/inView";
+import MagneticButton from "@/components/ui/MagneticEffect";
 
 
 import { Outfit } from 'next/font/google'
+import Link from "next/link";
 import { FaCircleArrowRight } from "react-icons/fa6";
 const outfit = Outfit({
   subsets: ['latin'],
@@ -48,9 +50,11 @@ export default function CompanyServices() {
             <div className="flex items-center justify-center space-x-6 w-full">
              <h1 className="text-4xl md:text-7xl text-white"><span className={`${outfit.className} font-semibold`}>For Your</span> <span className={`${outfit.className} font-extralight`}>Business.</span></h1> 
             
-            <button className="px-14 py-5 bg-orange-400 text-black font-semibold rounded-full flex items-center ">
+           <MagneticButton>
+            <Link href="/services" className="px-14 py-5 bg-orange-400 text-black font-semibold rounded-full flex items-center ">
             <span className={`flex flex-row ${outfit.className} font-normal text-sm items-center  `}>WHAT WE DO <span className="ml-5 "><FaCircleArrowRight size={24}/></span>  </span>
-            </button>
+            </Link>
+            </MagneticButton>
             </div>
           </div>
           </InView>
@@ -60,20 +64,24 @@ export default function CompanyServices() {
             {/* Service Card */}
             {[
               {
-                title: "Branding and Identity Design",
-                description: "Our creative agency helps you define and establish your unique brand identity.",
+                title: "Training & Skill Development",
+                description: "Our training programs enhance skills through hands-on learning for individuals ...",
+                link: "one",
               },
               {
-                title: "Website Design and Development",
-                description: "We create responsive and user-friendly websites tailored to your business needs.",
+                title: "Consultancy & Documentation Services",
+                description: "Our consultancy services provide strategic advice to businesses and ...",
+                link: "two",
               },
               {
-                title: "Advertising and  Marketing Campaigns",
-                description: "Boost your business with our targeted and effective marketing strategies.",
+                title: "Placement Assistance",
+                description: "We connect students and trainees with top companies through comprehensive placement services ...",
+                link: "three",
               },
               {
-                title: "Creative Consulting and Development",
+                title: "Digital Marketing",
                 description: "Innovative solutions to take your creative projects to the next level.",
+                link: "four",
               },
             ].map((service, index) => (
               <div
@@ -87,9 +95,9 @@ export default function CompanyServices() {
                 </p>
                
                 {/* Arrow Icon - Display only on hover */}
-                <div className="absolute bottom-24 left-10 text-orange-400 text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <Link href={`/services#${service.link}`} className="absolute bottom-24 left-10 text-orange-400 text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <FaCircleArrowRight size={36}/>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
