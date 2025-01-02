@@ -6,7 +6,7 @@ export default function DirectorComponent() {
       {/* Text Section */}
       <div className="flex-1">
         <h1 className="text-5xl font-bold">
-          <span className="text-black">Director's</span> <span className="text-black font-normal">Message</span>
+          <span className="text-black">Director&apos;s</span> <span className="text-black font-normal">Message</span>
           <img src="/comma5.png" alt="Tetra Logo" className="w-10 ml-2 mb-5 h-10 inline-block object-cover" />
         </h1>
         <hr className="w-1/5 border-b-2 border-black my-2" />

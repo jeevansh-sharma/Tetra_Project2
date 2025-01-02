@@ -1,16 +1,23 @@
 "use client"
 
-import { SideMenuBtn } from "@/components/ui/side-menu";
+
 import { AnimatePresence } from "framer-motion";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import NavBar from "../component/Navbar/Navbar";
+const NavBar = dynamic(() => import("../component/Navbar/Navbar"), {
+  ssr: false, // Disable SSR for this component
+});
+
 import { HeroSection } from "../component/Services/NewHeroSection";
 import ContactUs from "../component/AboutUs/ContactUs";
-import Filler from "../component/Services/Filler";
-import { ParallaxScrollDemo } from "../component/portfolio/ParralaxDemo";
+
+
 import { Footer } from "../component/Home/Footer";
 import PortfolioImages from "../component/portfolio/PortfolioImages";
-
+import { Filler } from "../component/Services/Filler";
+const SideMenuBtn = dynamic(() => import("../../components/ui/side-menu").then((mod) => mod.SideMenuBtn), {
+  ssr: false,
+});
 const title="PORTFOLIO"
 const summary = (
     <>
@@ -26,6 +33,7 @@ export default function Page(){
    
   
     useEffect(() => {
+      if (typeof window === "undefined") return;
       // Scroll progress for the progress bar
       const handleScroll = () => {
         const scrollTop = window.scrollY;

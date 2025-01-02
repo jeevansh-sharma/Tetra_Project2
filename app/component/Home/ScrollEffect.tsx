@@ -2,18 +2,13 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-//import {ReactLenis} from 'lenis/react'
+
 import { ReactLenis } from '@studio-freight/react-lenis'
 
-import { Bebas_Neue } from 'next/font/google'
-import SlidingText from './SlidingText';
+
 import { Marquee } from '@/animation';
 
-const bebas = Bebas_Neue({
-    subsets: ['latin'],
-    display: 'swap',
-    weight: '400'
-})
+
 gsap.registerPlugin(ScrollTrigger);
 
 export function ScrollEffect() {
@@ -133,7 +128,7 @@ export function ScrollEffect() {
                     </div>
                 </div>
                 <div id='btn' className='relative px-4 py-2 text-xl bg-none border-2 cursor-pointer border-white text-white hover:text-black hover:bg-white rounded-full opacity-0  outline-none transform translate-y-7 '>
-                    <button className=''>Let's Work </button>
+                    <button className=''>Lets Work </button>
                 </div>
             </div>
             {generateRows()}

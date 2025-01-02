@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import Navbar from "./component/Navbar/Navbar";
-//import {ReactLenis} from 'lenis/react'
-import { ReactLenis } from '@studio-freight/react-lenis';
 
-import Preloader from "./component/Preloader"; // Import the Preloader component
+
+
 import FollowCursor from "@/components/ui/FollowCursor";
 
 

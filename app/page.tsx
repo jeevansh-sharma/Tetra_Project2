@@ -1,10 +1,9 @@
 'use client'
-import { Outfit } from 'next/font/google'
 import React, { useEffect, useState } from "react";
-import { gsap, CSSPlugin, Expo } from "gsap";
+import { gsap, CSSPlugin } from "gsap";
 gsap.registerPlugin(CSSPlugin);
 
-import { Overview } from './component/Home/Overview';
+
 
 
 import CompanyServices from './component/Home/CompanyServices';
@@ -13,18 +12,16 @@ import Preloader from './component/Preloader';
 
 import { AnimatePresence } from 'framer-motion';
 import NavBar from './component/Navbar/Navbar';
-import { CircleArrowRight, MenuIcon } from 'lucide-react';
+
 
 import { SideMenuBtn } from '@/components/ui/side-menu';
 import { Footer } from './component/Home/Footer';
 
 import { ScrollEffect } from './component/Home/ScrollEffect';
-import { BentoGridDemo } from './component/Home/Accesories';
-import FirstHeroSection from './component/Home/FirstHeroSection';
-import SlidingText from './component/Home/SlidingText';
-import NewFooter from './component/Home/New_Footer';
+
+
 import Testimonials from './component/Home/NewTestinomials';
-import Process from './component/Home/NewProcess';
+
 import OurVision from './component/Home/Effect';
 import { SmoothScrollWrapper } from './component/Wrapper';
 import { HeroSection } from './component/NewHome/HeroSection';
@@ -37,10 +34,7 @@ import Videosection from './component/Home/VideoSection';
 
 
 
-const outfit = Outfit({
-  subsets: ['latin'],
-  display: 'swap',
-})
+
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -51,6 +45,7 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
+        console.log(showButton);
         setShowButton(true);
       } else {
         setShowButton(false);
@@ -140,78 +135,4 @@ export default function Home() {
     </div>
   );
 }
-
-export const products = [
-  {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
-    thumbnail:
-      "/9.png",
-  },
-  {
-    title: "Cursor",
-    link: "https://cursor.so",
-    thumbnail:
-  "/7.png",
-  },
-  {
-    title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail:
-"/1.png",
-  },
- 
-  {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail:
-      "/2.png",
-  },
-  {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail:
-    "/4.png",
-  },
-  {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail:
-      "/3.png",
-  },
- 
-  {
-    title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail:
-      "/5.png",
-  },
-  {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
-    thumbnail:
-      "/6.png",
-  },
-  {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
-    thumbnail:
-      "/8.png",
-  },
-  
- 
-
-];
-
-
-
-
-
-
-
-
-
-
-
-
 

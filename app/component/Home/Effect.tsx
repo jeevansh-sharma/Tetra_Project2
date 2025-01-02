@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, {  useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,7 +12,7 @@ const OurVision = () => {
   const visionContainer = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       gsap.to(".v-image", {
         y: "-55%",
         duration: 3,
@@ -24,7 +24,9 @@ const OurVision = () => {
       });
     });
 
-    
+    return () => {
+      ctx.revert();
+    };
   });
 
   return (

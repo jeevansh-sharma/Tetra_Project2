@@ -1,6 +1,6 @@
 import TextBorderAnimation from "@/components/animata/text/text-border-animation";
 import React from 'react'
-import Link from 'next/link'  // Import Link from next/link
+// Import Link from next/link
 import TransitionLink from "./Transition";
 
 export function NavbarTop() {

@@ -1,7 +1,7 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { motion, Transition, Variants } from 'motion/react';
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useEffect, useState } from 'react';
 import { FaArrowDownLong } from "react-icons/fa6";
 
 type SpinningTextProps = {
@@ -44,6 +44,13 @@ export function SpinningText({
   transition,
   variants,
 }: SpinningTextProps) {
+  const [isClient, setIsClient] = useState(false);  // State to track client-side rendering
+ console.log(radius);
+  // Set isClient to true once the component has mounted (in the client)
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const letters = children.split('');
   const totalLetters = letters.length;
 
@@ -64,10 +71,12 @@ export function SpinningText({
   };
 
   const handleScrollDown = () => {
-    window.scrollBy({
-      top: 1150, // Adjust the value to control the scroll distance
-      behavior: 'smooth', // Smooth scrolling effect
-    });
+    if (isClient) {
+      window.scrollBy({
+        top: 1150, // Adjust the value to control the scroll distance
+        behavior: 'smooth', // Smooth scrolling effect
+      });
+    }
   };
 
   return (
@@ -103,21 +112,19 @@ export function SpinningText({
             key={`${index}-${letter}`}
             variants={itemVariants}
             className='absolute left-1/2 top-1/2 inline-block'
-            style={
-              {
-                '--index': index,
-                '--total': totalLetters,
-                '--font-size': fontSize,
-                '--radius': 6.7,
-                fontSize: `calc(var(--font-size, 2) * 1rem)`,
-                transform: `
-                  translate(-50%, -50%)
-                  rotate(calc(360deg / var(--total) * var(--index)))
-                  translateY(calc(var(--radius, 5) * -1ch))
-                `,
-                transformOrigin: 'center',
-              } as React.CSSProperties
-            }
+            style={{
+              '--index': index,
+              '--total': totalLetters,
+              '--font-size': fontSize,
+              '--radius': 6.7,
+              fontSize: `calc(var(--font-size, 2) * 1rem)`,
+              transform: `
+                translate(-50%, -50%)
+                rotate(calc(360deg / var(--total) * var(--index)))
+                translateY(calc(var(--radius, 5) * -1ch))
+              `,
+              transformOrigin: 'center',
+            } as React.CSSProperties}
           >
             {letter}
           </motion.span>

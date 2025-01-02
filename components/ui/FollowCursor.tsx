@@ -1,19 +1,27 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface FollowCursorProps {
   color?: string;
 }
 
 const FollowCursor: React.FC<FollowCursorProps> = ({ color = '#E9EAEC' }) => {
+  const [isClient, setIsClient] = useState(false);  // Track if the component is on the client side
+
   useEffect(() => {
+    setIsClient(true);  // Set to true once the component has mounted on the client side
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;  // Skip SSR phase
+    
     let canvas: HTMLCanvasElement;
     let context: CanvasRenderingContext2D | null;
     let animationFrame: number;
     let width = window.innerWidth;
     let height = window.innerHeight;
-    let cursor = { x: width / 2, y: height / 2 };
+    const cursor = { x: width / 2, y: height / 2 };
     const prefersReducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     );
@@ -115,7 +123,7 @@ const FollowCursor: React.FC<FollowCursorProps> = ({ color = '#E9EAEC' }) => {
     return () => {
       destroy();
     };
-  }, [color]);
+  }, [color, isClient]);  // Only run the effect when `isClient` is `true`
 
   return null; // This component doesn't render any visible JSX
 };

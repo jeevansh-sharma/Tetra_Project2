@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef } from "react";
-import Link from "next/link";
+
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import { Outfit } from "next/font/google";
 
 type CardProps = {
@@ -14,7 +14,7 @@ type CardProps = {
   color: string;
   range: [number, number];
   targetScale: number;
-  progress: any; // Consider using a more specific type like `MotionValue<number>` if applicable
+  progress: MotionValue<number>; // Consider using a more specific type like `` if applicable
 };
 const outfit = Outfit({
   subsets: ["latin"],
@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({
     target: container,
     offset: ["start end", "start start"],
   });
-
+   console.log(link);
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]); // Image zoom out animation
   const scale = useTransform(progress, range, [1, targetScale]); // Stacking effect
 

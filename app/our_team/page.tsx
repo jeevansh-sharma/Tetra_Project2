@@ -1,18 +1,25 @@
 "use client"
 
-import { SideMenuBtn } from "@/components/ui/side-menu";
+
+import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import NavBar from "../component/Navbar/Navbar";
+const NavBar = dynamic(() => import("../component/Navbar/Navbar"), {
+  ssr: false, // Disable SSR for this component
+});
+
 import { HeroSection } from "../component/Services/NewHeroSection";
 import ContactUs from "../component/AboutUs/ContactUs";
-import Filler from "../component/Services/Filler";
+
 
 import { Footer } from "../component/Home/Footer";
 import { FocusCardsDemo } from "../component/OurTeam/TeamMembers";
 import DirectorComponent from "../component/OurTeam/DirectorComponent";
 import CMOComponent from "../component/OurTeam/CMOMessage";
-
+import { Filler } from "../component/Services/Filler";
+const SideMenuBtn = dynamic(() => import("../../components/ui/side-menu").then((mod) => mod.SideMenuBtn), {
+  ssr: false,
+});
 
 
 const title="OUR TEAM"
@@ -31,6 +38,7 @@ export default function Page(){
   
     useEffect(() => {
       // Scroll progress for the progress bar
+      if (typeof window === "undefined") return;
       const handleScroll = () => {
         const scrollTop = window.scrollY;
         const windowHeight = document.documentElement.scrollHeight - window.innerHeight;

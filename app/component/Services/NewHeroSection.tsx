@@ -5,7 +5,7 @@ import React, { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { Bebas_Neue } from 'next/font/google'
-import TextBorderAnimation from '@/components/animata/text/text-border-animation'
+
 
 const bebas = Bebas_Neue({
     subsets: ['latin'],

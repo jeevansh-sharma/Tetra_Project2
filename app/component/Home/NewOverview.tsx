@@ -1,6 +1,6 @@
 
 import { Outfit } from "next/font/google";
-import ParallaxSection from "../AboutUs/ParralaxScroll";
+
 import DigitalMarketing from "../Services/Digital Marketing";
 
 const outfit = Outfit({

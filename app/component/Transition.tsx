@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-import TextBorderAnimation from "@/components/animata/text/text-border-animation";
+
 import { animatePageOut } from "./Animations";
 
 

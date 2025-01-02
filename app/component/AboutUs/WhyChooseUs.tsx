@@ -7,7 +7,7 @@ const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
 })
-export default function WhyChooseUs() {
+export function WhyChooseUs() {
     return (
       <div className="bg-neutral-950 h-[500px] text-white pt-16 pl-8 relative">
 

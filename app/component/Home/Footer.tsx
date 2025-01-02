@@ -1,4 +1,4 @@
-import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon, YoutubeIcon } from 'lucide-react';
+import { FacebookIcon, InstagramIcon, LinkedinIcon } from 'lucide-react';
 import { Outfit } from 'next/font/google';
 import { Index } from './Curve';
 import { motion } from 'framer-motion';

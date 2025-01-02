@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import MagneticButton from './MagneticEffect';
-import RippleButton from './RippleButton';
+
 
 // Move open/close state to parent component if needed
-export const SideMenuBtn = () => {
+export function SideMenuBtn()  {
   const [crossed, setCrossedState] = useState(false);
 
   return (

@@ -5,7 +5,7 @@ import { menuSlide, scale, slide } from './anim';
 
 import Curve from './Curve/Curve';
 import Footer from './Footer/Footer';
-import Link from 'next/link';
+
 import TransitionLink from '../Transition';
 
 const navItems = [
@@ -36,7 +36,7 @@ const navItems = [
   },
 ]
 
-export default function NavBar() {
+export default  function NavBar() {
 
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
@@ -56,7 +56,7 @@ export default function NavBar() {
                           <TransitionLink href={data.href} label={<span >{data.title}</span>} />
 
 
-                          {/* <Link href={data.href}>{data.title}</Link> */}
+                       
                         </motion.div>
                         )
                       })

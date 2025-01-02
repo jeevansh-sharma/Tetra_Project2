@@ -1,33 +1,19 @@
 "use client";
-import { project } from "@/constants";
-import { useRef, useState } from "react";
-import ProjectCard from "./SlidingTextCard";
-import { Marquee, Modal } from "@/animation";
-import { useScroll, motion, useTransform } from "framer-motion";
-//import ReactLenis from "lenis/react";
+
+
+
+import { Marquee } from "@/animation";
+
+
 import { ReactLenis } from '@studio-freight/react-lenis'
 
 
 export default function SlidingText() { // Changed component name
-	const container = useRef(null);
+	
 
-	const { scrollYProgress } = useScroll({
-		target: container,
-		offset: ["start end", "end start"],
-	});
 
-	const transformStyles = [
-		useTransform(scrollYProgress, [0, 1], [0, -100]),
-		useTransform(scrollYProgress, [0, 1], [0, 100]),
-		useTransform(scrollYProgress, [0, 1], [0, -100]),
-		useTransform(scrollYProgress, [0, 1], [0, 100]),
-		useTransform(scrollYProgress, [0, 1], [0, -100]),
-		useTransform(scrollYProgress, [0, 1], [0, 100]),
-		useTransform(scrollYProgress, [0, 1], [0, -100]),
-		useTransform(scrollYProgress, [0, 1], [0, 100]),
-	];
+	
 
-	const [modal, setModal] = useState({ active: false, index: 0 });
 
 	return (
 		<ReactLenis root>
@@ -43,29 +29,7 @@ export default function SlidingText() { // Changed component name
 				</h1>
 			</Marquee>/
 			</section>
-			{/* // this is the text below for cards */}
-
-
-			{/* <div
-				className="w-full flex justify-between gap-y-[50px] padding-x flex-wrap"
-				ref={container}>
-				{project.map((project, index) => (
-					<motion.div
-						key={project.id}
-						className="w-[49%] sm:w-full xm:w-full"
-						style={{ y: transformStyles[index % transformStyles.length] }}>
-						<ProjectCard
-							item={project}
-							index={index}
-							setModal={setModal}
-						/>
-					</motion.div>
-				))}
-				<Modal
-					projects={project}
-					modal={modal}
-				/>
-			</div> */}
+			
 		
 		</ReactLenis>
 	);

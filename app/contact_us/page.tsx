@@ -1,24 +1,26 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Tiles } from "@/components/ui/animated-grid-box";
-import { Outfit } from "next/font/google";
-import { SpinningTextCustomVariants } from "@/components/motionui/spining-text-custom";
+
+
+
 import { LetsTalk } from "../component/ContactUs/Talk";
 import Map from "../component/ContactUs/Map";
 import { Innovative } from "../component/ContactUs/Innovative";
 import { HeroScrollDemo } from "../component/ContactUs/TiltScrollEffect";
 import { HeroSection } from "../component/Services/NewHeroSection";
 import { Footer } from "../component/Home/Footer";
-import { SideMenuBtn } from "@/components/ui/side-menu";
+const SideMenuBtn = dynamic(() => import("../../components/ui/side-menu").then((mod) => mod.SideMenuBtn), {
+  ssr: false,
+});
 import { AnimatePresence } from "framer-motion";
-import NavBar from "../component/Navbar/Navbar";
-import Filler from "../component/Services/Filler";
+const NavBar = dynamic(() => import("../component/Navbar/Navbar"), {
+  ssr: false, // Disable SSR for this component
+});
+
+import dynamic from "next/dynamic";
+import { Filler } from "../component/Services/Filler";
 
 
-const outfit = Outfit({
-    subsets: ["latin"],
-    display: "swap",
-  });
 
   const summary  = (
     <>
@@ -28,7 +30,8 @@ const outfit = Outfit({
 export default function Page(){
     const [scrollProgress, setScrollProgress] = useState(0);
     const [isActive, setIsActive] = useState(false);
-    useEffect(() => {                    //useEffect of scroll bar function
+    useEffect(() => {      
+      if (typeof window === "undefined") return;              //useEffect of scroll bar function
       const handleScroll = () => {
         const scrollTop = window.scrollY; // Current scroll position
         const windowHeight =

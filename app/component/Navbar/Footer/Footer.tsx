@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaFacebook,  FaWhatsapp } from "react-icons/fa";
 
 export default function Index() {
   return (

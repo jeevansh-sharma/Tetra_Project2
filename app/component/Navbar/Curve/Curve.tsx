@@ -1,9 +1,17 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
 
 
 export default function Index() {
-
+  const [windowWidth, setWindowWidth] = useState<number>(0);
+  console.log(windowWidth)
+  // Set window width after component mounts (only on client)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowWidth(window.innerWidth); // Safely access window properties
+    }
+  }, []);
   const initialPath = `M100 0 L200 0 L200 ${window.innerHeight} L100 ${window.innerHeight} Q-100 ${window.innerHeight/2} 100 0`
   const targetPath =  `M100 0 L200 0 L200 ${window.innerHeight} L100 ${window.innerHeight} Q100 ${window.innerHeight/2} 100 0`
   
