@@ -12,7 +12,7 @@ export function OurVision(){
    
   <div className='relative flex flex-col  max-w-md mx-auto'>
  
-    <Image src="/ourVision.jpg"  alt='ok' className='w-full h-full mr-24  'width={7} // Aspect ratio width
+    <Image src="/ourVision.jpg" unoptimized  alt='ok' className='w-full h-full mr-24  'width={7} // Aspect ratio width
   height={8} // Aspect ratio height
   layout="responsive" />
  

@@ -27,7 +27,7 @@ export function OurMission(){
   </div>
   <div className='flex relative items-center justify-center px-28'>
   
-  <Image src="/ourMission.jpg" alt='ok' className='w-full h-full   '  width={12} // Aspect ratio width
+  <Image src="/ourMission.jpg" alt='ok' className='w-full h-full   '  width={12}  unoptimized // Aspect ratio width
   height={16} // Aspect ratio height
   layout="responsive"/>
   

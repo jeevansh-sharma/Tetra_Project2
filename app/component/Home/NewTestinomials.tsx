@@ -30,6 +30,7 @@ export default function Testimonials() {
 											alt="asd"
 											width={50}
 											height={50}
+											unoptimized 
 											className="rounded-full h-[60px] w-[60px]"
 										/>
 										<div className="flex flex-col">
@@ -62,6 +63,7 @@ export default function Testimonials() {
 											alt="asd"
 											width={50}
 											height={50}
+											unoptimized 
 											className="rounded-full h-[60px] w-[60px]"
 										/>
 										<div className="flex flex-col">

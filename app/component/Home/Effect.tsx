@@ -48,6 +48,7 @@ const OurVision = () => {
           width={312}
           height={600}
           alt="Vision Image "
+          unoptimized 
           className="mt-24 h-[450px] object-cover rounded-xl"
         />
         <Image
@@ -55,6 +56,7 @@ const OurVision = () => {
           width={312}
           height={600}
           alt="Vision Image"
+          unoptimized 
           className="mt-96  h-[450px] object-cover rounded-xl"
         />
       </div>
@@ -73,6 +75,7 @@ const OurVision = () => {
           width={312}
           height={400}
           alt="Vision Image"
+          unoptimized 
           className="mt-64 ml-auto h-[450px] object-cover rounded-xl"
         />
       </div>

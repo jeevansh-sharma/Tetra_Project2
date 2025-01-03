@@ -72,8 +72,8 @@ export const HeroSection = () => {
             TETRA EDTECH LIMITED
         </h1>
         <div className='w-[380px] h-[400px] bg-[#858480] rounded-t-full absolute bottom-0 z-[1]' />
-        <Image ref={leafRef} src={'/lan1.png'} alt='plant' width={1200} height={500} className='w-[1500px] absolute bottom-0 z-0'    />
-        <Image ref={girlImagRef} src={'/lan2.png'} width={900} height={900}  alt='tatooed girl' className='absolute w-[1000px]  -bottom-8 z-[3]' />
+        <Image ref={leafRef} src={'/lan1.png'} unoptimized  alt='plant' width={1200} height={500} className='w-[1500px] absolute bottom-0 z-0'    />
+        <Image ref={girlImagRef} src={'/lan2.png'} unoptimized  width={900} height={900}  alt='tatooed girl' className='absolute w-[1000px]  -bottom-8 z-[3]' />
     </div>
     </>
   )

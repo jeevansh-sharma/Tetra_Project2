@@ -1,9 +1,13 @@
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from 'lucide-react';
 import { Outfit } from 'next/font/google';
-import { Index } from './Curve';
+const Index = dynamic(() => import("./Curve").then((mod) => mod.Index), {
+  ssr: false, // Disable server-side rendering
+  loading: () => <div>Loading...</div>, // Fallback UI
+});
 import { motion } from 'framer-motion';
 import TransitionLink from '../Transition';
 import { FaWhatsapp } from 'react-icons/fa';
+import dynamic from 'next/dynamic';
 
 const outfit = Outfit({
   subsets: ['latin'],
