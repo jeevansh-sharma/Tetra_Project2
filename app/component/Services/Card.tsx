@@ -10,7 +10,7 @@ type CardProps = {
   title: string;
   description: string;
   src: string;
-  link: string;
+  
   color: string;
   range: [number, number];
   targetScale: number;
@@ -25,7 +25,7 @@ const Card: React.FC<CardProps> = ({
   title,
   description,
   src,
-  link,
+  
   color,
   range,
   targetScale,
@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({
     target: container,
     offset: ["start end", "start start"],
   });
-   console.log(link);
+   
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]); // Image zoom out animation
   const scale = useTransform(progress, range, [1, targetScale]); // Stacking effect
 

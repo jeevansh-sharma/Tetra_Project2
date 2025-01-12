@@ -10,6 +10,9 @@ import FollowCursor from "@/components/ui/FollowCursor";
 export const metadata: Metadata = {
   title: "TetraEdTech",
   description: "www.tetraedtech.com",
+  icons:{
+    icon: "/logologo2.png",
+  }
 };
 
 export default function RootLayout({

@@ -11,7 +11,7 @@ type SpinningTextProps = {
   className?: string;
   reverse?: boolean;
   fontSize?: number;
-  radius?: number;
+  
   transition?: Transition;
   variants?: {
     container?: Variants;
@@ -40,12 +40,12 @@ export function SpinningText({
   className,
   reverse = false,
   fontSize = 1,
-  radius = 6,
+ 
   transition,
   variants,
 }: SpinningTextProps) {
   const [isClient, setIsClient] = useState(false);  // State to track client-side rendering
- console.log(radius);
+ 
   // Set isClient to true once the component has mounted (in the client)
   useEffect(() => {
     setIsClient(true);

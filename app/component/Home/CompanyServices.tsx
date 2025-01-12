@@ -132,7 +132,7 @@ export default function CompanyServices() {
 
               {/* Arrow Icon - Display only on hover */}
               <Link
-                href={`/services#${service.link}`}
+                href={`/services`}
                 className="absolute bottom-6 md:bottom-24 right-4 md:left-10 text-orange-400 text-xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
               >
                 <FaCircleArrowRight size={24}  />
