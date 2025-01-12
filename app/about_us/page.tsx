@@ -16,7 +16,7 @@ import { HeroSection } from "../component/Services/NewHeroSection";
 import { Footer } from "../component/Home/Footer";
 
 import { AnimatePresence } from "framer-motion";
-import { Filler } from "../component/Services/Filler";
+
 import { WhyChooseUs } from "../component/AboutUs/WhyChooseUs";
 const SideMenuBtn = dynamic(() => import("../../components/ui/side-menu").then((mod) => mod.SideMenuBtn), {
   ssr: false,
@@ -62,18 +62,16 @@ export default function Page() {
           style={{ height: `${scrollProgress}%` }}
         ></div>
       </div>
-      <div
-        className={`text-black ${scrollProgress < 10 ? `z-[0]` : `z-[50]`} fixed top-3 right-14 cursor-pointer`}
-        onClick={() => setIsActive(!isActive)}
-      >
-        <SideMenuBtn />
-      </div>
+      <div className={`text-black ${scrollProgress<10 ? ` z-[50] md:z-[0]`: `z-[50]` } fixed  top-3 right-4 md:right-14 cursor-pointer`} onClick={() => {setIsActive(!isActive)}}>
+                      <SideMenuBtn />
+            </div>
 
       <AnimatePresence mode="wait">
         {isActive && <NavBar />}
       </AnimatePresence>
       <HeroSection title={title} summary={summary} />
-      <Filler />
+      <div className="bg-[#e1e1e1] h-[1vh] md:h-[2vh] lg:h-[14vh] w-screen flex flex-col justify-center items-center">
+        </div>
       <OurMission />
       <OurVision />
       <WhyChooseUs />

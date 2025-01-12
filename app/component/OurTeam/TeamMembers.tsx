@@ -58,7 +58,7 @@ export function FocusCardsDemo() {
 
   return (
     <>
-      <div className="w-screen py-16 mb-4">
+      <div className="w-screen pt-16 pb-0 md:pt-16 md:pb-16 mb-0 md:mb-4">
         <div className="flex flex-col items-center justify-center gap-4">
           <div className="flex flex-col items-center justify-center space-x-6 w-full">
             <h1 className="text-4xl md:text-7xl text-black ">

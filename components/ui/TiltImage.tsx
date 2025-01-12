@@ -43,17 +43,17 @@ export const ContainerScroll = ({
     return isMobile ? [0.7, 0.9] : [1.05, 1];
   };
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [30, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
   return (
     <div
-      className="h-[60rem] md:h-[60rem] flex items-center justify-center relative p-8 md:p-20"
+      className="h-[35rem] md:h-[70rem] lg:h-[60rem] flex items-center justify-center relative p-5 md:p-20"
       ref={containerRef}
     >
       <div
-        className="py-10 md:py-40 w-full relative"
+        className="py-1 md:py-40 w-full relative"
         style={{
           perspective: '1000px',
         }}

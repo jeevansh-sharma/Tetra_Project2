@@ -40,8 +40,8 @@ export function Footer() {
             <div>
               <h3 className={`${outfit.className} text-lg font-semibold mb-2`}>Main Office</h3>
               <p className={`${outfit.className} text-sm`}>
-              WeWork DLF Phase 3 Cyber
-              City, Gurugram
+              wework Forum, DLF Cyber City,
+              DLF Phase 3,<br/> Sector 24, Gurugram, Haryana 122002
               </p>
             </div>
             <div>
@@ -56,7 +56,7 @@ hotel, Zirakpur, Nabha, Punjab
           </div>
 
           {/* Section 3: Quick Links */}
-          <div className="flex flex-col items-start">
+          <div className="flex md:hidden  lg:flex flex-col items-start">
   <h3 className={`${outfit.className} text-lg font-semibold mb-4`}>Quick Links</h3>
   <ul className={`${outfit.className} text-sm space-y-2`}>
     {[

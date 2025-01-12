@@ -60,20 +60,25 @@ export const HeroSection = () => {
   return (
     <>
     
-    <div ref={containerRef}  className=' min-h-screen bg-[#282828] flex flex-col items-center justify-center relative overflow-hidden'>
+    <div ref={containerRef}  className=' min-h-screen w-screen bg-neutral-900 flex flex-col items-center justify-center relative overflow-hidden'>
     <NavbarTop/>
-    <div className='absolute flex top-4 right-7 z-[4] '>
+    <div className=' md:hidden absolute top-0 left-3  z-[4]'>
+     
+     <img src='/logologo2.png'  className='object-cover h-28' />
+  
+ </div>
+    <div className='absolute hidden md:flex top-4 right-7 z-[4] '>
      
         <TransitionLink href="/contact_us" label={label}/>
        
 
     </div>
-        <h1 ref={textRef} className={`${bebas.className} text-white text-[6.5rem] font-extralight tracking-tight absolute top-[8.2rem] z-[2] `}>
+        <h1 ref={textRef} className={`${bebas.className} text-white text-center text-[3rem] md:text-[5.4rem] lg:text-[6.2rem] xl:text-[6.5rem] font-extralight tracking-tight absolute bottom-[50%] md:bottom-[32rem] lg:bottom-[38rem] xl:bottom-[21.5rem] z-[2] `}>
             TETRA EDTECH LIMITED
         </h1>
-        <div className='w-[380px] h-[400px] bg-[#858480] rounded-t-full absolute bottom-0 z-[1]' />
-        <Image ref={leafRef} src={'/lan1.png'} unoptimized  alt='plant' width={1200} height={500} className='w-[1500px] absolute bottom-0 z-0'    />
-        <Image ref={girlImagRef} src={'/lan2.png'} unoptimized  width={900} height={900}  alt='tatooed girl' className='absolute w-[1000px]  -bottom-8 z-[3]' />
+        <div className='w-[260px] h-[360px]   lg:w-[380px] lg:h-[400px] bg-[#858480] rounded-t-full absolute bottom-0 z-[1]' />
+        <Image ref={leafRef} src={'/lan1.png'}  alt='plant' width={1200} height={500} className='w-screen h-screen object-cover absolute bottom-0 z-0' unoptimized   />
+        <Image ref={girlImagRef} src={'/lan2.png'}  width={900} height={900}  alt='tatooed girl' className='absolute h-[400px] object-cover  lg:w-[1000px] lg:h-[450px]  -bottom-8 z-[3]' unoptimized/>
     </div>
     </>
   )

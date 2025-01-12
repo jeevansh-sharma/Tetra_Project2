@@ -7,15 +7,28 @@ interface FollowCursorProps {
 }
 
 const FollowCursor: React.FC<FollowCursorProps> = ({ color = '#E9EAEC' }) => {
-  const [isClient, setIsClient] = useState(false);  // Track if the component is on the client side
+  const [isClient, setIsClient] = useState(false); // Track if the component is on the client side
+  const [isLargeScreen, setIsLargeScreen] = useState(false); // Track if the device is a laptop/desktop
 
   useEffect(() => {
-    setIsClient(true);  // Set to true once the component has mounted on the client side
+    setIsClient(true); // Set to true once the component has mounted on the client side
+
+    const checkScreenSize = () => {
+      const width = window.innerWidth;
+      setIsLargeScreen(width >= 1024); // Only enable effect for screens 1024px or wider
+    };
+
+    checkScreenSize(); // Initial check
+    window.addEventListener('resize', checkScreenSize); // Listen for screen size changes
+
+    return () => {
+      window.removeEventListener('resize', checkScreenSize); // Cleanup
+    };
   }, []);
 
   useEffect(() => {
-    if (!isClient) return;  // Skip SSR phase
-    
+    if (!isClient || !isLargeScreen) return; // Skip SSR phase and non-large screens
+
     let canvas: HTMLCanvasElement;
     let context: CanvasRenderingContext2D | null;
     let animationFrame: number;
@@ -84,7 +97,7 @@ const FollowCursor: React.FC<FollowCursorProps> = ({ color = '#E9EAEC' }) => {
 
     const init = () => {
       if (prefersReducedMotion.matches) {
-        console.log('Reduced motion enabled, cursor effect skipped.');
+  
         return;
       }
 
@@ -123,7 +136,7 @@ const FollowCursor: React.FC<FollowCursorProps> = ({ color = '#E9EAEC' }) => {
     return () => {
       destroy();
     };
-  }, [color, isClient]);  // Only run the effect when `isClient` is `true`
+  }, [color, isClient, isLargeScreen]); // Add `isLargeScreen` dependency
 
   return null; // This component doesn't render any visible JSX
 };

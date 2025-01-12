@@ -9,7 +9,7 @@ const outfit = Outfit({
 })
 export function WhyChooseUs() {
     return (
-      <div className="bg-neutral-950 h-[500px] text-white pt-16 pl-8 relative">
+      <div className="bg-neutral-950 md:h-[890px]  lg:h-[500px] text-white py-12 pl-3 lg:pl-8 relative">
 
 
 
@@ -43,11 +43,20 @@ export function WhyChooseUs() {
         src: "/award1.jpeg"
       }}>
           <div className="p-2">
-            <div className="mb-2 text-sm font-semibold text-foreground/80">Yoga Event at Universal College Patran</div>
-            <p className="leading-2 text-sm text-muted-foreground">
-            Tetra Edtech Limited was honored with the opportunity to organize a rejuvenating and impactful yoga event at Universal College Atran, promoting wellness and mindfulness among the community.
-            </p>
-          </div>
+  <div
+    className="mb-0 md:mb-2 font-semibold  text-foreground/80 text-[0.5rem] leading-[0.7rem] md:text-sm"
+   
+  >
+    Yoga Event at Universal College Patran
+  </div>
+  <p
+    className="leading-2 text-muted-foreground text-[0.4rem] leading-[0.6rem] md:text-sm"
+    
+  >
+    Tetra Edtech Limited was honored with the opportunity to organize a rejuvenating and impactful yoga event at Universal College Atran, promoting wellness and mindfulness among the community.
+  </p>
+</div>
+
         </TiltedCover>
 
         <TiltedCover direction="right" tiltCover={false} image={{
@@ -55,9 +64,9 @@ export function WhyChooseUs() {
         src: "/award2.jpeg"
       }}>
           <div className="p-2">
-            <div className="mb-2 text-sm font-semibold text-foreground/80"> Heritage Fest and Job Fair</div>
-            <p className="leading-2 text-sm text-muted-foreground">
-            Our dedication to cultural enrichment and career development was acknowledged through an award for successfully arranging a vibrant Heritage Fest and a well-curated Job Fair. These events provided a unique platform for showcasing cultural pride while facilitating meaningful career opportunities.
+            <div className="mb-0 md:mb-2 text-[0.5rem] leading-[0.7rem] md:text-sm font-semibold text-foreground/80"> Heritage Fest and Job Fair</div>
+            <p className="leading-2 text-[0.4rem] leading-[0.6rem] md:text-sm text-muted-foreground">
+            Our dedication to cultural enrichment and career development was acknowledged through an award for successfully arranging a vibrant Heritage Fest and a well-curated Job Fair.<span className="hidden md:inline"> These events provided a unique platform for showcasing cultural pride while facilitating meaningful career opportunities.</span>
             </p>
           </div>
         </TiltedCover>
@@ -67,13 +76,13 @@ export function WhyChooseUs() {
         src: "/award3.jpeg"
       }}>
           <div className="p-2">
-            <div className="mb-2 text-sm font-semibold text-foreground/80">Seminar at Punjab Group of Colleges</div>
-            <p className="leading-2 text-sm text-muted-foreground">
+            <div className="mb-1 md:mb-2 text-[0.5rem] leading-[0.7rem] md:text-sm font-semibold text-foreground/80">Seminar at Punjab Group of Colleges</div>
+            <p className="leading-2 text-[0.4rem] leading-[0.6rem] md:text-sm text-muted-foreground">
             Tetra Edtech Limited was invited to deliver an insightful seminar at Punjab Group of Colleges, where we shared knowledge and expertise, fostering growth and learning among the students and faculty.
             </p>
           </div>
         </TiltedCover>
-      </div>;
+      </div>
           
         </div>
       </div>

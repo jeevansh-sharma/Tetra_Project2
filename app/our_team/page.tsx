@@ -16,7 +16,7 @@ import { Footer } from "../component/Home/Footer";
 import { FocusCardsDemo } from "../component/OurTeam/TeamMembers";
 import DirectorComponent from "../component/OurTeam/DirectorComponent";
 import CMOComponent from "../component/OurTeam/CMOMessage";
-import { Filler } from "../component/Services/Filler";
+
 const SideMenuBtn = dynamic(() => import("../../components/ui/side-menu").then((mod) => mod.SideMenuBtn), {
   ssr: false,
 });
@@ -59,9 +59,9 @@ export default function Page(){
          <div className="fixed top-0 right-0 h-full w-1.5 bg-neutral-900 z-50 ">
         <div className="bg-orange-500 rounded-b-2xl w-full" style={{ height: `${scrollProgress}%` }}></div>
       </div>
-      <div className={`text-black ${scrollProgress<10 ? `z-[0]`: `z-[50]` } fixed  top-3 right-14 cursor-pointer`} onClick={() => {setIsActive(!isActive)}}>
-                      <SideMenuBtn />
-            </div>
+     <div className={`text-black ${scrollProgress<10 ? ` z-[50] md:z-[0]`: `z-[50]` } fixed  top-3 right-4 md:right-14 cursor-pointer`} onClick={() => {setIsActive(!isActive)}}>
+                     <SideMenuBtn />
+           </div>
 
       {/* Intro Section */}
      
@@ -75,7 +75,8 @@ export default function Page(){
           
      
       <HeroSection title={title} summary={summary}/>
-      <Filler/>
+      <div className="bg-[#e1e1e1] h-[4vh] md:h-[7vh] lg:h-[9vh] xl:h-[20vh] w-screen flex flex-col justify-center items-center">
+</div>
       <DirectorComponent/>
       <CMOComponent/>
    

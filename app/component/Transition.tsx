@@ -17,9 +17,9 @@ export default function TransitionLink({
   const router = useRouter();
 
  const handleClick = () => {
-    console.log("handleClick",href," ", router);
+  
     animatePageOut(href, router);
-    console.log("handleClick2");
+   
   };
 
   return (

@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 
 export function Index() {
   const [windowWidth, setWindowWidth] = useState<number>(0);
-  console.log(windowWidth);
+
   // Set window width after component mounts (only on client)
   useEffect(() => {
    
@@ -13,8 +13,8 @@ export function Index() {
       setWindowWidth(window.innerWidth); // Safely access window properties
     }
   }, []);
-  const initialPath = `M0 0 Q${window.innerWidth / 2} 150 ${window.innerWidth} 0`;
-  const targetPath = `M0 0 Q${window.innerWidth / 2} 0 ${window.innerWidth} 0`;
+  const initialPath = `M0 0 Q${windowWidth / 2} 150 ${windowWidth} 0`;
+  const targetPath = `M0 0 Q${windowWidth / 2} 0 ${windowWidth} 0`;
 
   const curve = {
     initial: {

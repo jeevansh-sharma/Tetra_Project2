@@ -11,7 +11,7 @@ const DigitalMarketing = () => {
   return (
     <>
     <div className="parallax w-screen flex flex-col items-center justify-center bg-black bg-opacity-80">
-    <h1 className={`${outfit.className} font-semibold text-[5.5rem] text-white text-center`}>
+    <h1 className={`${outfit.className} font-semibold text-[2.3rem] md:text-[5.5rem] text-white text-center`}>
           Discover Our <span className="font-extralight">Studio</span>
         </h1>
         

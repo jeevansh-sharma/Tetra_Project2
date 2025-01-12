@@ -19,7 +19,30 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  /* Ensure the parallax container stretches across the entire width */
+  width: 100%;
+ /* Makes the section take up full viewport height */
+  
+  /* Add responsive padding to avoid content being too close to edges */
+  padding: 20px;
+  box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll; /* Disable fixed background attachment for mobile */
+    min-height: 300px; /* Reduce the min height on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax {
+    background-size: 120%; /* Slightly zoom in the image for smaller screens */
+    min-height: 250px; /* Further reduce the min height for very small devices */
+  }
+}
+
 
 .outfit-unique {
   font-family: "Outfit", sans-serif;

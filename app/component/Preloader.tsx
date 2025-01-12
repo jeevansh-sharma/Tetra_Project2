@@ -61,7 +61,7 @@ const Preloader = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden text-black">
+    <div className="relative  w-screen h-screen overflow-hidden text-black">
       {/* Loader Overlay */}
       <div className="h-full w-full bg-[#000] flex justify-center items-center absolute top-0 overflow-hidden ">
         <div id="line" className="absolute left-0 z-20 w-0 h-[2px] bg-orange-500"></div>
@@ -72,7 +72,7 @@ const Preloader = () => {
         ></div>
         <div
           id="counter"
-          className="absolute z-30 tracking-tighter text-center transform  font-extralight text-white/80 sm1:-translate-y-10 md:-translate-y-20 sm1:text-5xl md:text-8xl"
+          className="absolute z-30 tracking-tighter text-center transform  font-extralight text-white/80 -translate-y-10 md:-translate-y-20 text-4xl md:text-8xl"
         >
           {counter}%
         </div>

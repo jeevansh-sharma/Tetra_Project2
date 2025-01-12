@@ -77,14 +77,9 @@ export default function Page() {
       <div className="fixed top-0 right-0 h-full w-1.5 bg-neutral-900 ">
         <div className="bg-orange-500 rounded-b-2xl w-full" style={{ height: `${scrollProgress}%` }}></div>
       </div>
-      <div
-        className={`text-black ${scrollProgress < 10 ? `z-[0]` : `z-[50]`} fixed top-3 right-14 cursor-pointer`}
-        onClick={() => {
-          setIsActive(!isActive);
-        }}
-      >
-        <SideMenuBtn />
-      </div>
+     <div className={`text-black ${scrollProgress<10 ? ` z-[50] md:z-[0]`: `z-[50]` } fixed  top-3 right-4 md:right-14 cursor-pointer`} onClick={() => {setIsActive(!isActive)}}>
+                     <SideMenuBtn />
+           </div>
 
       {/* Intro Section */}
       <div className="relative w-screen h-screen flex flex-col bg-black">

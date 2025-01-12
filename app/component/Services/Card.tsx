@@ -43,21 +43,21 @@ const Card: React.FC<CardProps> = ({
   return (
     <div
       ref={container}
-      className="cardContainer h-screen flex items-center justify-center sticky top-0"
+      className="cardContainer h-[70vh] md:h-[70vh] lg:h-screen flex items-center justify-center sticky top-0"
     >
       <motion.div
-        className="card flex flex-col relative h-[500px] w-[1000px] rounded-3xl p-12"
+        className="card flex flex-col relative h-[400px] w-[350px] md:h-[440px] md:w-[800px] lg:h-[500px] lg:w-[1000px] rounded-3xl p-2 md:p-12"
         style={{ scale, backgroundColor: `${color}`, top: `calc(-5vh + ${i * 25}px)` }}
       >
-        <h2 className={`${outfit.className} text-center m-0 text-4xl font-semibold`}>{title}</h2>
-        <div className="flex h-full mt-12 gap-12">
-          <div className="desc w-[40%] relative top-[10%]">
-            <p className="text-base first-letter:text-2xl">{description}</p>
+        <h2 className={`${outfit.className} text-center mt-2 md:mt-0 m-0 text-2xl md:text-4xl font-semibold`}>{title}</h2>
+        <div className="flex flex-col-reverse md:flex-row  h-full mt-0  lg:mt-12 gap-1 md:gap-12">
+          <div className="desc w-[90%] text-justify md:text-left ml-4 md:mr-0 md:w-[40%] h-[60%] md:h-auto relative top-2 md:top-[10%]">
+            <p className="text-xs md:text-sm lg:text-base first-letter:text-lg md:first-letter:text-2xl">{description}</p>
             
           </div>
-          <div className="imgContainer relative w-[60%] h-full rounded-3xl overflow-hidden">
+          <div className="imgContainer mt-0 md:mt-12 lg:mt-0 ml-3 md:mr-0 relative w-[90%] md:w-[60%] h-[30%] md:h-[70%] lg:h-full rounded-3xl overflow-hidden">
             <motion.div style={{ scale: imageScale }} className="w-full h-full">
-              <Image fill src={`/${src}`} alt="image" className="object-cover" />
+              <Image fill src={`/${src}`} alt="image" className="object-cover" unoptimized />
             </motion.div>
           </div>
         </div>

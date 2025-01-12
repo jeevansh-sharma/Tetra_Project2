@@ -95,7 +95,7 @@ export function ScrollEffect() {
 
     return (
         <ReactLenis root>
-        <section id="main" className='relative bg-black flex w-screen justify-start mt-9 items-center h-[200vh] flex-col '>
+        <section id="main" className='hidden  xl:flex relative bg-black w-screen  justify-start mt-9 items-center h-[200vh] flex-col '>
         <div
 			className="w-full mt-9 "
 			>

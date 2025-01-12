@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 
 
 export default function Index() {
-  const [windowWidth, setWindowWidth] = useState<number>(0);
-  console.log(windowWidth)
+  const [, setWindowHeight] = useState<number>(0);
+
   // Set window width after component mounts (only on client)
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setWindowWidth(window.innerWidth); // Safely access window properties
+      setWindowHeight(window.innerHeight); // Safely access window properties
     }
   }, []);
   const initialPath = `M100 0 L200 0 L200 ${window.innerHeight} L100 ${window.innerHeight} Q-100 ${window.innerHeight/2} 100 0`
@@ -30,6 +30,7 @@ export default function Index() {
   }
 
   return (
+    
     <svg className="absolute top-0 left-[-99px] w-[100px] h-full fill-gray-800 stroke-none">
         <motion.path variants={curve} initial="initial" animate="enter" exit="exit"></motion.path>
     </svg>

@@ -12,6 +12,7 @@ type MagneticButtonType = {
 
 function MagneticButton({ children, distance = 0.6 }: MagneticButtonType) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isCursorDevice, setIsCursorDevice] = useState(false); // Detect devices with cursors
   const ref = useRef<HTMLDivElement>(null);
 
   const x = useMotionValue(0);
@@ -21,6 +22,24 @@ function MagneticButton({ children, distance = 0.6 }: MagneticButtonType) {
   const springY = useSpring(y, SPRING_CONFIG);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(pointer: fine)'); // Detect devices with precise pointer support (mouse/trackpad)
+
+    const updateCursorDevice = () => setIsCursorDevice(mediaQuery.matches);
+
+    // Initial check
+    updateCursorDevice();
+
+    // Listen for changes to the media query
+    mediaQuery.addEventListener('change', updateCursorDevice);
+
+    return () => {
+      mediaQuery.removeEventListener('change', updateCursorDevice);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isCursorDevice) return; // Skip for devices without a cursor
+
     const calculateDistance = (e: MouseEvent) => {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect();
@@ -44,7 +63,7 @@ function MagneticButton({ children, distance = 0.6 }: MagneticButtonType) {
     return () => {
       document.removeEventListener('mousemove', calculateDistance);
     };
-  }, [ref, isHovered]);
+  }, [ref, isHovered, isCursorDevice]); // Only run effect if `isCursorDevice` is true
 
   return (
     <motion.div
@@ -53,11 +72,13 @@ function MagneticButton({ children, distance = 0.6 }: MagneticButtonType) {
       onMouseLeave={() => setIsHovered(false)}
       style={{
         x: springX,
-        y: springY
-      }}>
+        y: springY,
+      }}
+    >
       {children}
     </motion.div>
   );
 }
 
 export default MagneticButton;
+

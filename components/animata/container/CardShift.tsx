@@ -38,8 +38,8 @@ export default function TiltedCover({
 
   return (
     // The container has height and width set to the size of the content + padding.
-    <div className="flex h-[20rem] w-[18rem] items-center justify-center overflow-hidden">
-      <div className="group relative h-[16rem] w-[14rem]">
+    <div className="flex h-[10rem] w-[8rem] md:h-[20rem] md:w-[18rem] items-center justify-center overflow-hidden">
+      <div className="group relative h-[8rem] w-[6rem] md:h-[16rem] md:w-[14rem]">
         {/* Background content */}
         <div
           className="border-box border-1 pointer-events-none relative h-full w-full overflow-hidden rounded-xl border bg-background transition-all duration-500 ease-slow group-hover:!transform-none dark:border-zinc-700"
